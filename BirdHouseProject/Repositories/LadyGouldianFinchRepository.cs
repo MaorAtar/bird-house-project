@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using BirdHouseProject.Models;
+using BirdHouseProject.Views;
 
 namespace BirdHouseProject.Repositories
 {
@@ -106,6 +105,14 @@ namespace BirdHouseProject.Repositories
                         ladyGouldianFinchList.Add(ladyGouldianFinchModel);
                     }
                 }
+            }
+            if (ladyGouldianFinchList.Count == 1)
+            {
+                var ladyGouldianFinchView = new LadyGouldianFinchDataView(ladyGouldianFinchList[0].Serial_number, ladyGouldianFinchList[0].Species, 
+                    ladyGouldianFinchList[0].Sub_species, ladyGouldianFinchList[0].Hatch_date, ladyGouldianFinchList[0].Gender, 
+                    ladyGouldianFinchList[0].Cage_number, ladyGouldianFinchList[0].F_serial_number, ladyGouldianFinchList[0].M_serial_number, 
+                    ladyGouldianFinchList[0].Head_color, ladyGouldianFinchList[0].Breast_color, ladyGouldianFinchList[0].Body_color);
+                ladyGouldianFinchView.Show();
             }
             return ladyGouldianFinchList;
         }

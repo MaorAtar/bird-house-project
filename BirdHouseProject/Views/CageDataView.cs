@@ -34,38 +34,15 @@ namespace BirdHouseProject.Views
         // Methods
         private void showBirdsTable()
         {
-            try
-            {
-                // Open connection
-                connectionString.Open();
-
-                // Prepare the query with a WHERE clause that filters by cage_serial_number
-                string query = "SELECT * FROM LadyGouldianFinch WHERE Cage_Number = @cage_serial_number";
-
-                // Create a SqlCommand object with the query and the parameter
-                SqlCommand cmd = new SqlCommand(query, connectionString);
-                cmd.Parameters.AddWithValue("@cage_serial_number", cageSerialBox.Text);
-
-                // Create a SqlDataAdapter object with the command
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                // Fill a DataTable with the query results
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                // Set the DataGridView control's DataSource property to the DataTable
-                birdsDataGridView.DataSource = dt;
-
-                // Close the connection
-                connectionString.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
+            connectionString.Open();
+            string query = "SELECT * FROM LadyGouldianFinch WHERE Cage_Number = @cage_serial_number";
+            SqlCommand command = new SqlCommand(query, connectionString);
+            command.Parameters.AddWithValue("@cage_serial_number", cageSerialBox.Text);
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            birdsDataGridView.DataSource = dt;
+            connectionString.Close();
         }
-
-
-
     }
 }

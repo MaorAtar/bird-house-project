@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 using BirdHouseProject.Models;
+using BirdHouseProject.Views;
 
 namespace BirdHouseProject.Repositories
 {
@@ -84,6 +84,11 @@ namespace BirdHouseProject.Repositories
                         cageList.Add(cageModel);
                     }
                 }
+            }
+            if (cageList.Count == 1)
+            {
+                var cageView = new CageDataView(cageList[0].Serial_nubmer, cageList[0].Length, cageList[0].Width, cageList[0].Height, cageList[0].Material);
+                cageView.Show();
             }
             return cageList;
         }
