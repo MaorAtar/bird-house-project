@@ -177,6 +177,7 @@ namespace BirdHouseProject.Views
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(857, 408);
             this.dataGridView1.TabIndex = 45;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // searchBtn
             // 

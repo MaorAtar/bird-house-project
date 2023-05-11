@@ -46,6 +46,7 @@ namespace BirdHouseProject.Views
             subSpeciesBox2.Text = subSpecies;
             cageNumberBox2.Text = cageNumber;
             fSerialBox2.Text = serialNumber.ToString();
+            // Add Chick
             addChickBtn.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
@@ -53,9 +54,17 @@ namespace BirdHouseProject.Views
                 tabControl1.TabPages.Add(tabPage2);
                 tabPage2.Text = "Add new bird";
             };
+            // Cancel
+            cancelBtn2.Click += delegate
+            {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+                tabControl1.TabPages.Remove(tabPage2);
+                tabControl1.TabPages.Add(tabPage1);
+            };
             tabControl1.TabPages.Remove(tabPage2);
         }
         
+        // Getters & Setters
         public string LadyGouldianFinchSerialNumber { get => serialBox2.Text; set => serialBox2.Text = value; }
         public string LadyGouldianFinchSpecies { get => speciesBox2.Text; set => speciesBox2.Text = value; }
         public string LadyGouldianFinchSubSpecies { get => subSpeciesBox2.Text; set => subSpeciesBox2.Text = value; }
@@ -64,12 +73,15 @@ namespace BirdHouseProject.Views
         public string LadyGouldianFinchCageNumber { get => cageNumberBox2.Text; set => cageNumberBox2.Text = value; }
         public int LadyGouldianFinchFSerialNumber { get => Convert.ToInt32(fSerialBox2.Text); set => fSerialBox2.Text = Convert.ToString(value); }
         public int LadyGouldianFinchMSerialNumber { get => Convert.ToInt32(mSerialBox2.Text); set => mSerialBox2.Text = Convert.ToString(value); }
-        public string LadyGouldianFinchHeadColor { get => headColorComboBox2.Text.ToString(); set => headColorComboBox2.Text = value; }
-        public string LadyGouldianFinchBreastColor { get => breastColorComboBox2.Text.ToString(); set => breastColorComboBox2.Text = value; }
-        public string LadyGouldianFinchBodyColor { get => bodyColorComboBox2.Text.ToString(); set => bodyColorComboBox2.Text = value; }
+        public string LadyGouldianFinchHeadColor { get => headColorBox2.Text.ToString(); set => headColorBox2.Text = value; }
+        public string LadyGouldianFinchBreastColor { get => breastColorBox2.Text.ToString(); set => breastColorBox2.Text = value; }
+        public string LadyGouldianFinchBodyColor { get => bodyColorBox2.Text.ToString(); set => bodyColorBox2.Text = value; }
 
+        // Events
         public event EventHandler AddNewEvent;
+        public event EventHandler CancelEvent;
 
+        // Methods
         private void showChickTable()
         {
             connectionString.Open();

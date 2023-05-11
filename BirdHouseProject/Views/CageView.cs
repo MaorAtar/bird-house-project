@@ -87,6 +87,7 @@ namespace BirdHouseProject.Views
         public string CageWidth { get => widthBox.Text; set => widthBox.Text = value; }
         public string CageHeight { get => heightBox.Text; set => heightBox.Text = value; }
         public string CageMaterial { get => materialComboBox.Text.ToString(); set => materialComboBox.Text = value; }
+
         public string SearchValue { get => searchBox.Text; set => searchBox.Text = value; }
         public bool IsEdit { get => isEdit; set => isEdit = value; }
         public bool IsSuccessful { get => isSuccessful; set => isSuccessful = value; }
@@ -123,6 +124,23 @@ namespace BirdHouseProject.Views
                 instance.BringToFront();
             }
             return instance;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Get the selected bird data
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            int cage_serial_number = Convert.ToInt32(row.Cells[0].Value);
+            double length = Convert.ToDouble(row.Cells[1].Value);
+            double width = Convert.ToDouble(row.Cells[2].Value);
+            double height = Convert.ToDouble(row.Cells[3].Value);
+            string material = row.Cells[4].Value.ToString();
+
+            // Create a new instance of the details form and pass the selected bird data
+            CageDataView cageDataView = new CageDataView(cage_serial_number, length, width, height, material);
+
+            // Show the details form
+            cageDataView.Show();
         }
     }
 }
