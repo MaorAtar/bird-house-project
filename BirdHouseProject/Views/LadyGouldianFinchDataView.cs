@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using BirdHouseProject.Models;
 
 namespace BirdHouseProject.Views
 {
     public partial class LadyGouldianFinchDataView : Form
     {
         // Fields
-        SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;");
+        SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+Integrated Security=True;");
 
         // Constructors
         public LadyGouldianFinchDataView(int serialNumber, string species, string subSpecies,
@@ -66,9 +62,6 @@ namespace BirdHouseProject.Views
         public string LadyGouldianFinchCageNumber { get => cageNumberBox2.Text; set => cageNumberBox2.Text = value; }
         public int LadyGouldianFinchFSerialNumber { get => Convert.ToInt32(fSerialBox2.Text); set => fSerialBox2.Text = Convert.ToString(value); }
         public int LadyGouldianFinchMSerialNumber { get => Convert.ToInt32(mSerialBox2.Text); set => mSerialBox2.Text = Convert.ToString(value); }
-        public string LadyGouldianFinchHeadColor { get => headColorBox2.Text.ToString(); set => headColorBox2.Text = value; }
-        public string LadyGouldianFinchBreastColor { get => breastColorBox2.Text.ToString(); set => breastColorBox2.Text = value; }
-        public string LadyGouldianFinchBodyColor { get => bodyColorBox2.Text.ToString(); set => bodyColorBox2.Text = value; }
 
         // Events
         public event EventHandler AddNewEvent;
@@ -104,15 +97,15 @@ namespace BirdHouseProject.Views
                 command.Parameters.Add("@cage_number", SqlDbType.NVarChar).Value = LadyGouldianFinchCageNumber;
                 command.Parameters.Add("@f_serial_number", SqlDbType.Int).Value = LadyGouldianFinchFSerialNumber;
                 command.Parameters.Add("@m_serial_number", SqlDbType.Int).Value = LadyGouldianFinchMSerialNumber;
-                command.Parameters.Add("@head_color", SqlDbType.NVarChar).Value = CalcChickHeadColor();
-                command.Parameters.Add("@breast_color", SqlDbType.NVarChar).Value = LadyGouldianFinchBreastColor;
-                command.Parameters.Add("@body_color", SqlDbType.NVarChar).Value = LadyGouldianFinchBodyColor;
+                command.Parameters.Add("@head_color", SqlDbType.NVarChar).Value = ChickHeadColor();
+                command.Parameters.Add("@breast_color", SqlDbType.NVarChar).Value = ChickBreastColor();
+                command.Parameters.Add("@body_color", SqlDbType.NVarChar).Value = ChickBodyColor();
                 command.ExecuteNonQuery();
             }
             this.Close();
         }
 
-        private string CalcChickHeadColor()
+        private string ChickHeadColor()
         {
             string f_head_color = null;
             string m_head_color = null;
@@ -123,7 +116,6 @@ namespace BirdHouseProject.Views
 
             using (SqlConnection sqlConnection = new SqlConnection(connection))
             {
-                // Retrieve the head color of the female bird
                 using (SqlCommand command1 = new SqlCommand(query1, sqlConnection))
                 {
                     command1.Parameters.AddWithValue("@f_serial_number", LadyGouldianFinchFSerialNumber);
@@ -136,8 +128,6 @@ namespace BirdHouseProject.Views
                     }
                     reader1.Close();
                 }
-
-                // Retrieve the head color of the male bird
                 using (SqlCommand command2 = new SqlCommand(query2, sqlConnection))
                 {
                     command2.Parameters.AddWithValue("@m_serial_number", LadyGouldianFinchMSerialNumber);
@@ -149,14 +139,177 @@ namespace BirdHouseProject.Views
                     }
                     reader2.Close();
                 }
-
                 sqlConnection.Close();
             }
-            if(f_head_color == "Red" && m_head_color == "Red")
+            return CalcChickHeadColor(f_head_color, m_head_color);
+        }
+
+        private string CalcChickHeadColor(string f_head_color, string m_head_color)
+        {
+            string chick_gender = LadyGouldianFinchGender;
+            if((f_head_color == "Red" && m_head_color == "Red") || 
+                (f_head_color == "Red" && m_head_color == "Black") ||
+                (f_head_color == "Red" && m_head_color == "Orange") ||
+                (f_head_color == "Black" && m_head_color == "Red" && chick_gender == "Male") ||
+                (f_head_color == "Black" && m_head_color == "Orange" && chick_gender == "Male") ||
+                (f_head_color == "Orange" && m_head_color == "Red") ||
+                (f_head_color == "Orange" && m_head_color == "Black"))
+            {
+                return "Red";
+            }
+            else if ((f_head_color == "Black" && m_head_color == "Black") || 
+                (f_head_color == "Black" && m_head_color == "Red" && chick_gender == "Female") ||
+                (f_head_color == "Black" && m_head_color == "Orange" && chick_gender == "Female"))
+            {
+                return "Black";
+            }
+            else if (f_head_color == "Orange" && m_head_color == "Orange")
+            {
+                return "Orange";
+            }
+            return f_head_color;
+        }
+
+        private string ChickBreastColor()
+        {
+            string f_breast_color = null;
+            string m_breast_color = null;
+
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query1 = "SELECT Breast_Color FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
+            string query2 = "SELECT Breast_Color FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command1 = new SqlCommand(query1, sqlConnection))
+                {
+                    command1.Parameters.AddWithValue("@f_serial_number", LadyGouldianFinchFSerialNumber);
+                    sqlConnection.Open();
+                    SqlDataReader reader1 = command1.ExecuteReader();
+                    if (reader1.HasRows)
+                    {
+                        reader1.Read();
+                        f_breast_color = reader1.GetString(0);
+                    }
+                    reader1.Close();
+                }
+                using (SqlCommand command2 = new SqlCommand(query2, sqlConnection))
+                {
+                    command2.Parameters.AddWithValue("@m_serial_number", LadyGouldianFinchMSerialNumber);
+                    SqlDataReader reader2 = command2.ExecuteReader();
+                    if (reader2.HasRows)
+                    {
+                        reader2.Read();
+                        m_breast_color = reader2.GetString(0);
+                    }
+                    reader2.Close();
+                }
+                sqlConnection.Close();
+            }
+            return CalcChickBreastColor(f_breast_color, m_breast_color);
+        }
+
+        private string CalcChickBreastColor(string f_breast_color, string m_breast_color)
+        {
+            if ((f_breast_color == "Purple" && m_breast_color == "Purple") || 
+                (f_breast_color == "Purple" && m_breast_color == "Lilac") ||
+                (f_breast_color == "Purple" && m_breast_color == "White") ||
+                (f_breast_color == "Lilac" && m_breast_color == "Purple") ||  
+                (f_breast_color == "White" && m_breast_color == "Purple"))
+            {
+                return "Purple";
+            }
+            else if((f_breast_color == "Lilac" && m_breast_color == "Lilac") || 
+                (f_breast_color == "Lilac" && m_breast_color == "White") || 
+                (f_breast_color == "White" && m_breast_color == "Lilac"))
+            {
+                return "Lilac";
+            }
+            else if (f_breast_color == "White" && m_breast_color == "White")
+            {
+                return "White";
+            }
+            return f_breast_color;
+        }
+
+        private string ChickBodyColor()
+        {
+            string f_body_color = null;
+            string m_body_color = null;
+
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query1 = "SELECT Body_Color FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
+            string query2 = "SELECT Body_Color FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command1 = new SqlCommand(query1, sqlConnection))
+                {
+                    command1.Parameters.AddWithValue("@f_serial_number", LadyGouldianFinchFSerialNumber);
+                    sqlConnection.Open();
+                    SqlDataReader reader1 = command1.ExecuteReader();
+                    if (reader1.HasRows)
+                    {
+                        reader1.Read();
+                        f_body_color = reader1.GetString(0);
+                    }
+                    reader1.Close();
+                }
+                using (SqlCommand command2 = new SqlCommand(query2, sqlConnection))
+                {
+                    command2.Parameters.AddWithValue("@m_serial_number", LadyGouldianFinchMSerialNumber);
+                    SqlDataReader reader2 = command2.ExecuteReader();
+                    if (reader2.HasRows)
+                    {
+                        reader2.Read();
+                        m_body_color = reader2.GetString(0);
+                    }
+                    reader2.Close();
+                }
+                sqlConnection.Close();
+            }
+            return CalcChickBodyColor(f_body_color, m_body_color);
+        }
+
+        private string CalcChickBodyColor(string f_body_color, string m_body_color)
+        {
+            string chick_gender = LadyGouldianFinchGender;
+            
+            if ((f_body_color == "Green" && m_body_color == "Green") ||
+                (f_body_color == "Green" && m_body_color == "Yellow") ||
+                (f_body_color == "Green" && m_body_color == "Blue") ||
+                (f_body_color == "Green" && m_body_color == "Silver") ||
+                (f_body_color == "Blue" && m_body_color == "Green") ||
+                (f_body_color == "Blue" && m_body_color == "Yellow") ||
+                (f_body_color == "Blue" && m_body_color == "Silver") ||
+                (f_body_color == "Yellow" && m_body_color == "Green" && chick_gender == "Male") ||
+                (f_body_color == "Yellow" && m_body_color == "Blue" && chick_gender == "Male") ||
+                (f_body_color == "Yellow" && m_body_color == "Silver" && chick_gender == "Male") ||
+                (f_body_color == "Silver" && m_body_color == "Green" && chick_gender == "Male") ||
+                (f_body_color == "Silver" && m_body_color == "Blue" && chick_gender == "Male") ||
+                (f_body_color == "Silver" && m_body_color == "Yellow" && chick_gender == "Male"))
+            {
+                return "Green";
+            }
+            else if((f_body_color == "Yellow" && m_body_color == "Green" && chick_gender == "Female") ||
+                (f_body_color == "Yellow" && m_body_color == "Yellow") ||
+                (f_body_color == "Yellow" && m_body_color == "Blue" && chick_gender == "Female") ||
+                (f_body_color == "Yellow" && m_body_color == "Silver" && chick_gender == "Female"))
+            {
+                return "Yellow";
+            }
+            else if((f_body_color == "Blue" && m_body_color == "Blue"))
             {
                 return "Blue";
             }
-            return "Yellow";
+            else if ((f_body_color == "Silver" && m_body_color == "Green" && chick_gender == "Female") ||
+                (f_body_color == "Silver" && m_body_color == "Blue" && chick_gender == "Female") ||
+                (f_body_color == "Silver" && m_body_color == "Silver") ||
+                (f_body_color == "Silver" && m_body_color == "Yellow" && chick_gender == "Female"))
+            {
+                return "Silver";
+            }
+            return f_body_color;
         }
     }
 }

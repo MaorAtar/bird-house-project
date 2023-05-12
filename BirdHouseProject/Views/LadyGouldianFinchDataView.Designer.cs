@@ -56,32 +56,26 @@ namespace BirdHouseProject.Views
             this.subSpeciesBox = new System.Windows.Forms.TextBox();
             this.speciesBox = new System.Windows.Forms.TextBox();
             this.serialBox = new System.Windows.Forms.TextBox();
-            this.serialBox2 = new System.Windows.Forms.TextBox();
-            this.hatchDateBox2 = new System.Windows.Forms.TextBox();
-            this.cageNumberBox2 = new System.Windows.Forms.TextBox();
-            this.fSerialBox2 = new System.Windows.Forms.TextBox();
-            this.mSerialBox2 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.saveBtn2 = new System.Windows.Forms.Button();
-            this.cancelBtn2 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.genderComboBox2 = new System.Windows.Forms.ComboBox();
-            this.addChickLabel = new System.Windows.Forms.Label();
-            this.speciesBox2 = new System.Windows.Forms.TextBox();
-            this.subSpeciesBox2 = new System.Windows.Forms.TextBox();
-            this.headColorBox2 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.breastColorBox2 = new System.Windows.Forms.TextBox();
-            this.bodyColorBox2 = new System.Windows.Forms.TextBox();
+            this.subSpeciesBox2 = new System.Windows.Forms.TextBox();
+            this.speciesBox2 = new System.Windows.Forms.TextBox();
+            this.addChickLabel = new System.Windows.Forms.Label();
+            this.genderComboBox2 = new System.Windows.Forms.ComboBox();
+            this.cancelBtn2 = new System.Windows.Forms.Button();
+            this.saveBtn2 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.mSerialBox2 = new System.Windows.Forms.TextBox();
+            this.fSerialBox2 = new System.Windows.Forms.TextBox();
+            this.cageNumberBox2 = new System.Windows.Forms.TextBox();
+            this.hatchDateBox2 = new System.Windows.Forms.TextBox();
+            this.serialBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -389,252 +383,12 @@ namespace BirdHouseProject.Views
             this.serialBox.TabIndex = 111;
             this.serialBox.Text = "0";
             // 
-            // serialBox2
-            // 
-            this.serialBox2.Location = new System.Drawing.Point(385, 176);
-            this.serialBox2.Name = "serialBox2";
-            this.serialBox2.Size = new System.Drawing.Size(177, 27);
-            this.serialBox2.TabIndex = 98;
-            this.serialBox2.Text = "0";
-            // 
-            // hatchDateBox2
-            // 
-            this.hatchDateBox2.Location = new System.Drawing.Point(385, 345);
-            this.hatchDateBox2.Name = "hatchDateBox2";
-            this.hatchDateBox2.Size = new System.Drawing.Size(177, 27);
-            this.hatchDateBox2.TabIndex = 99;
-            // 
-            // cageNumberBox2
-            // 
-            this.cageNumberBox2.Location = new System.Drawing.Point(850, 232);
-            this.cageNumberBox2.Name = "cageNumberBox2";
-            this.cageNumberBox2.ReadOnly = true;
-            this.cageNumberBox2.Size = new System.Drawing.Size(177, 27);
-            this.cageNumberBox2.TabIndex = 100;
-            // 
-            // fSerialBox2
-            // 
-            this.fSerialBox2.Location = new System.Drawing.Point(850, 288);
-            this.fSerialBox2.Name = "fSerialBox2";
-            this.fSerialBox2.ReadOnly = true;
-            this.fSerialBox2.Size = new System.Drawing.Size(177, 27);
-            this.fSerialBox2.TabIndex = 101;
-            // 
-            // mSerialBox2
-            // 
-            this.mSerialBox2.Location = new System.Drawing.Point(850, 345);
-            this.mSerialBox2.Name = "mSerialBox2";
-            this.mSerialBox2.Size = new System.Drawing.Size(177, 27);
-            this.mSerialBox2.TabIndex = 102;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label22.Location = new System.Drawing.Point(227, 176);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(152, 23);
-            this.label22.TabIndex = 103;
-            this.label22.Text = "Serial Number:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label21.Location = new System.Drawing.Point(287, 232);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(92, 23);
-            this.label21.TabIndex = 104;
-            this.label21.Text = "Species:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label20.Location = new System.Drawing.Point(246, 288);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(133, 23);
-            this.label20.TabIndex = 105;
-            this.label20.Text = "Sub Species:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label19.Location = new System.Drawing.Point(256, 345);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(126, 23);
-            this.label19.TabIndex = 106;
-            this.label19.Text = "Hatch Date:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label18.Location = new System.Drawing.Point(754, 176);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(90, 23);
-            this.label18.TabIndex = 107;
-            this.label18.Text = "Gender:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label17.Location = new System.Drawing.Point(692, 232);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(155, 23);
-            this.label17.TabIndex = 108;
-            this.label17.Text = "Cage Number:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label16.Location = new System.Drawing.Point(626, 288);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(218, 23);
-            this.label16.TabIndex = 109;
-            this.label16.Text = "Father Serial Number:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label15.Location = new System.Drawing.Point(618, 345);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(226, 23);
-            this.label15.TabIndex = 110;
-            this.label15.Text = "Mother Serial Number:";
-            // 
-            // saveBtn2
-            // 
-            this.saveBtn2.FlatAppearance.BorderSize = 0;
-            this.saveBtn2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.saveBtn2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.saveBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.saveBtn2.Location = new System.Drawing.Point(647, 456);
-            this.saveBtn2.Name = "saveBtn2";
-            this.saveBtn2.Size = new System.Drawing.Size(169, 57);
-            this.saveBtn2.TabIndex = 111;
-            this.saveBtn2.Text = "Save";
-            this.saveBtn2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.saveBtn2.UseVisualStyleBackColor = true;
-            this.saveBtn2.Click += new System.EventHandler(this.saveBtn2_Click);
-            // 
-            // cancelBtn2
-            // 
-            this.cancelBtn2.FlatAppearance.BorderSize = 0;
-            this.cancelBtn2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cancelBtn2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.cancelBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cancelBtn2.Location = new System.Drawing.Point(858, 456);
-            this.cancelBtn2.Name = "cancelBtn2";
-            this.cancelBtn2.Size = new System.Drawing.Size(169, 57);
-            this.cancelBtn2.TabIndex = 112;
-            this.cancelBtn2.Text = "Cancel";
-            this.cancelBtn2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.cancelBtn2.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label14.Location = new System.Drawing.Point(251, 400);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(128, 23);
-            this.label14.TabIndex = 113;
-            this.label14.Text = "Head Color:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label13.Location = new System.Drawing.Point(248, 449);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(134, 23);
-            this.label13.TabIndex = 114;
-            this.label13.Text = "Breast Color:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label3.Location = new System.Drawing.Point(257, 494);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 23);
-            this.label3.TabIndex = 115;
-            this.label3.Text = "Body Color:";
-            // 
-            // genderComboBox2
-            // 
-            this.genderComboBox2.FormattingEnabled = true;
-            this.genderComboBox2.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.genderComboBox2.Location = new System.Drawing.Point(850, 171);
-            this.genderComboBox2.Name = "genderComboBox2";
-            this.genderComboBox2.Size = new System.Drawing.Size(177, 28);
-            this.genderComboBox2.TabIndex = 121;
-            // 
-            // addChickLabel
-            // 
-            this.addChickLabel.AutoSize = true;
-            this.addChickLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addChickLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.addChickLabel.Location = new System.Drawing.Point(566, 120);
-            this.addChickLabel.Name = "addChickLabel";
-            this.addChickLabel.Size = new System.Drawing.Size(115, 23);
-            this.addChickLabel.TabIndex = 122;
-            this.addChickLabel.Text = "Add Chick";
-            // 
-            // speciesBox2
-            // 
-            this.speciesBox2.Location = new System.Drawing.Point(385, 228);
-            this.speciesBox2.Name = "speciesBox2";
-            this.speciesBox2.ReadOnly = true;
-            this.speciesBox2.Size = new System.Drawing.Size(177, 27);
-            this.speciesBox2.TabIndex = 123;
-            // 
-            // subSpeciesBox2
-            // 
-            this.subSpeciesBox2.Location = new System.Drawing.Point(385, 284);
-            this.subSpeciesBox2.Name = "subSpeciesBox2";
-            this.subSpeciesBox2.ReadOnly = true;
-            this.subSpeciesBox2.Size = new System.Drawing.Size(177, 27);
-            this.subSpeciesBox2.TabIndex = 124;
-            // 
-            // headColorBox2
-            // 
-            this.headColorBox2.Location = new System.Drawing.Point(385, 400);
-            this.headColorBox2.Name = "headColorBox2";
-            this.headColorBox2.ReadOnly = true;
-            this.headColorBox2.Size = new System.Drawing.Size(177, 27);
-            this.headColorBox2.TabIndex = 125;
-            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.bodyColorBox2);
-            this.tabPage2.Controls.Add(this.breastColorBox2);
-            this.tabPage2.Controls.Add(this.headColorBox2);
             this.tabPage2.Controls.Add(this.subSpeciesBox2);
             this.tabPage2.Controls.Add(this.speciesBox2);
             this.tabPage2.Controls.Add(this.addChickLabel);
             this.tabPage2.Controls.Add(this.genderComboBox2);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.cancelBtn2);
             this.tabPage2.Controls.Add(this.saveBtn2);
             this.tabPage2.Controls.Add(this.label15);
@@ -658,21 +412,198 @@ namespace BirdHouseProject.Views
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // breastColorBox2
+            // subSpeciesBox2
             // 
-            this.breastColorBox2.Location = new System.Drawing.Point(385, 449);
-            this.breastColorBox2.Name = "breastColorBox2";
-            this.breastColorBox2.ReadOnly = true;
-            this.breastColorBox2.Size = new System.Drawing.Size(177, 27);
-            this.breastColorBox2.TabIndex = 126;
+            this.subSpeciesBox2.Location = new System.Drawing.Point(385, 284);
+            this.subSpeciesBox2.Name = "subSpeciesBox2";
+            this.subSpeciesBox2.ReadOnly = true;
+            this.subSpeciesBox2.Size = new System.Drawing.Size(177, 27);
+            this.subSpeciesBox2.TabIndex = 124;
             // 
-            // bodyColorBox2
+            // speciesBox2
             // 
-            this.bodyColorBox2.Location = new System.Drawing.Point(385, 494);
-            this.bodyColorBox2.Name = "bodyColorBox2";
-            this.bodyColorBox2.ReadOnly = true;
-            this.bodyColorBox2.Size = new System.Drawing.Size(177, 27);
-            this.bodyColorBox2.TabIndex = 127;
+            this.speciesBox2.Location = new System.Drawing.Point(385, 228);
+            this.speciesBox2.Name = "speciesBox2";
+            this.speciesBox2.ReadOnly = true;
+            this.speciesBox2.Size = new System.Drawing.Size(177, 27);
+            this.speciesBox2.TabIndex = 123;
+            // 
+            // addChickLabel
+            // 
+            this.addChickLabel.AutoSize = true;
+            this.addChickLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addChickLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.addChickLabel.Location = new System.Drawing.Point(603, 118);
+            this.addChickLabel.Name = "addChickLabel";
+            this.addChickLabel.Size = new System.Drawing.Size(115, 23);
+            this.addChickLabel.TabIndex = 122;
+            this.addChickLabel.Text = "Add Chick";
+            // 
+            // genderComboBox2
+            // 
+            this.genderComboBox2.FormattingEnabled = true;
+            this.genderComboBox2.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.genderComboBox2.Location = new System.Drawing.Point(850, 171);
+            this.genderComboBox2.Name = "genderComboBox2";
+            this.genderComboBox2.Size = new System.Drawing.Size(177, 28);
+            this.genderComboBox2.TabIndex = 121;
+            // 
+            // cancelBtn2
+            // 
+            this.cancelBtn2.FlatAppearance.BorderSize = 0;
+            this.cancelBtn2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cancelBtn2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.cancelBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cancelBtn2.Location = new System.Drawing.Point(692, 438);
+            this.cancelBtn2.Name = "cancelBtn2";
+            this.cancelBtn2.Size = new System.Drawing.Size(169, 57);
+            this.cancelBtn2.TabIndex = 112;
+            this.cancelBtn2.Text = "Cancel";
+            this.cancelBtn2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.cancelBtn2.UseVisualStyleBackColor = true;
+            // 
+            // saveBtn2
+            // 
+            this.saveBtn2.FlatAppearance.BorderSize = 0;
+            this.saveBtn2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.saveBtn2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.saveBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.saveBtn2.Location = new System.Drawing.Point(481, 438);
+            this.saveBtn2.Name = "saveBtn2";
+            this.saveBtn2.Size = new System.Drawing.Size(169, 57);
+            this.saveBtn2.TabIndex = 111;
+            this.saveBtn2.Text = "Save";
+            this.saveBtn2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.saveBtn2.UseVisualStyleBackColor = true;
+            this.saveBtn2.Click += new System.EventHandler(this.saveBtn2_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label15.Location = new System.Drawing.Point(618, 345);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(226, 23);
+            this.label15.TabIndex = 110;
+            this.label15.Text = "Mother Serial Number:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label16.Location = new System.Drawing.Point(626, 288);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(218, 23);
+            this.label16.TabIndex = 109;
+            this.label16.Text = "Father Serial Number:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label17.Location = new System.Drawing.Point(692, 232);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(155, 23);
+            this.label17.TabIndex = 108;
+            this.label17.Text = "Cage Number:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label18.Location = new System.Drawing.Point(754, 176);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(90, 23);
+            this.label18.TabIndex = 107;
+            this.label18.Text = "Gender:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label19.Location = new System.Drawing.Point(256, 345);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(126, 23);
+            this.label19.TabIndex = 106;
+            this.label19.Text = "Hatch Date:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label20.Location = new System.Drawing.Point(246, 288);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(133, 23);
+            this.label20.TabIndex = 105;
+            this.label20.Text = "Sub Species:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label21.Location = new System.Drawing.Point(287, 232);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(92, 23);
+            this.label21.TabIndex = 104;
+            this.label21.Text = "Species:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label22.Location = new System.Drawing.Point(227, 176);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(152, 23);
+            this.label22.TabIndex = 103;
+            this.label22.Text = "Serial Number:";
+            // 
+            // mSerialBox2
+            // 
+            this.mSerialBox2.Location = new System.Drawing.Point(850, 345);
+            this.mSerialBox2.Name = "mSerialBox2";
+            this.mSerialBox2.Size = new System.Drawing.Size(177, 27);
+            this.mSerialBox2.TabIndex = 102;
+            // 
+            // fSerialBox2
+            // 
+            this.fSerialBox2.Location = new System.Drawing.Point(850, 288);
+            this.fSerialBox2.Name = "fSerialBox2";
+            this.fSerialBox2.ReadOnly = true;
+            this.fSerialBox2.Size = new System.Drawing.Size(177, 27);
+            this.fSerialBox2.TabIndex = 101;
+            // 
+            // cageNumberBox2
+            // 
+            this.cageNumberBox2.Location = new System.Drawing.Point(850, 232);
+            this.cageNumberBox2.Name = "cageNumberBox2";
+            this.cageNumberBox2.ReadOnly = true;
+            this.cageNumberBox2.Size = new System.Drawing.Size(177, 27);
+            this.cageNumberBox2.TabIndex = 100;
+            // 
+            // hatchDateBox2
+            // 
+            this.hatchDateBox2.Location = new System.Drawing.Point(385, 345);
+            this.hatchDateBox2.Name = "hatchDateBox2";
+            this.hatchDateBox2.Size = new System.Drawing.Size(177, 27);
+            this.hatchDateBox2.TabIndex = 99;
+            // 
+            // serialBox2
+            // 
+            this.serialBox2.Location = new System.Drawing.Point(385, 176);
+            this.serialBox2.Name = "serialBox2";
+            this.serialBox2.Size = new System.Drawing.Size(177, 27);
+            this.serialBox2.TabIndex = 98;
+            this.serialBox2.Text = "0";
             // 
             // LadyGouldianFinchDataView
             // 
@@ -722,16 +653,10 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox bodyColorBox2;
-        private System.Windows.Forms.TextBox breastColorBox2;
-        private System.Windows.Forms.TextBox headColorBox2;
         private System.Windows.Forms.TextBox subSpeciesBox2;
         private System.Windows.Forms.TextBox speciesBox2;
         private System.Windows.Forms.Label addChickLabel;
         private System.Windows.Forms.ComboBox genderComboBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button cancelBtn2;
         private System.Windows.Forms.Button saveBtn2;
         private System.Windows.Forms.Label label15;

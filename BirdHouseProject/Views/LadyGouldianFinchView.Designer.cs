@@ -319,7 +319,7 @@ namespace BirdHouseProject.Views
             this.headColorComboBox.Items.AddRange(new object[] {
             "Red",
             "Black",
-            "Yellow"});
+            "Orange"});
             this.headColorComboBox.Location = new System.Drawing.Point(261, 325);
             this.headColorComboBox.Name = "headColorComboBox";
             this.headColorComboBox.Size = new System.Drawing.Size(177, 28);

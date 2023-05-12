@@ -196,10 +196,8 @@ namespace BirdHouseProject.Views
             else if (genderComboBox.SelectedItem.ToString() == "Male")
             {
                 bodyColorComboBox.Items.Add("Green");
-                bodyColorComboBox.Items.Add("Diluted");
                 bodyColorComboBox.Items.Add("Yellow");
                 bodyColorComboBox.Items.Add("Blue");
-                bodyColorComboBox.Items.Add("Pastel");
                 bodyColorComboBox.Items.Add("Silver");
             }
         }
