@@ -16,19 +16,12 @@ namespace BirdHouseProject.Views
         SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;");
 
         // Constructors
-        public LadyGouldianFinchDataView()
-        {
-            InitializeComponent();
-            showChickTable();
-            tabControl1.TabPages.Remove(tabPage2);
-        }
-
         public LadyGouldianFinchDataView(int serialNumber, string species, string subSpecies,
     string hatchDate, string gender, string cageNumber, int fSerialNumber, int mSerialNumber,
     string headColor, string breastColor, string bodyColor)
         {
             InitializeComponent();
-            showChickTable();
+            showChickTable(serialNumber);
             // Fill the current bird details
             serialBox.Text = serialNumber.ToString();
             speciesBox.Text = species;
@@ -63,7 +56,7 @@ namespace BirdHouseProject.Views
             };
             tabControl1.TabPages.Remove(tabPage2);
         }
-        
+
         // Getters & Setters
         public string LadyGouldianFinchSerialNumber { get => serialBox2.Text; set => serialBox2.Text = value; }
         public string LadyGouldianFinchSpecies { get => speciesBox2.Text; set => speciesBox2.Text = value; }
@@ -82,11 +75,13 @@ namespace BirdHouseProject.Views
         public event EventHandler CancelEvent;
 
         // Methods
-        private void showChickTable()
+        private void showChickTable(int serialNumber)
         {
             connectionString.Open();
-            string query = "Select * From LadyGouldianFinch";
-            SqlDataAdapter da = new SqlDataAdapter(query, connectionString);
+            string query = "Select * From LadyGouldianFinch WHERE F_Serial_Number = @serial_number Or M_Serial_Number = @serial_number";
+            SqlCommand command = new SqlCommand(query, connectionString);
+            command.Parameters.AddWithValue("@serial_number", serialNumber);
+            SqlDataAdapter da = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView.DataSource = dt;
@@ -109,12 +104,59 @@ namespace BirdHouseProject.Views
                 command.Parameters.Add("@cage_number", SqlDbType.NVarChar).Value = LadyGouldianFinchCageNumber;
                 command.Parameters.Add("@f_serial_number", SqlDbType.Int).Value = LadyGouldianFinchFSerialNumber;
                 command.Parameters.Add("@m_serial_number", SqlDbType.Int).Value = LadyGouldianFinchMSerialNumber;
-                command.Parameters.Add("@head_color", SqlDbType.NVarChar).Value = LadyGouldianFinchHeadColor;
+                command.Parameters.Add("@head_color", SqlDbType.NVarChar).Value = CalcChickHeadColor();
                 command.Parameters.Add("@breast_color", SqlDbType.NVarChar).Value = LadyGouldianFinchBreastColor;
                 command.Parameters.Add("@body_color", SqlDbType.NVarChar).Value = LadyGouldianFinchBodyColor;
                 command.ExecuteNonQuery();
             }
             this.Close();
+        }
+
+        private string CalcChickHeadColor()
+        {
+            string f_head_color = null;
+            string m_head_color = null;
+
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query1 = "SELECT Head_Color FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
+            string query2 = "SELECT Head_Color FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                // Retrieve the head color of the female bird
+                using (SqlCommand command1 = new SqlCommand(query1, sqlConnection))
+                {
+                    command1.Parameters.AddWithValue("@f_serial_number", LadyGouldianFinchFSerialNumber);
+                    sqlConnection.Open();
+                    SqlDataReader reader1 = command1.ExecuteReader();
+                    if (reader1.HasRows)
+                    {
+                        reader1.Read();
+                        f_head_color = reader1.GetString(0);
+                    }
+                    reader1.Close();
+                }
+
+                // Retrieve the head color of the male bird
+                using (SqlCommand command2 = new SqlCommand(query2, sqlConnection))
+                {
+                    command2.Parameters.AddWithValue("@m_serial_number", LadyGouldianFinchMSerialNumber);
+                    SqlDataReader reader2 = command2.ExecuteReader();
+                    if (reader2.HasRows)
+                    {
+                        reader2.Read();
+                        m_head_color = reader2.GetString(0);
+                    }
+                    reader2.Close();
+                }
+
+                sqlConnection.Close();
+            }
+            if(f_head_color == "Red" && m_head_color == "Red")
+            {
+                return "Blue";
+            }
+            return "Yellow";
         }
     }
 }
