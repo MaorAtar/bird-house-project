@@ -68,6 +68,7 @@ namespace BirdHouseProject.Presenters
         /// </summary>
         private void AddNewLadyGouldianFinch(object sender, EventArgs e)
         {
+            CleanViewFields();
             view.IsEdit = false;
         }
 
@@ -145,8 +146,8 @@ namespace BirdHouseProject.Presenters
             view.LadyGouldianFinchHatchDate = "";
             view.LadyGouldianFinchGender = "";
             view.LadyGouldianFinchCageNumber = "";
-            view.LadyGouldianFinchFSerialNumber = "0";
-            view.LadyGouldianFinchMSerialNumber = "0";
+            view.LadyGouldianFinchFSerialNumber = "";
+            view.LadyGouldianFinchMSerialNumber = "";
             view.LadyGouldianFinchHeadColor = "";
             view.LadyGouldianFinchBreastColor = "";
             view.LadyGouldianFinchBodyColor = "";
@@ -168,7 +169,7 @@ namespace BirdHouseProject.Presenters
             catch (Exception ex)
             {
                 view.IsSuccessful = false;
-                view.Message = "An error ocurred, could not delete bird";
+                view.Message = "An error ocurred - " + ex.Message + ", could not delete bird";
             }
         }
 

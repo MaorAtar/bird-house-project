@@ -33,7 +33,18 @@ namespace BirdHouseProject.Views
             speciesBox2.Text = species;
             subSpeciesBox2.Text = subSpecies;
             cageNumberBox2.Text = cageNumber;
-            fSerialBox2.Text = serialNumber.ToString();
+            if (IsFSerialNumberValid(serialNumber.ToString()) == true)
+            {
+                fSerialBox2.Text = serialNumber.ToString();
+                fSerialBox2.ReadOnly = true;
+                fSerialBox2.BackColor = System.Drawing.Color.White;
+            }
+            else
+            {
+                mSerialBox2.Text = serialNumber.ToString();
+                mSerialBox2.ReadOnly = true;
+                mSerialBox2.BackColor = System.Drawing.Color.White;
+            }
             // Add Chick
             addChickBtn.Click += delegate
             {
@@ -54,7 +65,6 @@ namespace BirdHouseProject.Views
         }
 
         // Getters & Setters
-        public string LadyGouldianFinchSerialNumber { get => serialBox2.Text; set => serialBox2.Text = value; }
         public string LadyGouldianFinchSpecies { get => speciesBox2.Text; set => speciesBox2.Text = value; }
         public string LadyGouldianFinchSubSpecies { get => subSpeciesBox2.Text; set => subSpeciesBox2.Text = value; }
         public string LadyGouldianFinchHatchDate { get => hatchDateBox2.Text; set => hatchDateBox2.Text = value; }
@@ -95,6 +105,77 @@ Integrated Security=True;");
         {
             SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
 Integrated Security=True;");
+
+            // Hatch Date Validation
+            if (!IsDateFormatValid(hatchDateBox2.Text))
+            {
+                hatchDateErrorProvider.SetError(hatchDateBox2, "Enter Date in DD/MM/YYYY Format");
+                return;
+            }
+            else
+            {
+                hatchDateErrorProvider.SetError(hatchDateBox2, string.Empty);
+            }
+            // Gender Validation
+            if (genderComboBox2.SelectedIndex == -1)
+            {
+                genderErrorProvider.SetError(genderComboBox2, "Invalid Gender");
+                return;
+            }
+            else
+            {
+                genderErrorProvider.SetError(genderComboBox2, string.Empty);
+            }
+            // Father Serial Number Validation
+            if (fSerialBox2.Text.Length != 6)
+            {
+                fsnErrorProvider.SetError(fSerialBox2, "Father Serial Number must be 6 digits long");
+                return;
+            }
+            else if (!IsFSerialNumberInDB(fSerialBox2.Text))
+            {
+                fsnErrorProvider.SetError(fSerialBox2, "Father Serial Number does not exist in the system");
+                return;
+            }
+            else if (!IsFSerialNumberValid(fSerialBox2.Text))
+            {
+                fsnErrorProvider.SetError(fSerialBox2, "Father Serial Number does not match to a Male bird Serial Number");
+                return;
+            }
+            else if (string.Equals(fSerialBox2.Text, mSerialBox2.Text))
+            {
+                fsnErrorProvider.SetError(fSerialBox2, "Father Serial Number and Mother Serial Number can't be the same");
+                return;
+            }
+            else
+            {
+                fsnErrorProvider.SetError(fSerialBox2, string.Empty);
+            }
+            // Mother Serial Number Validation
+            if (mSerialBox2.Text.Length != 6)
+            {
+                msnErrorProvider.SetError(mSerialBox2, "Mother Serial Number must be 6 digits long");
+                return;
+            }
+            else if (!IsMSerialNumberInDB(mSerialBox2.Text))
+            {
+                msnErrorProvider.SetError(mSerialBox2, "Mother Serial Number does not exist in the system");
+                return;
+            }
+            else if (!IsMSerialNumberValid(mSerialBox2.Text))
+            {
+                msnErrorProvider.SetError(mSerialBox2, "Mother Serial Number does not match to a Female bird Serial Number");
+                return;
+            }
+            else if (string.Equals(mSerialBox2.Text, fSerialBox2.Text))
+            {
+                msnErrorProvider.SetError(mSerialBox2, "Mother Serial Number can't be the same as Father Serial Number");
+            }
+            else
+            {
+                msnErrorProvider.SetError(mSerialBox2, string.Empty);
+            }
+
             using (var connection = connectionString)
             using (var command = new SqlCommand())
             {
@@ -368,6 +449,145 @@ Integrated Security=True;");
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet, "LadyGouldianFinch");
             dataGridView.DataSource = dataSet.Tables[0];
+        }
+
+        /// <summary>
+        /// Checks if a given father serial number is in the LadyGouldianFinch SQL table.
+        /// </summary>
+        /// <param name="f_serial_number"></param>
+        /// <returns></returns>
+        private bool IsFSerialNumberInDB(string f_serial_number)
+        {
+            bool flag = false;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query = "SELECT Serial_Number FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@f_serial_number", f_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        flag = true;
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return flag;
+        }
+
+        /// <summary>
+        /// Checks if a given father serial number is valid.
+        /// </summary>
+        /// <param name="f_serial_number"></param>
+        /// <returns>boolean</returns>
+        private bool IsFSerialNumberValid(string f_serial_number)
+        {
+            bool flag = false;
+            string temp;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query = "SELECT Gender FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@f_serial_number", f_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        temp = reader.GetString(0);
+                        if (temp == "Male")
+                        {
+                            flag = true;
+                        }
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return flag;
+        }
+
+        /// <summary>
+        /// Checks if a given mother serial number is in the LadyGouldianFinch SQL table.
+        /// </summary>
+        /// <param name="m_serial_number"></param>
+        /// <returns></returns>
+        private bool IsMSerialNumberInDB(string m_serial_number)
+        {
+            bool flag = false;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query = "SELECT Serial_Number FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@m_serial_number", m_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        flag = true;
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return flag;
+        }
+
+        /// <summary>
+        /// Checks if the given string is in a correct date format.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns>boolean</returns>
+        private static bool IsDateFormatValid(string input)
+        {
+            DateTime parsedDate;
+            return DateTime.TryParseExact(input, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out parsedDate);
+        }
+
+        /// <summary>
+        /// Checks if a given mother serial number is valid.
+        /// </summary>
+        /// <param name="m_serial_number"></param>
+        /// <returns>boolean</returns>
+        private bool IsMSerialNumberValid(string m_serial_number)
+        {
+            bool flag = false;
+            string temp;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query = "SELECT Gender FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@m_serial_number", m_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        temp = reader.GetString(0);
+                        if (temp == "Female")
+                        {
+                            flag = true;
+                        }
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return flag;
         }
     }
 }

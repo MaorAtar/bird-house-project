@@ -170,7 +170,6 @@ namespace BirdHouseProject.Views
             this.cageSerialBox.ReadOnly = true;
             this.cageSerialBox.Size = new System.Drawing.Size(177, 27);
             this.cageSerialBox.TabIndex = 138;
-            this.cageSerialBox.Text = "0";
             // 
             // CageDataView
             // 

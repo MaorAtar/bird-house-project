@@ -60,6 +60,62 @@ Integrated Security=True;");
             // Save changes
             saveBtn.Click += delegate
             {
+                // User input validation
+                // Length Validation
+                if (string.IsNullOrEmpty(lenBox.Text))
+                {
+                    lengthErrorProvider.SetError(lenBox, "Cage Length can't be empty");
+                    return;
+                }
+                else if (!ValidateCageSizeInput(lenBox.Text))
+                {
+                    lengthErrorProvider.SetError(lenBox, "Length must be in range of 15-100 cm");
+                    return;
+                }
+                else
+                {
+                    lengthErrorProvider.SetError(lenBox, string.Empty);
+                }
+                // Width Validation
+                if (string.IsNullOrEmpty(widthBox.Text))
+                {
+                    widthErrorProvider.SetError(widthBox, "Cage Width can't be empty");
+                    return;
+                }
+                else if (!ValidateCageSizeInput(widthBox.Text))
+                {
+                    widthErrorProvider.SetError(widthBox, "Width must be in range of 15-100 cm");
+                    return;
+                }
+                else
+                {
+                    widthErrorProvider.SetError(widthBox, string.Empty);
+                }
+                // Height Validation
+                if (string.IsNullOrEmpty(heightBox.Text))
+                {
+                    heightErrorProvider.SetError(heightBox, "Cage Height can't be empty");
+                    return;
+                }
+                else if (!ValidateCageSizeInput(heightBox.Text))
+                {
+                    heightErrorProvider.SetError(heightBox, "Height must be in range of 15-100 cm");
+                    return;
+                }
+                else
+                {
+                    heightErrorProvider.SetError(heightBox, string.Empty);
+                }
+                // Material Validation
+                if (materialComboBox.SelectedIndex == -1)
+                {
+                    materialErrorProvider.SetError(materialComboBox, "Invalid Material Type");
+                    return;
+                }
+                else
+                {
+                    materialErrorProvider.SetError(materialComboBox, string.Empty);
+                }
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 RefreshCageList();
                 if (isSuccessful)
@@ -179,6 +235,15 @@ Integrated Security=True;");
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet, "Cage");
             dataGridView1.DataSource = dataSet.Tables[0];
+        }
+
+        /// <summary>
+        /// Validates the size of the cage inputs.
+        /// </summary>
+        /// <returns>Boolean</returns>
+        private bool ValidateCageSizeInput(string size)
+        {
+            return Convert.ToInt32(size) >= 15 && Convert.ToInt32(size) <= 100;
         }
     }
 }

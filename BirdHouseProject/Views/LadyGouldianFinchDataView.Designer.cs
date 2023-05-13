@@ -29,6 +29,7 @@ namespace BirdHouseProject.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -70,16 +71,22 @@ namespace BirdHouseProject.Views
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.mSerialBox2 = new System.Windows.Forms.TextBox();
             this.fSerialBox2 = new System.Windows.Forms.TextBox();
             this.cageNumberBox2 = new System.Windows.Forms.TextBox();
             this.hatchDateBox2 = new System.Windows.Forms.TextBox();
-            this.serialBox2 = new System.Windows.Forms.TextBox();
+            this.hatchDateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.genderErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.msnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.fsnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hatchDateErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.msnErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fsnErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -161,35 +168,43 @@ namespace BirdHouseProject.Views
             // 
             // genderBox
             // 
+            this.genderBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.genderBox.Location = new System.Drawing.Point(600, 129);
             this.genderBox.Name = "genderBox";
             this.genderBox.ReadOnly = true;
             this.genderBox.Size = new System.Drawing.Size(177, 27);
             this.genderBox.TabIndex = 133;
+            this.genderBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bodyColorBox
             // 
+            this.bodyColorBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.bodyColorBox.Location = new System.Drawing.Point(1112, 23);
             this.bodyColorBox.Name = "bodyColorBox";
             this.bodyColorBox.ReadOnly = true;
             this.bodyColorBox.Size = new System.Drawing.Size(177, 27);
             this.bodyColorBox.TabIndex = 132;
+            this.bodyColorBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // breastColorBox
             // 
+            this.breastColorBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.breastColorBox.Location = new System.Drawing.Point(600, 74);
             this.breastColorBox.Name = "breastColorBox";
             this.breastColorBox.ReadOnly = true;
             this.breastColorBox.Size = new System.Drawing.Size(177, 27);
             this.breastColorBox.TabIndex = 131;
+            this.breastColorBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // headColorBox
             // 
+            this.headColorBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.headColorBox.Location = new System.Drawing.Point(600, 23);
             this.headColorBox.Name = "headColorBox";
             this.headColorBox.ReadOnly = true;
             this.headColorBox.Size = new System.Drawing.Size(177, 27);
             this.headColorBox.TabIndex = 130;
+            this.headColorBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
@@ -328,60 +343,73 @@ namespace BirdHouseProject.Views
             // 
             // mSerialBox
             // 
+            this.mSerialBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.mSerialBox.Location = new System.Drawing.Point(1112, 129);
             this.mSerialBox.Name = "mSerialBox";
             this.mSerialBox.ReadOnly = true;
             this.mSerialBox.Size = new System.Drawing.Size(177, 27);
             this.mSerialBox.TabIndex = 117;
+            this.mSerialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fSerialBox
             // 
+            this.fSerialBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.fSerialBox.Location = new System.Drawing.Point(1112, 72);
             this.fSerialBox.Name = "fSerialBox";
             this.fSerialBox.ReadOnly = true;
             this.fSerialBox.Size = new System.Drawing.Size(177, 27);
             this.fSerialBox.TabIndex = 116;
+            this.fSerialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cageNumberBox
             // 
+            this.cageNumberBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.cageNumberBox.Location = new System.Drawing.Point(600, 185);
             this.cageNumberBox.Name = "cageNumberBox";
             this.cageNumberBox.ReadOnly = true;
             this.cageNumberBox.Size = new System.Drawing.Size(177, 27);
             this.cageNumberBox.TabIndex = 115;
+            this.cageNumberBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // hatchDateBox
             // 
+            this.hatchDateBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.hatchDateBox.Location = new System.Drawing.Point(187, 185);
             this.hatchDateBox.Name = "hatchDateBox";
             this.hatchDateBox.ReadOnly = true;
             this.hatchDateBox.Size = new System.Drawing.Size(177, 27);
             this.hatchDateBox.TabIndex = 114;
+            this.hatchDateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // subSpeciesBox
             // 
+            this.subSpeciesBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.subSpeciesBox.Location = new System.Drawing.Point(187, 135);
             this.subSpeciesBox.Name = "subSpeciesBox";
             this.subSpeciesBox.ReadOnly = true;
             this.subSpeciesBox.Size = new System.Drawing.Size(177, 27);
             this.subSpeciesBox.TabIndex = 113;
+            this.subSpeciesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // speciesBox
             // 
+            this.speciesBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.speciesBox.Location = new System.Drawing.Point(187, 79);
             this.speciesBox.Name = "speciesBox";
             this.speciesBox.ReadOnly = true;
             this.speciesBox.Size = new System.Drawing.Size(177, 27);
             this.speciesBox.TabIndex = 112;
+            this.speciesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // serialBox
             // 
+            this.serialBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.serialBox.Location = new System.Drawing.Point(187, 23);
             this.serialBox.Name = "serialBox";
             this.serialBox.ReadOnly = true;
             this.serialBox.Size = new System.Drawing.Size(177, 27);
             this.serialBox.TabIndex = 111;
-            this.serialBox.Text = "0";
+            this.serialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPage2
             // 
@@ -398,12 +426,10 @@ namespace BirdHouseProject.Views
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.label21);
-            this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Controls.Add(this.mSerialBox2);
             this.tabPage2.Controls.Add(this.fSerialBox2);
             this.tabPage2.Controls.Add(this.cageNumberBox2);
             this.tabPage2.Controls.Add(this.hatchDateBox2);
-            this.tabPage2.Controls.Add(this.serialBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -414,7 +440,8 @@ namespace BirdHouseProject.Views
             // 
             // subSpeciesBox2
             // 
-            this.subSpeciesBox2.Location = new System.Drawing.Point(385, 284);
+            this.subSpeciesBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.subSpeciesBox2.Location = new System.Drawing.Point(381, 227);
             this.subSpeciesBox2.Name = "subSpeciesBox2";
             this.subSpeciesBox2.ReadOnly = true;
             this.subSpeciesBox2.Size = new System.Drawing.Size(177, 27);
@@ -422,7 +449,8 @@ namespace BirdHouseProject.Views
             // 
             // speciesBox2
             // 
-            this.speciesBox2.Location = new System.Drawing.Point(385, 228);
+            this.speciesBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.speciesBox2.Location = new System.Drawing.Point(381, 171);
             this.speciesBox2.Name = "speciesBox2";
             this.speciesBox2.ReadOnly = true;
             this.speciesBox2.Size = new System.Drawing.Size(177, 27);
@@ -445,7 +473,7 @@ namespace BirdHouseProject.Views
             this.genderComboBox2.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.genderComboBox2.Location = new System.Drawing.Point(850, 171);
+            this.genderComboBox2.Location = new System.Drawing.Point(381, 340);
             this.genderComboBox2.Name = "genderComboBox2";
             this.genderComboBox2.Size = new System.Drawing.Size(177, 28);
             this.genderComboBox2.TabIndex = 121;
@@ -456,7 +484,7 @@ namespace BirdHouseProject.Views
             this.cancelBtn2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cancelBtn2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
             this.cancelBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cancelBtn2.Location = new System.Drawing.Point(692, 438);
+            this.cancelBtn2.Location = new System.Drawing.Point(822, 329);
             this.cancelBtn2.Name = "cancelBtn2";
             this.cancelBtn2.Size = new System.Drawing.Size(169, 57);
             this.cancelBtn2.TabIndex = 112;
@@ -470,7 +498,7 @@ namespace BirdHouseProject.Views
             this.saveBtn2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.saveBtn2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
             this.saveBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.saveBtn2.Location = new System.Drawing.Point(481, 438);
+            this.saveBtn2.Location = new System.Drawing.Point(611, 329);
             this.saveBtn2.Name = "saveBtn2";
             this.saveBtn2.Size = new System.Drawing.Size(169, 57);
             this.saveBtn2.TabIndex = 111;
@@ -484,7 +512,7 @@ namespace BirdHouseProject.Views
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label15.Location = new System.Drawing.Point(618, 345);
+            this.label15.Location = new System.Drawing.Point(590, 284);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(226, 23);
             this.label15.TabIndex = 110;
@@ -495,7 +523,7 @@ namespace BirdHouseProject.Views
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label16.Location = new System.Drawing.Point(626, 288);
+            this.label16.Location = new System.Drawing.Point(598, 227);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(218, 23);
             this.label16.TabIndex = 109;
@@ -506,7 +534,7 @@ namespace BirdHouseProject.Views
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label17.Location = new System.Drawing.Point(692, 232);
+            this.label17.Location = new System.Drawing.Point(664, 171);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(155, 23);
             this.label17.TabIndex = 108;
@@ -517,7 +545,7 @@ namespace BirdHouseProject.Views
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label18.Location = new System.Drawing.Point(754, 176);
+            this.label18.Location = new System.Drawing.Point(285, 345);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(90, 23);
             this.label18.TabIndex = 107;
@@ -528,7 +556,7 @@ namespace BirdHouseProject.Views
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label19.Location = new System.Drawing.Point(256, 345);
+            this.label19.Location = new System.Drawing.Point(252, 288);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(126, 23);
             this.label19.TabIndex = 106;
@@ -539,7 +567,7 @@ namespace BirdHouseProject.Views
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label20.Location = new System.Drawing.Point(246, 288);
+            this.label20.Location = new System.Drawing.Point(242, 231);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(133, 23);
             this.label20.TabIndex = 105;
@@ -550,41 +578,31 @@ namespace BirdHouseProject.Views
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label21.Location = new System.Drawing.Point(287, 232);
+            this.label21.Location = new System.Drawing.Point(283, 175);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(92, 23);
             this.label21.TabIndex = 104;
             this.label21.Text = "Species:";
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label22.Location = new System.Drawing.Point(227, 176);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(152, 23);
-            this.label22.TabIndex = 103;
-            this.label22.Text = "Serial Number:";
-            // 
             // mSerialBox2
             // 
-            this.mSerialBox2.Location = new System.Drawing.Point(850, 345);
+            this.mSerialBox2.Location = new System.Drawing.Point(822, 284);
             this.mSerialBox2.Name = "mSerialBox2";
             this.mSerialBox2.Size = new System.Drawing.Size(177, 27);
             this.mSerialBox2.TabIndex = 102;
             // 
             // fSerialBox2
             // 
-            this.fSerialBox2.Location = new System.Drawing.Point(850, 288);
+            this.fSerialBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.fSerialBox2.Location = new System.Drawing.Point(822, 227);
             this.fSerialBox2.Name = "fSerialBox2";
-            this.fSerialBox2.ReadOnly = true;
             this.fSerialBox2.Size = new System.Drawing.Size(177, 27);
             this.fSerialBox2.TabIndex = 101;
             // 
             // cageNumberBox2
             // 
-            this.cageNumberBox2.Location = new System.Drawing.Point(850, 232);
+            this.cageNumberBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cageNumberBox2.Location = new System.Drawing.Point(822, 171);
             this.cageNumberBox2.Name = "cageNumberBox2";
             this.cageNumberBox2.ReadOnly = true;
             this.cageNumberBox2.Size = new System.Drawing.Size(177, 27);
@@ -592,18 +610,26 @@ namespace BirdHouseProject.Views
             // 
             // hatchDateBox2
             // 
-            this.hatchDateBox2.Location = new System.Drawing.Point(385, 345);
+            this.hatchDateBox2.Location = new System.Drawing.Point(381, 288);
             this.hatchDateBox2.Name = "hatchDateBox2";
             this.hatchDateBox2.Size = new System.Drawing.Size(177, 27);
             this.hatchDateBox2.TabIndex = 99;
             // 
-            // serialBox2
+            // hatchDateErrorProvider
             // 
-            this.serialBox2.Location = new System.Drawing.Point(385, 176);
-            this.serialBox2.Name = "serialBox2";
-            this.serialBox2.Size = new System.Drawing.Size(177, 27);
-            this.serialBox2.TabIndex = 98;
-            this.serialBox2.Text = "0";
+            this.hatchDateErrorProvider.ContainerControl = this;
+            // 
+            // genderErrorProvider
+            // 
+            this.genderErrorProvider.ContainerControl = this;
+            // 
+            // msnErrorProvider
+            // 
+            this.msnErrorProvider.ContainerControl = this;
+            // 
+            // fsnErrorProvider
+            // 
+            this.fsnErrorProvider.ContainerControl = this;
             // 
             // LadyGouldianFinchDataView
             // 
@@ -619,6 +645,10 @@ namespace BirdHouseProject.Views
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hatchDateErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.msnErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fsnErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -666,11 +696,13 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox mSerialBox2;
         private System.Windows.Forms.TextBox fSerialBox2;
         private System.Windows.Forms.TextBox cageNumberBox2;
         private System.Windows.Forms.TextBox hatchDateBox2;
-        private System.Windows.Forms.TextBox serialBox2;
+        private System.Windows.Forms.ErrorProvider hatchDateErrorProvider;
+        private System.Windows.Forms.ErrorProvider genderErrorProvider;
+        private System.Windows.Forms.ErrorProvider msnErrorProvider;
+        private System.Windows.Forms.ErrorProvider fsnErrorProvider;
     }
 }

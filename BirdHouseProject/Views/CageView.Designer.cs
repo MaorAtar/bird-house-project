@@ -29,6 +29,7 @@ namespace BirdHouseProject.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -53,10 +54,18 @@ namespace BirdHouseProject.Views
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.serialBox = new System.Windows.Forms.TextBox();
+            this.lengthErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.widthErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.heightErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.materialErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lengthErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heightErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -254,6 +263,7 @@ namespace BirdHouseProject.Views
             this.heightBox.Name = "heightBox";
             this.heightBox.Size = new System.Drawing.Size(177, 27);
             this.heightBox.TabIndex = 109;
+            this.heightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // widthBox
             // 
@@ -261,6 +271,7 @@ namespace BirdHouseProject.Views
             this.widthBox.Name = "widthBox";
             this.widthBox.Size = new System.Drawing.Size(177, 27);
             this.widthBox.TabIndex = 108;
+            this.widthBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lenBox
             // 
@@ -268,6 +279,7 @@ namespace BirdHouseProject.Views
             this.lenBox.Name = "lenBox";
             this.lenBox.Size = new System.Drawing.Size(177, 27);
             this.lenBox.TabIndex = 107;
+            this.lenBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cancelBtn
             // 
@@ -348,17 +360,35 @@ namespace BirdHouseProject.Views
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
             this.label1.Location = new System.Drawing.Point(142, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 23);
+            this.label1.Size = new System.Drawing.Size(155, 23);
             this.label1.TabIndex = 97;
-            this.label1.Text = "Serial Number:";
+            this.label1.Text = "Cage Number:";
             // 
             // serialBox
             // 
             this.serialBox.Location = new System.Drawing.Point(300, 78);
             this.serialBox.Name = "serialBox";
+            this.serialBox.ReadOnly = true;
             this.serialBox.Size = new System.Drawing.Size(177, 27);
             this.serialBox.TabIndex = 89;
             this.serialBox.Text = "0";
+            this.serialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lengthErrorProvider
+            // 
+            this.lengthErrorProvider.ContainerControl = this;
+            // 
+            // widthErrorProvider
+            // 
+            this.widthErrorProvider.ContainerControl = this;
+            // 
+            // heightErrorProvider
+            // 
+            this.heightErrorProvider.ContainerControl = this;
+            // 
+            // materialErrorProvider
+            // 
+            this.materialErrorProvider.ContainerControl = this;
             // 
             // CageView
             // 
@@ -376,6 +406,10 @@ namespace BirdHouseProject.Views
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lengthErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widthErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heightErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -406,5 +440,9 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.TextBox heightBox;
         private System.Windows.Forms.TextBox widthBox;
         private System.Windows.Forms.TextBox lenBox;
+        private System.Windows.Forms.ErrorProvider lengthErrorProvider;
+        private System.Windows.Forms.ErrorProvider widthErrorProvider;
+        private System.Windows.Forms.ErrorProvider heightErrorProvider;
+        private System.Windows.Forms.ErrorProvider materialErrorProvider;
     }
 }

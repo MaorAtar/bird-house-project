@@ -107,9 +107,9 @@ namespace BirdHouseProject.Presenters
         private void CleanViewFields()
         {
             view.CageSerialNumber = "0";
-            view.CageLength = "0.0";
-            view.CageWidth = "0.0";
-            view.CageHeight = "0.0";
+            view.CageLength = "0";
+            view.CageWidth = "0";
+            view.CageHeight = "0";
             view.CageMaterial = "";
         }
         /// <summary>
@@ -128,7 +128,7 @@ namespace BirdHouseProject.Presenters
             catch (Exception ex)
             {
                 view.IsSuccessful = false;
-                view.Message = "An error ocurred, could not delete cage";
+                view.Message = "An error ocurred - " + ex.Message + ", could not delete cage";
             }
         }
 

@@ -29,6 +29,7 @@ namespace BirdHouseProject.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.searchBtn = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,16 +60,36 @@ namespace BirdHouseProject.Views
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.mSerialBox = new System.Windows.Forms.TextBox();
             this.fSerialBox = new System.Windows.Forms.TextBox();
             this.cageNumberBox = new System.Windows.Forms.TextBox();
             this.hatchDateBox = new System.Windows.Forms.TextBox();
+            this.fsnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.msnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cageNumberErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.genderErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bodyColorErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.breastColorErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.headColorErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.hatchDateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.subSpeciesErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.speciesErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.serialBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fsnErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.msnErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cageNumberErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodyColorErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.breastColorErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.headColorErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hatchDateErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subSpeciesErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciesErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBtn
@@ -258,7 +279,7 @@ namespace BirdHouseProject.Views
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1031, 520);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Bird Detail";
+            this.tabPage2.Text = "s";
             // 
             // genderComboBox
             // 
@@ -463,17 +484,6 @@ namespace BirdHouseProject.Views
             this.label4.TabIndex = 80;
             this.label4.Text = "Species:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label1.Location = new System.Drawing.Point(103, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 23);
-            this.label1.TabIndex = 79;
-            this.label1.Text = "Serial Number:";
-            // 
             // mSerialBox
             // 
             this.mSerialBox.Location = new System.Drawing.Point(726, 275);
@@ -502,13 +512,65 @@ namespace BirdHouseProject.Views
             this.hatchDateBox.Size = new System.Drawing.Size(177, 27);
             this.hatchDateBox.TabIndex = 74;
             // 
+            // fsnErrorProvider
+            // 
+            this.fsnErrorProvider.ContainerControl = this;
+            // 
+            // msnErrorProvider
+            // 
+            this.msnErrorProvider.ContainerControl = this;
+            // 
+            // cageNumberErrorProvider
+            // 
+            this.cageNumberErrorProvider.ContainerControl = this;
+            // 
+            // genderErrorProvider
+            // 
+            this.genderErrorProvider.ContainerControl = this;
+            // 
+            // bodyColorErrorProvider
+            // 
+            this.bodyColorErrorProvider.ContainerControl = this;
+            // 
+            // breastColorErrorProvider
+            // 
+            this.breastColorErrorProvider.ContainerControl = this;
+            // 
+            // headColorErrorProvider
+            // 
+            this.headColorErrorProvider.ContainerControl = this;
+            // 
+            // hatchDateErrorProvider
+            // 
+            this.hatchDateErrorProvider.ContainerControl = this;
+            // 
+            // subSpeciesErrorProvider
+            // 
+            this.subSpeciesErrorProvider.ContainerControl = this;
+            // 
+            // speciesErrorProvider
+            // 
+            this.speciesErrorProvider.ContainerControl = this;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label1.Location = new System.Drawing.Point(103, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 23);
+            this.label1.TabIndex = 79;
+            this.label1.Text = "Serial Number:";
+            // 
             // serialBox
             // 
             this.serialBox.Location = new System.Drawing.Point(261, 106);
             this.serialBox.Name = "serialBox";
+            this.serialBox.ReadOnly = true;
             this.serialBox.Size = new System.Drawing.Size(177, 27);
             this.serialBox.TabIndex = 71;
-            this.serialBox.Text = "0";
+            this.serialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LadyGouldianFinchView
             // 
@@ -528,6 +590,16 @@ namespace BirdHouseProject.Views
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fsnErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.msnErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cageNumberErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bodyColorErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.breastColorErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.headColorErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hatchDateErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subSpeciesErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciesErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -552,12 +624,10 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox mSerialBox;
         private System.Windows.Forms.TextBox fSerialBox;
         private System.Windows.Forms.TextBox cageNumberBox;
         private System.Windows.Forms.TextBox hatchDateBox;
-        private System.Windows.Forms.TextBox serialBox;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.ComboBox bodyColorComboBox;
@@ -569,5 +639,17 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.ComboBox subSpeciesComboBox;
         private System.Windows.Forms.ComboBox speciesComboBox;
         private System.Windows.Forms.ComboBox genderComboBox;
+        private System.Windows.Forms.ErrorProvider fsnErrorProvider;
+        private System.Windows.Forms.ErrorProvider msnErrorProvider;
+        private System.Windows.Forms.ErrorProvider cageNumberErrorProvider;
+        private System.Windows.Forms.ErrorProvider genderErrorProvider;
+        private System.Windows.Forms.ErrorProvider bodyColorErrorProvider;
+        private System.Windows.Forms.ErrorProvider breastColorErrorProvider;
+        private System.Windows.Forms.ErrorProvider headColorErrorProvider;
+        private System.Windows.Forms.ErrorProvider hatchDateErrorProvider;
+        private System.Windows.Forms.ErrorProvider subSpeciesErrorProvider;
+        private System.Windows.Forms.ErrorProvider speciesErrorProvider;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox serialBox;
     }
 }

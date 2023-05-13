@@ -88,6 +88,137 @@ Integrated Security=True;");
             // Save changes
             saveBtn.Click += delegate
             {
+                // User input validation
+                // Species Validation
+                if (speciesComboBox.SelectedIndex == -1)
+                {
+                    speciesErrorProvider.SetError(speciesComboBox, "Invalid Species");
+                    return;
+                }
+                else
+                {
+                    speciesErrorProvider.SetError(speciesComboBox, string.Empty);
+                }
+                // Sub Species Validation
+                if (subSpeciesComboBox.SelectedIndex == -1)
+                {
+                    subSpeciesErrorProvider.SetError(subSpeciesComboBox, "Invalid Sub Species");
+                    return;
+                }
+                else
+                {
+                    subSpeciesErrorProvider.SetError(subSpeciesComboBox, string.Empty);
+                }
+                // Hatch Date Validation
+                if (!IsDateFormatValid(hatchDateBox.Text))
+                {
+                    hatchDateErrorProvider.SetError(hatchDateBox, "Enter Date in DD/MM/YYYY Format");
+                    return;
+                }
+                else
+                {
+                    hatchDateErrorProvider.SetError(hatchDateBox, string.Empty);
+                }
+                // Head Color Validation
+                if (headColorComboBox.SelectedIndex == -1)
+                {
+                    headColorErrorProvider.SetError(headColorComboBox, "Invalid Head Color");
+                    return;
+                }
+                else
+                {
+                    headColorErrorProvider.SetError(headColorComboBox, string.Empty);
+                }
+                // Breast Color Validation
+                if (breastColorComboBox.SelectedIndex == -1)
+                {
+                    breastColorErrorProvider.SetError(breastColorComboBox, "Invalid Breast Color");
+                    return;
+                }
+                else
+                {
+                    breastColorErrorProvider.SetError(breastColorComboBox, string.Empty);
+                }
+                // Body Color Validation
+                if (bodyColorComboBox.SelectedIndex == -1)
+                {
+                    bodyColorErrorProvider.SetError(bodyColorComboBox, "Invalid Body Color");
+                    return;
+                }
+                else
+                {
+                    bodyColorErrorProvider.SetError(bodyColorComboBox, string.Empty);
+                }
+                // Gender Validation
+                if (genderComboBox.SelectedIndex == -1)
+                {
+                    genderErrorProvider.SetError(genderComboBox, "Invalid Gender");
+                    return;
+                }
+                else
+                {
+                    genderErrorProvider.SetError(genderComboBox, string.Empty);
+                }
+                // Cage Number Validation
+                if (cageNumberBox.Text.Length != 6)
+                {
+                    cageNumberErrorProvider.SetError(cageNumberBox, "Cage Number must be 6 digits long");
+                    return;
+                }
+                else if (!IsCageNumberInDB(cageNumberBox.Text))
+                {
+                    cageNumberErrorProvider.SetError(cageNumberBox, "Cage Number does not exist in the system");
+                    return;
+                }
+                else
+                {
+                    cageNumberErrorProvider.SetError(cageNumberBox, string.Empty);
+                }
+                // Father Serial Number Validation
+                if (fSerialBox.Text.Length != 6)
+                {
+                    fsnErrorProvider.SetError(fSerialBox, "Father Serial Number must be 6 digits long");
+                    return;
+                }
+                else if (!IsFSerialNumberInDB(fSerialBox.Text))
+                {
+                    fsnErrorProvider.SetError(fSerialBox, "Father Serial Number does not exist in the system");
+                    return;
+                }
+                else if (!IsFSerialNumberValid(fSerialBox.Text))
+                {
+                    fsnErrorProvider.SetError(fSerialBox, "Father Serial Number does not match to a Male bird Serial Number");
+                    return;
+                }
+                else if (string.Equals(fSerialBox.Text, mSerialBox.Text))
+                {
+                    fsnErrorProvider.SetError(fSerialBox, "Father Serial Number and Mother Serial Number can't be the same");
+                    return;
+                }
+                else
+                {
+                    fsnErrorProvider.SetError(fSerialBox, string.Empty);
+                }
+                // Mother Serial Number Validation
+                if (mSerialBox.Text.Length != 6)
+                {
+                    msnErrorProvider.SetError(mSerialBox, "Mother Serial Number must be 6 digits long");
+                    return;
+                }
+                else if (!IsMSerialNumberInDB(mSerialBox.Text))
+                {
+                    msnErrorProvider.SetError(mSerialBox, "Mother Serial Number does not exist in the system");
+                    return;
+                }
+                else if (!IsMSerialNumberValid(mSerialBox.Text))
+                {
+                    msnErrorProvider.SetError(mSerialBox, "Mother Serial Number does not match to a Female bird Serial Number");
+                    return;
+                }
+                else
+                {
+                    msnErrorProvider.SetError(mSerialBox, string.Empty);
+                }
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 RefreshBirdList();
                 if (isSuccessful)
@@ -129,7 +260,7 @@ Integrated Security=True;");
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         // Singleton pattern (open a single form instance)
@@ -157,7 +288,6 @@ Integrated Security=True;");
             }
             return instance;
         }
-
 
         /// <summary>
         /// Handles the cell content click event in the DataGridView1 control.
@@ -257,6 +387,174 @@ Integrated Security=True;");
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet, "LadyGouldianFinch");
             dataGridView1.DataSource = dataSet.Tables[0];
+        }
+
+        /// <summary>
+        /// Checks if the given string is in a correct date format.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns>boolean</returns>
+        private static bool IsDateFormatValid(string input)
+        {
+            DateTime parsedDate;
+            return DateTime.TryParseExact(input, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out parsedDate);
+        }
+
+        /// <summary>
+        /// Checks if a given cage number is in the Cage SQL table.
+        /// </summary>
+        /// <param name="cage_number"></param>
+        /// <returns>boolean</returns>
+        private bool IsCageNumberInDB(string cage_number)
+        {
+            bool flag = false;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query = "SELECT Serial_Number FROM Cage WHERE Serial_Number = @cage_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@cage_number", cage_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        flag = true;
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return flag;
+        }
+
+        /// <summary>
+        /// Checks if a given father serial number is in the LadyGouldianFinch SQL table.
+        /// </summary>
+        /// <param name="f_serial_number"></param>
+        /// <returns></returns>
+        private bool IsFSerialNumberInDB(string f_serial_number)
+        {
+            bool flag = false;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query = "SELECT Serial_Number FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@f_serial_number", f_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        flag = true;
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return flag;
+        }
+
+        /// <summary>
+        /// Checks if a given father serial number is valid.
+        /// </summary>
+        /// <param name="f_serial_number"></param>
+        /// <returns>boolean</returns>
+        private bool IsFSerialNumberValid(string f_serial_number)
+        {
+            bool flag = false;
+            string temp;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query = "SELECT Gender FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@f_serial_number", f_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        temp = reader.GetString(0);
+                        if (temp == "Male")
+                        {
+                            flag = true;
+                        }
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return flag;
+        }
+
+        /// <summary>
+        /// Checks if a given mother serial number is in the LadyGouldianFinch SQL table.
+        /// </summary>
+        /// <param name="m_serial_number"></param>
+        /// <returns></returns>
+        private bool IsMSerialNumberInDB(string m_serial_number)
+        {
+            bool flag = false;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query = "SELECT Serial_Number FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@m_serial_number", m_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        flag = true;
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return flag;
+        }
+
+        /// <summary>
+        /// Checks if a given mother serial number is valid.
+        /// </summary>
+        /// <param name="m_serial_number"></param>
+        /// <returns>boolean</returns>
+        private bool IsMSerialNumberValid(string m_serial_number)
+        {
+            bool flag = false;
+            string temp;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query = "SELECT Gender FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@m_serial_number", m_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        temp = reader.GetString(0);
+                        if (temp == "Female")
+                        {
+                            flag = true;
+                        }
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return flag;
         }
     }
 }
