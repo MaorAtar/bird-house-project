@@ -1,24 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace BirdHouseProject.Views
 {
+    /// <summary>
+    /// Represents a Windows Forms view for displaying cage data and associated birds.
+    /// </summary>
     public partial class CageDataView : Form
     {
         // Fields
         SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;");
 
+        /// <summary>
+        /// Initializes a new instance of the CageDataView class.
+        /// </summary>
         public CageDataView()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the CageDataView class with the specified cage details.
+        /// </summary>
+        /// <param name="cage_serial_number">The serial number of the cage.</param>
+        /// <param name="length">The length of the cage.</param>
+        /// <param name="width">The width of the cage.</param>
+        /// <param name="height">The height of the cage.</param>
+        /// <param name="material">The material of the cage.</param>
         public CageDataView(int cage_serial_number, double length, double width, double height, string material)
         {
             InitializeComponent();
@@ -31,7 +40,9 @@ namespace BirdHouseProject.Views
             showBirdsTable();
         }
 
-        // Methods
+        /// <summary>
+        /// Displays the birds table associated with the current cage.
+        /// </summary>
         private void showBirdsTable()
         {
             connectionString.Open();
@@ -46,4 +57,3 @@ namespace BirdHouseProject.Views
         }
     }
 }
-

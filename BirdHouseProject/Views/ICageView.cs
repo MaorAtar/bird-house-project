@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 
 namespace BirdHouseProject.Views
 {
+    /// <summary>
+    /// Represents the view interface for managing cages in the Bird House project.
+    /// </summary>
     interface ICageView
     {
         // Properties - Fields

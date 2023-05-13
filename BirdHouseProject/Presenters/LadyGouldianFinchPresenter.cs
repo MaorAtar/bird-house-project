@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 using BirdHouseProject.Models;
 using BirdHouseProject.Views;
 
 namespace BirdHouseProject.Presenters
 {
+    /// <summary>
+    /// Presenter for the Lady Gouldian Finch view.
+    /// Handles the communication between the view and the repository.
+    /// </summary>
     public class LadyGouldianFinchPresenter
     {
         // Fields
@@ -14,7 +17,7 @@ namespace BirdHouseProject.Presenters
         private ILadyGouldianFinchRepository repository;
         private BindingSource ladyGouldianFinchBindingSource;
         private IEnumerable<LadyGouldianFinchModel> ladyGouldianFinchList;
-    
+
         // Constructor
         public LadyGouldianFinchPresenter(ILadyGouldianFinchView view, ILadyGouldianFinchRepository repository)
         {
@@ -36,26 +39,42 @@ namespace BirdHouseProject.Presenters
             this.view.Show();
         }
 
+        /// <summary>
+        /// Loads all Lady Gouldian Finch models from the repository and sets the data source for the view.
+        /// </summary>
         private void LoadAllLadyGouldianFinchList()
         {
             ladyGouldianFinchList = repository.GetAll();
-            ladyGouldianFinchBindingSource.DataSource = ladyGouldianFinchList; // Set data source
+            ladyGouldianFinchBindingSource.DataSource = ladyGouldianFinchList;
         }
 
+        /// <summary>
+        /// Event handler for searching Lady Gouldian Finch models.
+        /// Retrieves Lady Gouldian Finch models from the repository based on the search value and binds them to the view.
+        /// </summary>
         private void SearchLadyGouldianFinch(object sender, EventArgs e)
         {
             bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
             if (emptyValue == false)
                 ladyGouldianFinchList = repository.GetByValue(this.view.SearchValue);
-            else ladyGouldianFinchList = repository.GetAll();
+            else
+                ladyGouldianFinchList = repository.GetAll();
             ladyGouldianFinchBindingSource.DataSource = ladyGouldianFinchList;
         }
 
+        /// <summary>
+        /// Event handler for adding a new Lady Gouldian Finch.
+        /// Sets the view to add mode.
+        /// </summary>
         private void AddNewLadyGouldianFinch(object sender, EventArgs e)
         {
             view.IsEdit = false;
         }
 
+        /// <summary>
+        /// Event handler for loading the selected Lady Gouldian Finch model to edit.
+        /// Populates the view fields with the data of the selected Lady Gouldian Finch model.
+        /// </summary>
         private void LoadSelectedLadyGouldianFinchToEdit(object sender, EventArgs e)
         {
             var ladyGouldianFinch = (LadyGouldianFinchModel)ladyGouldianFinchBindingSource.Current;
@@ -73,6 +92,10 @@ namespace BirdHouseProject.Presenters
             view.IsEdit = true;
         }
 
+        /// <summary>
+        /// Event handler for saving the Lady Gouldian Finch model.
+        /// Validates the model data and either adds a new model or edits an existing one in the repository.
+        /// </summary>
         private void SaveLadyGouldianFinch(object sender, EventArgs e)
         {
             var model = new LadyGouldianFinchModel();
@@ -111,6 +134,9 @@ namespace BirdHouseProject.Presenters
             }
         }
 
+        /// <summary>
+        /// Clears the view fields.
+        /// </summary>
         private void CleanViewFields()
         {
             view.LadyGouldianFinchSerialNumber = "0";
@@ -126,6 +152,10 @@ namespace BirdHouseProject.Presenters
             view.LadyGouldianFinchBodyColor = "";
         }
 
+        /// <summary>
+        /// Event handler for deleting the selected Lady Gouldian Finch model.
+        /// Deletes the model from the repository.
+        /// </summary>
         private void DeleteSelectedLadyGouldianFinch(object sender, EventArgs e)
         {
             try
@@ -142,10 +172,13 @@ namespace BirdHouseProject.Presenters
             }
         }
 
+        /// <summary>
+        /// Event handler for canceling the current action.
+        /// Clears the view fields.
+        /// </summary>
         private void CancelAction(object sender, EventArgs e)
         {
             CleanViewFields();
         }
-
     }
 }

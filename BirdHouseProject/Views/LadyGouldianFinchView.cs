@@ -1,21 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace BirdHouseProject.Views
 {
+    /// <summary>
+    /// Represents a Windows Forms view for managing lady gouldian finch data.
+    /// Implements the ILadyGouldianFinchView interface.
+    /// </summary>
     public partial class LadyGouldianFinchView : Form, ILadyGouldianFinchView
     {
         // Fields
+        SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+Integrated Security=True;");
         private string message;
         private bool isSuccessful;
         private bool isEdit;
 
-        // Constructor
+        /// <summary>
+        /// Initializes a new instance of the LadyGouldianFinchView class.
+        /// </summary>
         public LadyGouldianFinchView()
         {
             InitializeComponent();
@@ -49,7 +54,9 @@ namespace BirdHouseProject.Views
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-        // Methods
+        /// <summary>
+        /// Associates and raises events for the view.
+        /// </summary>
         public void AssociateAndRaiseViewEvents()
         {
             // Search
@@ -58,11 +65,13 @@ namespace BirdHouseProject.Views
             {
                 if (e.KeyCode == Keys.Enter)
                     SearchEvent?.Invoke(this, EventArgs.Empty);
+                    RefreshBirdList();
             };
             // Add New
             addnewBtn.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
+                RefreshBirdList();
                 tabControl1.TabPages.Remove(tabPage1);
                 tabControl1.TabPages.Add(tabPage2);
                 tabPage2.Text = "Add new bird";
@@ -71,6 +80,7 @@ namespace BirdHouseProject.Views
             editBtn.Click += delegate
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
+                RefreshBirdList();
                 tabControl1.TabPages.Remove(tabPage1);
                 tabControl1.TabPages.Add(tabPage2);
                 tabPage2.Text = "Edit bird";
@@ -79,6 +89,7 @@ namespace BirdHouseProject.Views
             saveBtn.Click += delegate
             {
                 SaveEvent?.Invoke(this, EventArgs.Empty);
+                RefreshBirdList();
                 if (isSuccessful)
                 {
                     tabControl1.TabPages.Remove(tabPage2);
@@ -101,11 +112,16 @@ namespace BirdHouseProject.Views
                 if (result == DialogResult.Yes)
                 {
                     DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    RefreshBirdList();
                     MessageBox.Show(Message);
                 }
             };
         }
 
+        /// <summary>
+        /// Sets the binding source for the Lady Gouldian Finch data.
+        /// </summary>
+        /// <param name="ladyGouldianFinchList">The binding source containing Lady Gouldian Finch data.</param>
         public void SetLadyGouldianFinchBindingSource(BindingSource ladyGouldianFinchList)
         {
             dataGridView1.DataSource = ladyGouldianFinchList;
@@ -118,6 +134,12 @@ namespace BirdHouseProject.Views
 
         // Singleton pattern (open a single form instance)
         private static LadyGouldianFinchView instance;
+
+        /// <summary>
+        /// Retrieves the singleton instance of the CageView form.
+        /// </summary>
+        /// <param name="parentContainer">The parent container form.</param>
+        /// <returns>The singleton instance of the CageView form.</returns>
         public static LadyGouldianFinchView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
@@ -136,6 +158,13 @@ namespace BirdHouseProject.Views
             return instance;
         }
 
+
+        /// <summary>
+        /// Handles the cell content click event in the DataGridView1 control.
+        /// Retrieves the selected bird data and opens a LadyGouldianFinchDataView form to display the details.
+        /// </summary>
+        /// <param name="sender">The object that triggered the event.</param>
+        /// <param name="e">A DataGridViewCellEventArgs that contains the event data.</param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Get the selected bird data
@@ -160,6 +189,13 @@ namespace BirdHouseProject.Views
             ladyGouldianFinchDataView.Show();
         }
 
+        /// <summary>
+        /// Handles the SelectedIndexChanged event of the speciesComboBox control.
+        /// Occurs when the selected index of the speciesComboBox is changed.
+        /// Updates the subSpeciesComboBox items based on the selected species.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">An EventArgs that contains the event data.</param>
         private void speciesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             subSpeciesComboBox.Items.Clear();
@@ -182,6 +218,13 @@ namespace BirdHouseProject.Views
             }
         }
 
+        /// <summary>
+        /// Handles the SelectedIndexChanged event of the genderComboBox control.
+        /// Occurs when the selected index of the genderComboBox is changed.
+        /// Updates the bodyColorComboBox items based on the selected gender.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">An EventArgs that contains the event data.</param>
         private void genderComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             bodyColorComboBox.Items.Clear();
@@ -200,6 +243,20 @@ namespace BirdHouseProject.Views
                 bodyColorComboBox.Items.Add("Blue");
                 bodyColorComboBox.Items.Add("Silver");
             }
+        }
+
+        /// <summary>
+        /// Refreshes the bird list displayed in the dataGridView1 control.
+        /// Retrieves the latest data from the database table "LadyGouldianFinch"
+        /// and updates the dataGridView1 with the retrieved data.
+        /// </summary>
+        private void RefreshBirdList()
+        {
+            string query = "Select *from LadyGouldianFinch order by Serial_number desc";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet, "LadyGouldianFinch");
+            dataGridView1.DataSource = dataSet.Tables[0];
         }
     }
 }

@@ -5,12 +5,11 @@ using System.Windows.Forms;
 
 namespace BirdHouseProject.Views
 {
+    /// <summary>
+    /// Form for displaying and adding data for Lady Gouldian Finch.
+    /// </summary>
     public partial class LadyGouldianFinchDataView : Form
     {
-        // Fields
-        SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
-Integrated Security=True;");
-
         // Constructors
         public LadyGouldianFinchDataView(int serialNumber, string species, string subSpecies,
     string hatchDate, string gender, string cageNumber, int fSerialNumber, int mSerialNumber,
@@ -39,6 +38,7 @@ Integrated Security=True;");
             addChickBtn.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
+                RefreshBirdList();
                 tabControl1.TabPages.Remove(tabPage1);
                 tabControl1.TabPages.Add(tabPage2);
                 tabPage2.Text = "Add new bird";
@@ -67,9 +67,14 @@ Integrated Security=True;");
         public event EventHandler AddNewEvent;
         public event EventHandler CancelEvent;
 
-        // Methods
+        /// <summary>
+        /// Populates the DataGridView with the chick table data for the given serial number.
+        /// </summary>
+        /// <param name="serialNumber">The serial number to filter the chick table.</param>
         private void showChickTable(int serialNumber)
         {
+            SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+Integrated Security=True;");
             connectionString.Open();
             string query = "Select * From LadyGouldianFinch WHERE F_Serial_Number = @serial_number Or M_Serial_Number = @serial_number";
             SqlCommand command = new SqlCommand(query, connectionString);
@@ -81,9 +86,16 @@ Integrated Security=True;");
             connectionString.Close();
         }
 
+        /// <summary>
+        /// Event handler for the Save button click event. Saves the data of a new Lady Gouldian Finch.
+        /// </summary>
+        /// <param name="sender">The object that raised the event.</param>
+        /// <param name="e">The event arguments.</param>
         private void saveBtn2_Click(object sender, EventArgs e)
         {
-            using (var connection = this.connectionString)
+            SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+Integrated Security=True;");
+            using (var connection = connectionString)
             using (var command = new SqlCommand())
             {
                 connection.Open();
@@ -102,9 +114,14 @@ Integrated Security=True;");
                 command.Parameters.Add("@body_color", SqlDbType.NVarChar).Value = ChickBodyColor();
                 command.ExecuteNonQuery();
             }
-            this.Close();
+            RefreshBirdList();
+            Close();
         }
 
+        /// <summary>
+        /// Determines the head color of a Lady Gouldian Finch using CalcChickHeadColor function.
+        /// </summary>
+        /// <returns>The head color of the chick.</returns>
         private string ChickHeadColor()
         {
             string f_head_color = null;
@@ -144,6 +161,13 @@ Integrated Security=True;");
             return CalcChickHeadColor(f_head_color, m_head_color);
         }
 
+        /// <summary>
+        /// Calculates the head color of a Lady Gouldian Finch chick based on the head colors of the parents and the chick's gender.
+        /// </summary>
+        /// <param name="parent1HeadColor">The head color of the first parent.</param>
+        /// <param name="parent2HeadColor">The head color of the second parent.</param>
+        /// <param name="chickGender">The gender of the chick.</param>
+        /// <returns>The head color of the chick.</returns>
         private string CalcChickHeadColor(string f_head_color, string m_head_color)
         {
             string chick_gender = LadyGouldianFinchGender;
@@ -170,6 +194,9 @@ Integrated Security=True;");
             return f_head_color;
         }
 
+        /// <summary>
+        /// Calculates the breast color of a Lady Gouldian Finch chick using CalcChickBreastColor function.
+        /// </summary>
         private string ChickBreastColor()
         {
             string f_breast_color = null;
@@ -209,6 +236,12 @@ Integrated Security=True;");
             return CalcChickBreastColor(f_breast_color, m_breast_color);
         }
 
+        /// <summary>
+        /// Calculates the breast color of a Lady Gouldian Finch chick based on the breast colors of the parents and the chick's gender.
+        /// </summary>
+        /// <param name="f_breast_color">The breast color of the first parent.</param>
+        /// <param name="m_breast_color">The breast color of the second parent.</param>
+        /// <returns>The breast color of the chick.</returns>
         private string CalcChickBreastColor(string f_breast_color, string m_breast_color)
         {
             if ((f_breast_color == "Purple" && m_breast_color == "Purple") || 
@@ -232,6 +265,9 @@ Integrated Security=True;");
             return f_breast_color;
         }
 
+        /// <summary>
+        /// Calculates the body color of a Lady Gouldian Finch using CalcChickBodyColor function.
+        /// </summary>
         private string ChickBodyColor()
         {
             string f_body_color = null;
@@ -271,6 +307,12 @@ Integrated Security=True;");
             return CalcChickBodyColor(f_body_color, m_body_color);
         }
 
+        /// <summary>
+        /// Calculates the body color of a Lady Gouldian Finch chick based on the body colors of the parents and the chick's gender.
+        /// </summary>
+        /// <param name="f_body_color">The body color of the first parent.</param>
+        /// <param name="m_body_color">The body color of the second parent.</param>
+        /// <returns>The body color of the chick.</returns>
         private string CalcChickBodyColor(string f_body_color, string m_body_color)
         {
             string chick_gender = LadyGouldianFinchGender;
@@ -310,6 +352,22 @@ Integrated Security=True;");
                 return "Silver";
             }
             return f_body_color;
+        }
+
+        /// <summary>
+        /// Refreshes the bird list displayed in the dataGridView1 control.
+        /// Retrieves the latest data from the database table "LadyGouldianFinch"
+        /// and updates the dataGridView1 with the retrieved data.
+        /// </summary>
+        private void RefreshBirdList()
+        {
+            SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+Integrated Security=True;");
+            string query = "Select *from LadyGouldianFinch order by Serial_number desc";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet, "LadyGouldianFinch");
+            dataGridView.DataSource = dataSet.Tables[0];
         }
     }
 }

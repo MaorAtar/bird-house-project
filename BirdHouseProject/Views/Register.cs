@@ -1,30 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Text.RegularExpressions.Regex;
 using Microsoft.Office.Interop.Excel;
-using System.Data.OleDb;
 using Range = Microsoft.Office.Interop.Excel.Range;
 
 namespace BirdHouseProject.Views
 {
+    /// <summary>
+    /// The registration form of the Bird House application.
+    /// </summary>
     public partial class Register : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Register"/> class.
+        /// </summary>
         public Register()
         {
             InitializeComponent();
         }
 
-        private void Register_Load(object sender, EventArgs e)
-        {
-
-        }
+        /// <summary>
+        /// Handles the click event of the "Register" button.
+        /// Performs registration process by saving user data to an Excel file.
+        /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
             string filePath = "C:\\Users\\maora\\OneDrive\\Desktop\\BirdHouseProject\\BirdHouseProject\\Excel Files\\Users.xlsx";
@@ -84,7 +82,14 @@ namespace BirdHouseProject.Views
             this.Close();
         }
 
-
+        /// <summary>
+        /// Validates the username.
+        /// The username must contain between 6 and 8 characters.
+        /// It can only contain numbers or letters in English.
+        /// It cannot contain more than 2 digits.
+        /// </summary>
+        /// <param name="username">The username to validate.</param>
+        /// <returns><c>true</c> if the username is valid; otherwise, <c>false</c>.</returns>
         private bool ValidateUsername(string username)
         {
             // Validate length
@@ -117,6 +122,14 @@ namespace BirdHouseProject.Views
 
             return true;
         }
+
+        /// <summary>
+        /// Validates the password.
+        /// The password must contain between 8 and 10 characters.
+        /// It must have at least one digit, one letter, and one special character from the set: '-', '?', '#', '$', '_'.
+        /// </summary>
+        /// <param name="password">The password to validate.</param>
+        /// <returns><c>true</c> if the password is valid; otherwise, <c>false</c>.</returns>
         private bool ValidatePassword(string password)
         {
             if (password.Length < 8 || password.Length > 10)
@@ -164,6 +177,12 @@ namespace BirdHouseProject.Views
             return true;
         }
 
+        /// <summary>
+        /// Validates the ID number.
+        /// The ID number must contain 9 digits.
+        /// </summary>
+        /// <param name="id">The ID number to validate.</param>
+        /// <returns><c>true</c> if the ID number is valid; otherwise, <c>false</c>.</returns>
         private bool ValidateId(string id)
         {
             if (id.Length != 9)
@@ -182,11 +201,13 @@ namespace BirdHouseProject.Views
             return true;
         }
 
+        /// <summary>
+        /// Handles the click event of the "Exit" label.
+        /// Exits the application.
+        /// </summary>
         private void label5_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
-
-        
     }
 }

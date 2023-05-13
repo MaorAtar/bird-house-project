@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace BirdHouseProject.Views
 {
+    /// <summary>
+    /// Represents a Windows Forms view for managing cages.
+    /// </summary>
     public partial class CageView : Form, ICageView
     {
         // Fields
+        SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+Integrated Security=True;");
         private string message;
         private bool isSuccessful;
         private bool isEdit;
@@ -24,6 +26,9 @@ namespace BirdHouseProject.Views
             closeBtn.Click += delegate { this.Close(); };
         }
 
+        /// <summary>
+        /// Associates and raises events for the view.
+        /// </summary>
         private void AssociateAndRaiseViewEvents()
         {
             // Search
@@ -32,11 +37,13 @@ namespace BirdHouseProject.Views
             {
                 if (e.KeyCode == Keys.Enter)
                     SearchEvent?.Invoke(this, EventArgs.Empty);
+                RefreshCageList();
             };
             // Add New
             addnewBtn.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
+                RefreshCageList();
                 tabControl1.TabPages.Remove(tabPage1);
                 tabControl1.TabPages.Add(tabPage2);
                 tabPage2.Text = "Add new cage";
@@ -45,6 +52,7 @@ namespace BirdHouseProject.Views
             editBtn.Click += delegate
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
+                RefreshCageList();
                 tabControl1.TabPages.Remove(tabPage1);
                 tabControl1.TabPages.Add(tabPage2);
                 tabPage2.Text = "Edit cage";
@@ -53,6 +61,7 @@ namespace BirdHouseProject.Views
             saveBtn.Click += delegate
             {
                 SaveEvent?.Invoke(this, EventArgs.Empty);
+                RefreshCageList();
                 if (isSuccessful)
                 {
                     tabControl1.TabPages.Remove(tabPage2);
@@ -76,6 +85,7 @@ namespace BirdHouseProject.Views
                 if (result == DialogResult.Yes)
                 {
                     DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    RefreshCageList();
                     MessageBox.Show(Message);
                 }
             };
@@ -100,7 +110,9 @@ namespace BirdHouseProject.Views
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-        // Methods
+        /// <summary>
+        /// Sets the data source for the cage list.
+        /// </summary>
         public void SetCageBindingSource(BindingSource cageList)
         {
             dataGridView1.DataSource = cageList;
@@ -108,6 +120,12 @@ namespace BirdHouseProject.Views
 
         // Singleton pattern (open a single form instance)
         private static CageView instance;
+
+        /// <summary>
+        /// Retrieves the singleton instance of the CageView form.
+        /// </summary>
+        /// <param name="parentContainer">The parent container form.</param>
+        /// <returns>The singleton instance of the CageView form.</returns>
         public static CageView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
@@ -126,6 +144,12 @@ namespace BirdHouseProject.Views
             return instance;
         }
 
+        /// <summary>
+        /// Handles the cell content click event in the DataGridView control.
+        /// Retrieves the selected cage data and opens a CageDataView form to display the details.
+        /// </summary>
+        /// <param name="sender">The object that triggered the event.</param>
+        /// <param name="e">A DataGridViewCellEventArgs that contains the event data.</param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Get the selected bird data
@@ -141,6 +165,20 @@ namespace BirdHouseProject.Views
 
             // Show the details form
             cageDataView.Show();
+        }
+
+        /// <summary>
+        /// Refreshes the cage list displayed in the dataGridView1 control.
+        /// Retrieves the latest data from the database table "Cage"
+        /// and updates the dataGridView1 with the retrieved data.
+        /// </summary>
+        private void RefreshCageList()
+        {
+            string query = "Select *from Cage order by Serial_number desc";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet, "Cage");
+            dataGridView1.DataSource = dataSet.Tables[0];
         }
     }
 }

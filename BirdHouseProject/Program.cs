@@ -1,13 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BirdHouseProject.Models;
 using BirdHouseProject.Views;
-using BirdHouseProject.Presenters;
-using BirdHouseProject.Repositories;
-using System.Configuration;
 
 
 namespace BirdHouseProject

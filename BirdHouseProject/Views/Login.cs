@@ -1,33 +1,36 @@
 ﻿using BirdHouseProject.Presenters;
 using Microsoft.Office.Interop.Excel;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
-using System.Data.OleDb;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace BirdHouseProject.Views
 {
+    /// <summary>
+    /// The login form of the Bird House application.
+    /// </summary>
     public partial class Login : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Login"/> class.
+        /// </summary>
         public Login()
         {
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
+        /// <summary>
+        /// Handles the click event of the "Login" button.
+        /// Reads and validates the entered username and password from an Excel file.
+        /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
             readExcel();
         }
 
+        /// <summary>
+        /// Reads the usernames and passwords from an Excel file and performs login validation.
+        /// </summary>
         private void readExcel()
         {
             try
@@ -65,15 +68,13 @@ namespace BirdHouseProject.Views
                         }
                         return;
                     }
-                    
                 }
+
+                // Username not found
                 MessageBox.Show("Username not found");
                 txtUsername.Clear();
                 txtPassword.Clear();
                 txtUsername.Focus();
-                // Close the Excel workbook
-                workbook.Close();
-                excel.Quit();
 
                 // Close the Excel workbook
                 workbook.Close();
@@ -83,20 +84,21 @@ namespace BirdHouseProject.Views
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            
         }
 
-
-        private void Login_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Handles the click event of the "Exit" label.
+        /// Exits the application.
+        /// </summary>
         private void label5_Click_1(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
 
+        /// <summary>
+        /// Handles the click event of the "Clear" label.
+        /// Clears the username and password fields.
+        /// </summary>
         private void label4_Click_1(object sender, EventArgs e)
         {
             txtUsername.Clear();
@@ -104,12 +106,14 @@ namespace BirdHouseProject.Views
             txtUsername.Focus();
         }
 
+        /// <summary>
+        /// Handles the click event of the "Register" label.
+        /// Shows the registration form and hides the login form.
+        /// </summary>
         private void label6_Click_1(object sender, EventArgs e)
         {
             new Register().Show();
             this.Hide();
         }
-
-        
     }
 }

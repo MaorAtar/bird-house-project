@@ -7,6 +7,9 @@ using BirdHouseProject.Views;
 
 namespace BirdHouseProject.Repositories
 {
+    /// <summary>
+    /// Repository for managing Lady Gouldian Finch data in a database.
+    /// </summary>
     public class LadyGouldianFinchRepository : BaseRepository, ILadyGouldianFinchRepository
     {
         // Constructor
@@ -15,7 +18,10 @@ namespace BirdHouseProject.Repositories
             this.connectionString = connectionString;
         }
 
-        // Methods
+        /// <summary>
+        /// Adds a new Lady Gouldian Finch record to the database.
+        /// </summary>
+        /// <param name="ladyGouldianFinchModel">The LadyGouldianFinchModel object containing the data to be added.</param>
         public void Add(LadyGouldianFinchModel ladyGouldianFinchModel)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -25,6 +31,8 @@ namespace BirdHouseProject.Repositories
                 command.Connection = connection;
                 command.CommandText = "Insert into LadyGouldianFinch values (@species, @sub_species, @hatch_date, @gender, " +
                     "@cage_number, @f_serial_number, @m_serial_number, @head_color, @breast_color, @body_color)";
+
+                // Set parameter values
                 command.Parameters.Add("@species", SqlDbType.NVarChar).Value = ladyGouldianFinchModel.Species;
                 command.Parameters.Add("@sub_species", SqlDbType.NVarChar).Value = ladyGouldianFinchModel.Sub_species;
                 command.Parameters.Add("@hatch_date", SqlDbType.NVarChar).Value = ladyGouldianFinchModel.Hatch_date;
@@ -35,10 +43,15 @@ namespace BirdHouseProject.Repositories
                 command.Parameters.Add("@head_color", SqlDbType.NVarChar).Value = ladyGouldianFinchModel.Head_color;
                 command.Parameters.Add("@breast_color", SqlDbType.NVarChar).Value = ladyGouldianFinchModel.Breast_color;
                 command.Parameters.Add("@body_color", SqlDbType.NVarChar).Value = ladyGouldianFinchModel.Body_color;
+
                 command.ExecuteNonQuery();
             }
         }
 
+        /// <summary>
+        /// Deletes a Lady Gouldian Finch record from the database.
+        /// </summary>
+        /// <param name="serial_number">The serial number of the record to be deleted.</param>
         public void Delete(int serial_number)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -52,6 +65,10 @@ namespace BirdHouseProject.Repositories
             }
         }
 
+        /// <summary>
+        /// Edits an existing Lady Gouldian Finch record in the database.
+        /// </summary>
+        /// <param name="ladyGouldianFinchModel">The LadyGouldianFinchModel 
         public void Edit(LadyGouldianFinchModel ladyGouldianFinchModel)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -77,6 +94,10 @@ namespace BirdHouseProject.Repositories
             }
         }
 
+        /// <summary>
+        /// Retrieves all Lady Gouldian Finch records from the database.
+        /// </summary>
+        /// <returns>A collection of LadyGouldianFinchModel objects representing the retrieved data.</returns>
         public IEnumerable<LadyGouldianFinchModel> GetAll()
         {
             var ladyGouldianFinchList = new List<LadyGouldianFinchModel>();
@@ -117,6 +138,11 @@ namespace BirdHouseProject.Repositories
             return ladyGouldianFinchList;
         }
 
+        /// <summary>
+        /// Retrieves a specific Lady Gouldian Finch record from the database based on a specific value.
+        /// </summary>
+        /// <param name="value">The specific value of the record to retrieve.</param>
+        /// <returns>A LadyGouldianFinchModel object representing the retrieved data.</returns>
         public IEnumerable<LadyGouldianFinchModel> GetByValue(string value)
         {
             var ladyGouldianFinchList = new List<LadyGouldianFinchModel>();
