@@ -29,15 +29,13 @@ namespace BirdHouseProject.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cageBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bgMusicCheckBox = new System.Windows.Forms.CheckBox();
             this.birdBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,51 +44,6 @@ namespace BirdHouseProject.Views
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.button5.Image = global::BirdHouseProject.Properties.Resources.facebook;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(52, 649);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(43, 42);
-            this.button5.TabIndex = 6;
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.button6.Image = global::BirdHouseProject.Properties.Resources.twitter;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(150, 649);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(43, 42);
-            this.button6.TabIndex = 7;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.button7.Image = global::BirdHouseProject.Properties.Resources.instagram;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(101, 649);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(43, 42);
-            this.button7.TabIndex = 8;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -153,17 +106,27 @@ namespace BirdHouseProject.Views
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
+            this.panel1.Controls.Add(this.bgMusicCheckBox);
             this.panel1.Controls.Add(this.cageBtn);
             this.panel1.Controls.Add(this.birdBtn);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(253, 714);
             this.panel1.TabIndex = 45;
+            // 
+            // bgMusicCheckBox
+            // 
+            this.bgMusicCheckBox.Appearance = System.Windows.Forms.Appearance.Button;
+            this.bgMusicCheckBox.AutoSize = true;
+            this.bgMusicCheckBox.Location = new System.Drawing.Point(72, 672);
+            this.bgMusicCheckBox.Name = "bgMusicCheckBox";
+            this.bgMusicCheckBox.Size = new System.Drawing.Size(92, 30);
+            this.bgMusicCheckBox.TabIndex = 14;
+            this.bgMusicCheckBox.Text = "Stop Music";
+            this.bgMusicCheckBox.UseVisualStyleBackColor = true;
+            this.bgMusicCheckBox.CheckedChanged += new System.EventHandler(this.bgMusicCheckBox_CheckedChanged);
             // 
             // birdBtn
             // 
@@ -222,15 +185,13 @@ namespace BirdHouseProject.Views
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -240,5 +201,6 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button birdBtn;
+        private System.Windows.Forms.CheckBox bgMusicCheckBox;
     }
 }
