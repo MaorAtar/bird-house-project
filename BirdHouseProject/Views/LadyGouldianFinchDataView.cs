@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BirdHouseProject.Views
@@ -29,6 +30,7 @@ namespace BirdHouseProject.Views
             headColorBox.Text = headColor;
             breastColorBox.Text = breastColor;
             bodyColorBox.Text = bodyColor;
+            showBirdPic(headColor, breastColor, bodyColor);
             // Fill the Chick inherited details
             speciesBox2.Text = species;
             subSpeciesBox2.Text = subSpecies;
@@ -588,6 +590,90 @@ Integrated Security=True;");
                 sqlConnection.Close();
             }
             return flag;
+        }
+
+        /// <summary>
+        /// Presentes the picture of the bird.
+        /// </summary>
+        /// <param name="headColor"></param>
+        /// <param name="breastColor"></param>
+        /// <param name="bodyColor"></param>
+        private void showBirdPic(string headColor, string breastColor, string bodyColor)
+        {
+            if (headColor == "Red" && breastColor == "Purple" && bodyColor == "Green")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RPG.png");
+            else if (headColor == "Red" && breastColor == "Purple" && bodyColor == "Yellow")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RPY.png");
+            else if (headColor == "Red" && breastColor == "Purple" && bodyColor == "Blue")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RPB.png");
+            else if (headColor == "Red" && breastColor == "Purple" && bodyColor == "Silver")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RPS.png");
+            else if (headColor == "Red" && breastColor == "Lilac" && bodyColor == "Green")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RLG.png");
+            else if (headColor == "Red" && breastColor == "Lilac" && bodyColor == "Yellow")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RLY.png");
+            else if (headColor == "Red" && breastColor == "Lilac" && bodyColor == "Blue")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RLB.png");
+            else if (headColor == "Red" && breastColor == "Lilac" && bodyColor == "Silver")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RLS.png");
+            else if (headColor == "Red" && breastColor == "White" && bodyColor == "Green")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RWG.png");
+            else if (headColor == "Red" && breastColor == "White" && bodyColor == "Yellow")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RWY.png");
+            else if (headColor == "Red" && breastColor == "White" && bodyColor == "Blue")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RWB.png");
+            else if (headColor == "Red" && breastColor == "White" && bodyColor == "Silver")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RWS.png");
+            else if (headColor == "Black" && breastColor == "Purple" && bodyColor == "Green")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BPG.png");
+            else if (headColor == "Black" && breastColor == "Purple" && bodyColor == "Yellow")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BPY.png");
+            else if (headColor == "Black" && breastColor == "Purple" && bodyColor == "Blue")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BPB.png");
+            else if (headColor == "Black" && breastColor == "Purple" && bodyColor == "Silver")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BPS.png");
+            else if (headColor == "Black" && breastColor == "Lilac" && bodyColor == "Green")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BLG.png");
+            else if (headColor == "Black" && breastColor == "Lilac" && bodyColor == "Yellow")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BLY.png");
+            else if (headColor == "Black" && breastColor == "Lilac" && bodyColor == "Blue")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BLB.png");
+            else if (headColor == "Black" && breastColor == "Lilac" && bodyColor == "Silver")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BLS.png");
+            else if (headColor == "Black" && breastColor == "White" && bodyColor == "Green")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BWG.png");
+            else if (headColor == "Black" && breastColor == "White" && bodyColor == "Yellow")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BWY.png");
+            else if (headColor == "Black" && breastColor == "White" && bodyColor == "Blue")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BWB.png");
+            else if (headColor == "Black" && breastColor == "White" && bodyColor == "Silver")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\BWS.png");
+            else if (headColor == "Orange" && breastColor == "Purple" && bodyColor == "Green")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OPG.png");
+            else if (headColor == "Orange" && breastColor == "Purple" && bodyColor == "Yellow")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OPY.png");
+            else if (headColor == "Orange" && breastColor == "Purple" && bodyColor == "Blue")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OPB.png");
+            else if (headColor == "Orange" && breastColor == "Purple" && bodyColor == "Silver")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OPS.png");
+            else if (headColor == "Orange" && breastColor == "Lilac" && bodyColor == "Green")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OLG.png");
+            else if (headColor == "Orange" && breastColor == "Lilac" && bodyColor == "Yellow")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OLY.png");
+            else if (headColor == "Orange" && breastColor == "Lilac" && bodyColor == "Blue")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OLB.png");
+            else if (headColor == "Orange" && breastColor == "Lilac" && bodyColor == "Silver")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OLS.png");
+            else if (headColor == "Orange" && breastColor == "White" && bodyColor == "Green")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OWG.png");
+            else if (headColor == "Orange" && breastColor == "White" && bodyColor == "Yellow")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OWY.png");
+            else if (headColor == "Orange" && breastColor == "White" && bodyColor == "Blue")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OWB.png");
+            else if (headColor == "Orange" && breastColor == "White" && bodyColor == "Silver")
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OWS.png");
+            else
+                birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RPG.png");
         }
     }
 }

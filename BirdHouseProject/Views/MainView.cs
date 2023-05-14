@@ -18,7 +18,7 @@ namespace BirdHouseProject.Views
         public MainView()
         {
             InitializeComponent();
-            sound = new SoundPlayer("background-sound.wav");
+            sound = new SoundPlayer(@"Resources\Music\background-sound.wav");
             sound.PlayLooping();
             birdBtn.Click += delegate { ShowLadyGouldianFinchView?.Invoke(this, EventArgs.Empty); };
             cageBtn.Click += delegate { ShowCageView?.Invoke(this, EventArgs.Empty); };
