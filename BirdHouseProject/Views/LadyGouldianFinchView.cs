@@ -28,6 +28,10 @@ Integrated Security=True;");
             AssociateAndRaiseViewEvents();
             tabControl1.TabPages.Remove(tabPage2);
             closeBtn.Click += delegate { this.Close(); };
+            if (dataGridView1.Rows.Count == 1)
+            {
+                SingleObjectInDB();
+            }
         }
 
         // Properties
@@ -298,7 +302,6 @@ Integrated Security=True;");
         /// <param name="e">A DataGridViewCellEventArgs that contains the event data.</param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Get the selected bird data
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             int serialNumber = Convert.ToInt32(row.Cells[0].Value);
             string species = row.Cells[1].Value.ToString();
@@ -312,11 +315,31 @@ Integrated Security=True;");
             string breastColor = row.Cells[9].Value.ToString();
             string bodyColor = row.Cells[10].Value.ToString();
 
-            // Create a new instance of the details form and pass the selected bird data
             LadyGouldianFinchDataView ladyGouldianFinchDataView = new LadyGouldianFinchDataView(
                 serialNumber, species, subSpecies, hatchDate, gender, cageNumber, fSerialNumber, mSerialNumber, headColor, breastColor, bodyColor);
+            ladyGouldianFinchDataView.Show();
+        }
 
-            // Show the details form
+        /// <summary>
+        /// Displays the single bird object (in the data base) details.
+        /// </summary>
+        private void SingleObjectInDB()
+        {
+            DataGridViewRow row = dataGridView1.Rows[0];
+            int serialNumber = Convert.ToInt32(row.Cells[0].Value);
+            string species = row.Cells[1].Value.ToString();
+            string subSpecies = row.Cells[2].Value.ToString();
+            string hatchDate = row.Cells[3].Value.ToString();
+            string gender = row.Cells[4].Value.ToString();
+            string cageNumber = row.Cells[5].Value.ToString();
+            int fSerialNumber = Convert.ToInt32(row.Cells[6].Value);
+            int mSerialNumber = Convert.ToInt32(row.Cells[7].Value);
+            string headColor = row.Cells[8].Value.ToString();
+            string breastColor = row.Cells[9].Value.ToString();
+            string bodyColor = row.Cells[10].Value.ToString();
+
+            LadyGouldianFinchDataView ladyGouldianFinchDataView = new LadyGouldianFinchDataView(
+                serialNumber, species, subSpecies, hatchDate, gender, cageNumber, fSerialNumber, mSerialNumber, headColor, breastColor, bodyColor);
             ladyGouldianFinchDataView.Show();
         }
 

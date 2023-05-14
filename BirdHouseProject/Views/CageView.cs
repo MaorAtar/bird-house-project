@@ -25,6 +25,10 @@ Integrated Security=True;");
             AssociateAndRaiseViewEvents();
             tabControl1.TabPages.Remove(tabPage2);
             closeBtn.Click += delegate { this.Close(); };
+            if (dataGridView1.Rows.Count == 1)
+            {
+                SingleObjectInDB();
+            }
         }
 
         /// <summary>
@@ -211,6 +215,23 @@ Integrated Security=True;");
         {
             // Get the selected bird data
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            int cage_serial_number = Convert.ToInt32(row.Cells[0].Value);
+            double length = Convert.ToDouble(row.Cells[1].Value);
+            double width = Convert.ToDouble(row.Cells[2].Value);
+            double height = Convert.ToDouble(row.Cells[3].Value);
+            string material = row.Cells[4].Value.ToString();
+
+            // Create a new instance of the details form and pass the selected bird data
+            CageDataView cageDataView = new CageDataView(cage_serial_number, length, width, height, material);
+
+            // Show the details form
+            cageDataView.Show();
+        }
+
+        private void SingleObjectInDB()
+        {
+            // Get the selected bird data
+            DataGridViewRow row = dataGridView1.Rows[0];
             int cage_serial_number = Convert.ToInt32(row.Cells[0].Value);
             double length = Convert.ToDouble(row.Cells[1].Value);
             double width = Convert.ToDouble(row.Cells[2].Value);
