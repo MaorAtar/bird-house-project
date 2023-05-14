@@ -58,6 +58,7 @@ namespace BirdHouseProject.Views
             this.widthErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.heightErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.materialErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.exportButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -90,6 +91,7 @@ namespace BirdHouseProject.Views
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
+            this.tabPage1.Controls.Add(this.exportButton);
             this.tabPage1.Controls.Add(this.deleteBtn);
             this.tabPage1.Controls.Add(this.editBtn);
             this.tabPage1.Controls.Add(this.addnewBtn);
@@ -390,11 +392,27 @@ namespace BirdHouseProject.Views
             // 
             this.materialErrorProvider.ContainerControl = this;
             // 
+            // exportButton
+            // 
+            this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportButton.FlatAppearance.BorderSize = 0;
+            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exportButton.Location = new System.Drawing.Point(886, 195);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(141, 31);
+            this.exportButton.TabIndex = 57;
+            this.exportButton.Text = "Export";
+            this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
+            // 
             // CageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 607);
+            this.ClientSize = new System.Drawing.Size(1040, 605);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -444,5 +462,6 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.ErrorProvider widthErrorProvider;
         private System.Windows.Forms.ErrorProvider heightErrorProvider;
         private System.Windows.Forms.ErrorProvider materialErrorProvider;
+        private System.Windows.Forms.Button exportButton;
     }
 }

@@ -60,10 +60,12 @@ namespace BirdHouseProject.Views
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.mSerialBox = new System.Windows.Forms.TextBox();
             this.fSerialBox = new System.Windows.Forms.TextBox();
             this.cageNumberBox = new System.Windows.Forms.TextBox();
             this.hatchDateBox = new System.Windows.Forms.TextBox();
+            this.serialBox = new System.Windows.Forms.TextBox();
             this.fsnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.msnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.cageNumberErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -74,8 +76,7 @@ namespace BirdHouseProject.Views
             this.hatchDateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.subSpeciesErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.speciesErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.serialBox = new System.Windows.Forms.TextBox();
+            this.exportButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -165,6 +166,7 @@ namespace BirdHouseProject.Views
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
+            this.tabPage1.Controls.Add(this.exportButton);
             this.tabPage1.Controls.Add(this.deleteBtn);
             this.tabPage1.Controls.Add(this.editBtn);
             this.tabPage1.Controls.Add(this.addnewBtn);
@@ -484,6 +486,17 @@ namespace BirdHouseProject.Views
             this.label4.TabIndex = 80;
             this.label4.Text = "Species:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label1.Location = new System.Drawing.Point(103, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 23);
+            this.label1.TabIndex = 79;
+            this.label1.Text = "Serial Number:";
+            // 
             // mSerialBox
             // 
             this.mSerialBox.Location = new System.Drawing.Point(726, 275);
@@ -511,6 +524,15 @@ namespace BirdHouseProject.Views
             this.hatchDateBox.Name = "hatchDateBox";
             this.hatchDateBox.Size = new System.Drawing.Size(177, 27);
             this.hatchDateBox.TabIndex = 74;
+            // 
+            // serialBox
+            // 
+            this.serialBox.Location = new System.Drawing.Point(261, 106);
+            this.serialBox.Name = "serialBox";
+            this.serialBox.ReadOnly = true;
+            this.serialBox.Size = new System.Drawing.Size(177, 27);
+            this.serialBox.TabIndex = 71;
+            this.serialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fsnErrorProvider
             // 
@@ -552,25 +574,21 @@ namespace BirdHouseProject.Views
             // 
             this.speciesErrorProvider.ContainerControl = this;
             // 
-            // label1
+            // exportButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label1.Location = new System.Drawing.Point(103, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 23);
-            this.label1.TabIndex = 79;
-            this.label1.Text = "Serial Number:";
-            // 
-            // serialBox
-            // 
-            this.serialBox.Location = new System.Drawing.Point(261, 106);
-            this.serialBox.Name = "serialBox";
-            this.serialBox.ReadOnly = true;
-            this.serialBox.Size = new System.Drawing.Size(177, 27);
-            this.serialBox.TabIndex = 71;
-            this.serialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportButton.FlatAppearance.BorderSize = 0;
+            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exportButton.Location = new System.Drawing.Point(884, 205);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(141, 31);
+            this.exportButton.TabIndex = 58;
+            this.exportButton.Text = "Export";
+            this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
             // LadyGouldianFinchView
             // 
@@ -651,5 +669,6 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.ErrorProvider speciesErrorProvider;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox serialBox;
+        private System.Windows.Forms.Button exportButton;
     }
 }

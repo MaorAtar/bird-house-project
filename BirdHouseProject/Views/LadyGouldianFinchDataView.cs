@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 
 namespace BirdHouseProject.Views
 {
@@ -674,6 +675,54 @@ Integrated Security=True;");
                 birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\OWS.png");
             else
                 birdPictureBox.Image = Image.FromFile(@"Resources\Birds Pictures\RPG.png");
+        }
+
+        /// <summary>
+        /// Exports the data in the datagrid to an excel file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void exportButton_Click(object sender, EventArgs e)
+        {
+            DataTable dataTable = new DataTable();
+            // Create columns in the DataTable based on the DataGridView columns
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                dataTable.Columns.Add(column.HeaderText);
+            }
+
+            // Iterate through each DataGridView row and copy the cell values to the DataTable
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                DataRow dataRow = dataTable.NewRow();
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    dataRow[cell.ColumnIndex] = cell.Value;
+                }
+
+                dataTable.Rows.Add(dataRow);
+            }
+
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Woorkbook|*.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (XLWorkbook workbook = new XLWorkbook())
+                        {
+                            workbook.Worksheets.Add(dataTable.Copy(), "Chicks");
+                            workbook.SaveAs(sfd.FileName);
+                        }
+                        MessageBox.Show("Successfully exported the Chicks data", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

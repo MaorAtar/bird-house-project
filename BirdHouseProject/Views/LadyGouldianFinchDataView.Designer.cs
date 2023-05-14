@@ -80,6 +80,7 @@ namespace BirdHouseProject.Views
             this.genderErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.msnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.fsnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.exportButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.birdPictureBox)).BeginInit();
@@ -103,6 +104,7 @@ namespace BirdHouseProject.Views
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.exportButton);
             this.tabPage1.Controls.Add(this.genderBox);
             this.tabPage1.Controls.Add(this.bodyColorBox);
             this.tabPage1.Controls.Add(this.breastColorBox);
@@ -642,6 +644,21 @@ namespace BirdHouseProject.Views
             // 
             this.fsnErrorProvider.ContainerControl = this;
             // 
+            // exportButton
+            // 
+            this.exportButton.FlatAppearance.BorderSize = 0;
+            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exportButton.Location = new System.Drawing.Point(927, 375);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(238, 42);
+            this.exportButton.TabIndex = 162;
+            this.exportButton.Text = "Export";
+            this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
+            // 
             // LadyGouldianFinchDataView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -717,5 +734,6 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.TextBox subSpeciesBox;
         private System.Windows.Forms.TextBox speciesBox;
         private System.Windows.Forms.TextBox serialBox;
+        private System.Windows.Forms.Button exportButton;
     }
 }

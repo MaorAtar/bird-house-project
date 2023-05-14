@@ -43,6 +43,7 @@ namespace BirdHouseProject.Views
             this.cageSerialBox = new System.Windows.Forms.TextBox();
             this.birdsDataGrid = new System.Windows.Forms.DataGridView();
             this.cagePictureBox = new System.Windows.Forms.PictureBox();
+            this.exportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.birdsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.birdsDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cagePictureBox)).BeginInit();
@@ -82,7 +83,7 @@ namespace BirdHouseProject.Views
             // 
             // materialBox
             // 
-            this.materialBox.Location = new System.Drawing.Point(1136, 345);
+            this.materialBox.Location = new System.Drawing.Point(1136, 307);
             this.materialBox.Name = "materialBox";
             this.materialBox.ReadOnly = true;
             this.materialBox.Size = new System.Drawing.Size(177, 27);
@@ -93,7 +94,7 @@ namespace BirdHouseProject.Views
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label2.Location = new System.Drawing.Point(1035, 345);
+            this.label2.Location = new System.Drawing.Point(1035, 307);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 23);
             this.label2.TabIndex = 146;
@@ -104,7 +105,7 @@ namespace BirdHouseProject.Views
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label6.Location = new System.Drawing.Point(1051, 293);
+            this.label6.Location = new System.Drawing.Point(1051, 255);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 23);
             this.label6.TabIndex = 145;
@@ -115,7 +116,7 @@ namespace BirdHouseProject.Views
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label5.Location = new System.Drawing.Point(1060, 248);
+            this.label5.Location = new System.Drawing.Point(1060, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 23);
             this.label5.TabIndex = 144;
@@ -126,7 +127,7 @@ namespace BirdHouseProject.Views
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label4.Location = new System.Drawing.Point(1049, 192);
+            this.label4.Location = new System.Drawing.Point(1049, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 23);
             this.label4.TabIndex = 143;
@@ -137,7 +138,7 @@ namespace BirdHouseProject.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label1.Location = new System.Drawing.Point(917, 141);
+            this.label1.Location = new System.Drawing.Point(917, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 23);
             this.label1.TabIndex = 142;
@@ -145,7 +146,7 @@ namespace BirdHouseProject.Views
             // 
             // heightBox
             // 
-            this.heightBox.Location = new System.Drawing.Point(1136, 293);
+            this.heightBox.Location = new System.Drawing.Point(1136, 255);
             this.heightBox.Name = "heightBox";
             this.heightBox.ReadOnly = true;
             this.heightBox.Size = new System.Drawing.Size(177, 27);
@@ -153,7 +154,7 @@ namespace BirdHouseProject.Views
             // 
             // widthBox
             // 
-            this.widthBox.Location = new System.Drawing.Point(1136, 244);
+            this.widthBox.Location = new System.Drawing.Point(1136, 206);
             this.widthBox.Name = "widthBox";
             this.widthBox.ReadOnly = true;
             this.widthBox.Size = new System.Drawing.Size(177, 27);
@@ -161,7 +162,7 @@ namespace BirdHouseProject.Views
             // 
             // lengthBox
             // 
-            this.lengthBox.Location = new System.Drawing.Point(1136, 188);
+            this.lengthBox.Location = new System.Drawing.Point(1136, 150);
             this.lengthBox.Name = "lengthBox";
             this.lengthBox.ReadOnly = true;
             this.lengthBox.Size = new System.Drawing.Size(177, 27);
@@ -169,7 +170,7 @@ namespace BirdHouseProject.Views
             // 
             // cageSerialBox
             // 
-            this.cageSerialBox.Location = new System.Drawing.Point(1136, 141);
+            this.cageSerialBox.Location = new System.Drawing.Point(1136, 103);
             this.cageSerialBox.Name = "cageSerialBox";
             this.cageSerialBox.ReadOnly = true;
             this.cageSerialBox.Size = new System.Drawing.Size(177, 27);
@@ -193,11 +194,27 @@ namespace BirdHouseProject.Views
             this.cagePictureBox.TabIndex = 151;
             this.cagePictureBox.TabStop = false;
             // 
+            // exportButton
+            // 
+            this.exportButton.FlatAppearance.BorderSize = 0;
+            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exportButton.Location = new System.Drawing.Point(1075, 359);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(238, 42);
+            this.exportButton.TabIndex = 163;
+            this.exportButton.Text = "Export";
+            this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
+            // 
             // CageDataView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1358, 1061);
+            this.Controls.Add(this.exportButton);
             this.Controls.Add(this.cagePictureBox);
             this.Controls.Add(this.birdsDataGrid);
             this.Controls.Add(this.birdsDataGridView);
@@ -238,5 +255,6 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.TextBox cageSerialBox;
         private System.Windows.Forms.DataGridView birdsDataGrid;
         private System.Windows.Forms.PictureBox cagePictureBox;
+        private System.Windows.Forms.Button exportButton;
     }
 }

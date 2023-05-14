@@ -1,7 +1,9 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 
 namespace BirdHouseProject.Views
 {
@@ -32,13 +34,13 @@ namespace BirdHouseProject.Views
         public CageDataView(int cage_serial_number, double length, double width, double height, string material)
         {
             InitializeComponent();
-            showBirdsTable();
             // Fill the current cage details
             cageSerialBox.Text = cage_serial_number.ToString();
             lengthBox.Text = length.ToString();
             widthBox.Text = width.ToString();
             heightBox.Text = height.ToString();
             materialBox.Text = material;
+            showBirdsTable();
             showCagePic(material);
         }
 
@@ -66,6 +68,54 @@ namespace BirdHouseProject.Views
                 cagePictureBox.Image = Image.FromFile(@"Resources\Cages Pictures\WoodCage.jpg");
             else if (material == "Plastic")
                 cagePictureBox.Image = Image.FromFile(@"Resources\Cages Pictures\PlasticCage.jpg");
+        }
+
+        /// <summary>
+        /// Exports the data in the datagrid to an excel file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void exportButton_Click(object sender, System.EventArgs e)
+        {
+            DataTable dataTable = new DataTable();
+            // Create columns in the DataTable based on the DataGridView columns
+            foreach (DataGridViewColumn column in birdsDataGrid.Columns)
+            {
+                dataTable.Columns.Add(column.HeaderText);
+            }
+
+            // Iterate through each DataGridView row and copy the cell values to the DataTable
+            foreach (DataGridViewRow row in birdsDataGrid.Rows)
+            {
+                DataRow dataRow = dataTable.NewRow();
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    dataRow[cell.ColumnIndex] = cell.Value;
+                }
+
+                dataTable.Rows.Add(dataRow);
+            }
+
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Woorkbook|*.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (XLWorkbook workbook = new XLWorkbook())
+                        {
+                            workbook.Worksheets.Add(dataTable.Copy(), "Chicks");
+                            workbook.SaveAs(sfd.FileName);
+                        }
+                        MessageBox.Show("Successfully exported the Chick data", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }
