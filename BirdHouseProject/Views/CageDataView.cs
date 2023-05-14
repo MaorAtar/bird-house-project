@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BirdHouseProject.Views
@@ -31,13 +32,14 @@ namespace BirdHouseProject.Views
         public CageDataView(int cage_serial_number, double length, double width, double height, string material)
         {
             InitializeComponent();
+            showBirdsTable();
             // Fill the current cage details
             cageSerialBox.Text = cage_serial_number.ToString();
             lengthBox.Text = length.ToString();
             widthBox.Text = width.ToString();
             heightBox.Text = height.ToString();
             materialBox.Text = material;
-            showBirdsTable();
+            showCagePic(material);
         }
 
         /// <summary>
@@ -52,8 +54,18 @@ namespace BirdHouseProject.Views
             SqlDataAdapter da = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            birdsDataGridView.DataSource = dt;
+            birdsDataGrid.DataSource = dt;
             connectionString.Close();
+        }
+
+        private void showCagePic(string material)
+        {
+            if (material == "Steel")
+                cagePictureBox.Image = Image.FromFile(@"Resources\Cages Pictures\SteelCage.jpg");
+            else if (material == "Wood")
+                cagePictureBox.Image = Image.FromFile(@"Resources\Cages Pictures\WoodCage.jpg");
+            else if (material == "Plastic")
+                cagePictureBox.Image = Image.FromFile(@"Resources\Cages Pictures\PlasticCage.jpg");
         }
     }
 }

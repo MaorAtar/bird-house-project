@@ -41,7 +41,11 @@ namespace BirdHouseProject.Views
             this.widthBox = new System.Windows.Forms.TextBox();
             this.lengthBox = new System.Windows.Forms.TextBox();
             this.cageSerialBox = new System.Windows.Forms.TextBox();
+            this.birdsDataGrid = new System.Windows.Forms.DataGridView();
+            this.cagePictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.birdsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.birdsDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cagePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // birdsDataGridView
@@ -57,12 +61,12 @@ namespace BirdHouseProject.Views
             this.birdsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.birdsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.birdsDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.birdsDataGridView.Location = new System.Drawing.Point(38, 338);
+            this.birdsDataGridView.Location = new System.Drawing.Point(38, -1938);
             this.birdsDataGridView.Name = "birdsDataGridView";
             this.birdsDataGridView.ReadOnly = true;
             this.birdsDataGridView.RowHeadersWidth = 51;
             this.birdsDataGridView.RowTemplate.Height = 29;
-            this.birdsDataGridView.Size = new System.Drawing.Size(1474, 420);
+            this.birdsDataGridView.Size = new System.Drawing.Size(1275, 687);
             this.birdsDataGridView.TabIndex = 149;
             // 
             // label23
@@ -70,7 +74,7 @@ namespace BirdHouseProject.Views
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label23.Location = new System.Drawing.Point(38, 312);
+            this.label23.Location = new System.Drawing.Point(38, 393);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(119, 23);
             this.label23.TabIndex = 148;
@@ -78,7 +82,7 @@ namespace BirdHouseProject.Views
             // 
             // materialBox
             // 
-            this.materialBox.Location = new System.Drawing.Point(257, 249);
+            this.materialBox.Location = new System.Drawing.Point(1136, 345);
             this.materialBox.Name = "materialBox";
             this.materialBox.ReadOnly = true;
             this.materialBox.Size = new System.Drawing.Size(177, 27);
@@ -89,7 +93,7 @@ namespace BirdHouseProject.Views
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label2.Location = new System.Drawing.Point(156, 249);
+            this.label2.Location = new System.Drawing.Point(1035, 345);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 23);
             this.label2.TabIndex = 146;
@@ -100,7 +104,7 @@ namespace BirdHouseProject.Views
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label6.Location = new System.Drawing.Point(172, 197);
+            this.label6.Location = new System.Drawing.Point(1051, 293);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 23);
             this.label6.TabIndex = 145;
@@ -111,7 +115,7 @@ namespace BirdHouseProject.Views
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label5.Location = new System.Drawing.Point(181, 152);
+            this.label5.Location = new System.Drawing.Point(1060, 248);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 23);
             this.label5.TabIndex = 144;
@@ -122,7 +126,7 @@ namespace BirdHouseProject.Views
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label4.Location = new System.Drawing.Point(170, 96);
+            this.label4.Location = new System.Drawing.Point(1049, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 23);
             this.label4.TabIndex = 143;
@@ -133,7 +137,7 @@ namespace BirdHouseProject.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label1.Location = new System.Drawing.Point(38, 45);
+            this.label1.Location = new System.Drawing.Point(917, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 23);
             this.label1.TabIndex = 142;
@@ -141,7 +145,7 @@ namespace BirdHouseProject.Views
             // 
             // heightBox
             // 
-            this.heightBox.Location = new System.Drawing.Point(257, 197);
+            this.heightBox.Location = new System.Drawing.Point(1136, 293);
             this.heightBox.Name = "heightBox";
             this.heightBox.ReadOnly = true;
             this.heightBox.Size = new System.Drawing.Size(177, 27);
@@ -149,7 +153,7 @@ namespace BirdHouseProject.Views
             // 
             // widthBox
             // 
-            this.widthBox.Location = new System.Drawing.Point(257, 148);
+            this.widthBox.Location = new System.Drawing.Point(1136, 244);
             this.widthBox.Name = "widthBox";
             this.widthBox.ReadOnly = true;
             this.widthBox.Size = new System.Drawing.Size(177, 27);
@@ -157,7 +161,7 @@ namespace BirdHouseProject.Views
             // 
             // lengthBox
             // 
-            this.lengthBox.Location = new System.Drawing.Point(257, 92);
+            this.lengthBox.Location = new System.Drawing.Point(1136, 188);
             this.lengthBox.Name = "lengthBox";
             this.lengthBox.ReadOnly = true;
             this.lengthBox.Size = new System.Drawing.Size(177, 27);
@@ -165,17 +169,37 @@ namespace BirdHouseProject.Views
             // 
             // cageSerialBox
             // 
-            this.cageSerialBox.Location = new System.Drawing.Point(257, 45);
+            this.cageSerialBox.Location = new System.Drawing.Point(1136, 141);
             this.cageSerialBox.Name = "cageSerialBox";
             this.cageSerialBox.ReadOnly = true;
             this.cageSerialBox.Size = new System.Drawing.Size(177, 27);
             this.cageSerialBox.TabIndex = 138;
             // 
+            // birdsDataGrid
+            // 
+            this.birdsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.birdsDataGrid.Location = new System.Drawing.Point(38, 429);
+            this.birdsDataGrid.Name = "birdsDataGrid";
+            this.birdsDataGrid.RowHeadersWidth = 51;
+            this.birdsDataGrid.RowTemplate.Height = 29;
+            this.birdsDataGrid.Size = new System.Drawing.Size(1275, 599);
+            this.birdsDataGrid.TabIndex = 150;
+            // 
+            // cagePictureBox
+            // 
+            this.cagePictureBox.Location = new System.Drawing.Point(38, 67);
+            this.cagePictureBox.Name = "cagePictureBox";
+            this.cagePictureBox.Size = new System.Drawing.Size(379, 301);
+            this.cagePictureBox.TabIndex = 151;
+            this.cagePictureBox.TabStop = false;
+            // 
             // CageDataView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1557, 794);
+            this.ClientSize = new System.Drawing.Size(1358, 1061);
+            this.Controls.Add(this.cagePictureBox);
+            this.Controls.Add(this.birdsDataGrid);
             this.Controls.Add(this.birdsDataGridView);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.materialBox);
@@ -191,6 +215,8 @@ namespace BirdHouseProject.Views
             this.Name = "CageDataView";
             this.Text = "CageDataView";
             ((System.ComponentModel.ISupportInitialize)(this.birdsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.birdsDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cagePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +236,7 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.TextBox widthBox;
         private System.Windows.Forms.TextBox lengthBox;
         private System.Windows.Forms.TextBox cageSerialBox;
+        private System.Windows.Forms.DataGridView birdsDataGrid;
+        private System.Windows.Forms.PictureBox cagePictureBox;
     }
 }
