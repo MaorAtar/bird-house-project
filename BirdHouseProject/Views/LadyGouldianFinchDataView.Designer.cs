@@ -32,6 +32,7 @@ namespace BirdHouseProject.Views
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.exportButton = new System.Windows.Forms.Button();
             this.genderBox = new System.Windows.Forms.TextBox();
             this.bodyColorBox = new System.Windows.Forms.TextBox();
             this.breastColorBox = new System.Windows.Forms.TextBox();
@@ -80,7 +81,6 @@ namespace BirdHouseProject.Views
             this.genderErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.msnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.fsnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.exportButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.birdPictureBox)).BeginInit();
@@ -138,6 +138,21 @@ namespace BirdHouseProject.Views
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // exportButton
+            // 
+            this.exportButton.FlatAppearance.BorderSize = 0;
+            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exportButton.Location = new System.Drawing.Point(927, 375);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(238, 42);
+            this.exportButton.TabIndex = 162;
+            this.exportButton.Text = "Export";
+            this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
             // genderBox
             // 
@@ -644,21 +659,6 @@ namespace BirdHouseProject.Views
             // 
             this.fsnErrorProvider.ContainerControl = this;
             // 
-            // exportButton
-            // 
-            this.exportButton.FlatAppearance.BorderSize = 0;
-            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.exportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exportButton.Location = new System.Drawing.Point(927, 375);
-            this.exportButton.Name = "exportButton";
-            this.exportButton.Size = new System.Drawing.Size(238, 42);
-            this.exportButton.TabIndex = 162;
-            this.exportButton.Text = "Export";
-            this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.exportButton.UseVisualStyleBackColor = true;
-            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
-            // 
             // LadyGouldianFinchDataView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -666,6 +666,7 @@ namespace BirdHouseProject.Views
             this.ClientSize = new System.Drawing.Size(1358, 1061);
             this.Controls.Add(this.tabControl1);
             this.Name = "LadyGouldianFinchDataView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LadyGouldianFinchDataView";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

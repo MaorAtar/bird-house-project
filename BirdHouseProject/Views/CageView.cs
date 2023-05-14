@@ -14,6 +14,7 @@ namespace BirdHouseProject.Views
         // Fields
         SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
 Integrated Security=True;");
+        private CageDataView openCageDataViewForm;
         private string message;
         private bool isSuccessful;
         private bool isEdit;
@@ -213,7 +214,13 @@ Integrated Security=True;");
         /// <param name="e">A DataGridViewCellEventArgs that contains the event data.</param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Get the selected bird data
+            // Check if a CageDataView form is already open
+            if (openCageDataViewForm != null && !openCageDataViewForm.IsDisposed)
+            {
+                openCageDataViewForm.BringToFront();
+                return;
+            }
+
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             int cage_serial_number = Convert.ToInt32(row.Cells[0].Value);
             double length = Convert.ToDouble(row.Cells[1].Value);
@@ -221,16 +228,16 @@ Integrated Security=True;");
             double height = Convert.ToDouble(row.Cells[3].Value);
             string material = row.Cells[4].Value.ToString();
 
-            // Create a new instance of the details form and pass the selected bird data
-            CageDataView cageDataView = new CageDataView(cage_serial_number, length, width, height, material);
-
-            // Show the details form
-            cageDataView.Show();
+            openCageDataViewForm = new CageDataView(cage_serial_number, length, width, height, material);
+            openCageDataViewForm.FormClosed += (s, args) => openCageDataViewForm = null; // Reset the reference when the form is closed
+            openCageDataViewForm.Show();
         }
 
+        /// <summary>
+        /// Displays the single cage object (in the data base) details.
+        /// </summary>
         private void SingleObjectInDB()
         {
-            // Get the selected bird data
             DataGridViewRow row = dataGridView1.Rows[0];
             int cage_serial_number = Convert.ToInt32(row.Cells[0].Value);
             double length = Convert.ToDouble(row.Cells[1].Value);
@@ -238,10 +245,7 @@ Integrated Security=True;");
             double height = Convert.ToDouble(row.Cells[3].Value);
             string material = row.Cells[4].Value.ToString();
 
-            // Create a new instance of the details form and pass the selected bird data
             CageDataView cageDataView = new CageDataView(cage_serial_number, length, width, height, material);
-
-            // Show the details form
             cageDataView.Show();
         }
 

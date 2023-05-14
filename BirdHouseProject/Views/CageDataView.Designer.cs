@@ -230,6 +230,7 @@ namespace BirdHouseProject.Views
             this.Controls.Add(this.lengthBox);
             this.Controls.Add(this.cageSerialBox);
             this.Name = "CageDataView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CageDataView";
             ((System.ComponentModel.ISupportInitialize)(this.birdsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.birdsDataGrid)).EndInit();

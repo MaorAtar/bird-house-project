@@ -39,7 +39,6 @@ namespace BirdHouseProject.Models
         // Cage Material
         [DisplayName("Cage Material")]
         [Required(ErrorMessage = "Cage material is required!")]
-        [StringLength(50, MinimumLength = 4, ErrorMessage = "Cage material must be 4-7 digits long exactly!")]
         public string Material { get => material; set => material = value; }
     }
 }

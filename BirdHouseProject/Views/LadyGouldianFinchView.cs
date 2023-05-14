@@ -15,6 +15,7 @@ namespace BirdHouseProject.Views
         // Fields
         SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
 Integrated Security=True;");
+        private LadyGouldianFinchDataView openLadyGouldianFinchDataViewForm;
         private string message;
         private bool isSuccessful;
         private bool isEdit;
@@ -302,6 +303,13 @@ Integrated Security=True;");
         /// <param name="e">A DataGridViewCellEventArgs that contains the event data.</param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Check if a LadyGouldianFinchDataView form is already open
+            if (openLadyGouldianFinchDataViewForm != null && !openLadyGouldianFinchDataViewForm.IsDisposed)
+            {
+                openLadyGouldianFinchDataViewForm.BringToFront();
+                return;
+            }
+
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             int serialNumber = Convert.ToInt32(row.Cells[0].Value);
             string species = row.Cells[1].Value.ToString();
@@ -315,9 +323,10 @@ Integrated Security=True;");
             string breastColor = row.Cells[9].Value.ToString();
             string bodyColor = row.Cells[10].Value.ToString();
 
-            LadyGouldianFinchDataView ladyGouldianFinchDataView = new LadyGouldianFinchDataView(
+            openLadyGouldianFinchDataViewForm = new LadyGouldianFinchDataView(
                 serialNumber, species, subSpecies, hatchDate, gender, cageNumber, fSerialNumber, mSerialNumber, headColor, breastColor, bodyColor);
-            ladyGouldianFinchDataView.Show();
+            openLadyGouldianFinchDataViewForm.FormClosed += (s, args) => openLadyGouldianFinchDataViewForm = null; // Reset the reference when the form is closed
+            openLadyGouldianFinchDataViewForm.Show();
         }
 
         /// <summary>
