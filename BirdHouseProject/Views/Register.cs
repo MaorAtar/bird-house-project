@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using static System.Text.RegularExpressions.Regex;
 using Microsoft.Office.Interop.Excel;
 using Range = Microsoft.Office.Interop.Excel.Range;
+using System.IO;
 
 namespace BirdHouseProject.Views
 {
@@ -25,7 +26,8 @@ namespace BirdHouseProject.Views
         /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
-            string filePath = "C:\\Users\\maora\\OneDrive\\Desktop\\BirdHouseProject\\BirdHouseProject\\Excel Files\\Users.xlsx";
+
+            string filePath = Path.GetFullPath(@"Resources\Login Excel Files\Users.xlsx");
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
             Workbook wb;
             Worksheet ws;
@@ -137,7 +139,7 @@ namespace BirdHouseProject.Views
                 MessageBox.Show("Password must contain between 8 and 10 characters");
                 return false;
             }
-            char[] specialChars = new char[] { '-', '?', '#', '$', '_' };
+            char[] specialChars = new char[] { '-', '?', '#', '$', '_', '@', '!', '%', '^', '&', '*', '=', '+' };
             int numofdigit = 0;
             int numofletter = 0;
             int numofspeical = 0;

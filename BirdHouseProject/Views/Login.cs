@@ -2,6 +2,8 @@
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Configuration;
+using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace BirdHouseProject.Views
@@ -37,7 +39,8 @@ namespace BirdHouseProject.Views
             {
                 // Open the Excel workbook
                 Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-                Workbook workbook = excel.Workbooks.Open(@"C:\Users\maora\OneDrive\Desktop\BirdHouseProject\BirdHouseProject\Excel Files\Users.xlsx");
+                string filePath = Path.GetFullPath(@"Resources\Login Excel Files\Users.xlsx");
+                Workbook workbook = excel.Workbooks.Open(filePath);
                 Worksheet worksheet = workbook.Worksheets[1];
 
                 // Get the range of cells containing the usernames and passwords
@@ -79,6 +82,12 @@ namespace BirdHouseProject.Views
                 // Close the Excel workbook
                 workbook.Close();
                 excel.Quit();
+                Marshal.ReleaseComObject(worksheet);
+                Marshal.ReleaseComObject(workbook);
+                Marshal.ReleaseComObject(excel);
+                worksheet = null;
+                workbook = null;
+                excel = null;
             }
             catch (Exception ex)
             {
