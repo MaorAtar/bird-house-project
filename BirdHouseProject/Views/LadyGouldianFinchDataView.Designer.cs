@@ -99,7 +99,7 @@ namespace BirdHouseProject.Views
             this.tabControl1.Location = new System.Drawing.Point(12, 58);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1258, 991);
+            this.tabControl1.Size = new System.Drawing.Size(1334, 991);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -134,7 +134,7 @@ namespace BirdHouseProject.Views
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1250, 958);
+            this.tabPage1.Size = new System.Drawing.Size(1326, 958);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@ namespace BirdHouseProject.Views
             this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.exportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
             this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exportButton.Location = new System.Drawing.Point(978, 375);
+            this.exportButton.Location = new System.Drawing.Point(927, 375);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(238, 42);
             this.exportButton.TabIndex = 162;
@@ -233,7 +233,7 @@ namespace BirdHouseProject.Views
             this.addChickBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.addChickBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
             this.addChickBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addChickBtn.Location = new System.Drawing.Point(978, 435);
+            this.addChickBtn.Location = new System.Drawing.Point(927, 435);
             this.addChickBtn.Name = "addChickBtn";
             this.addChickBtn.Size = new System.Drawing.Size(238, 42);
             this.addChickBtn.TabIndex = 154;
@@ -425,7 +425,7 @@ namespace BirdHouseProject.Views
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 29;
-            this.dataGridView.Size = new System.Drawing.Size(1195, 420);
+            this.dataGridView.Size = new System.Drawing.Size(1268, 420);
             this.dataGridView.TabIndex = 137;
             // 
             // label23
@@ -433,7 +433,7 @@ namespace BirdHouseProject.Views
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.label23.Location = new System.Drawing.Point(31, 490);
+            this.label23.Location = new System.Drawing.Point(31, 494);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(117, 23);
             this.label23.TabIndex = 134;
@@ -663,9 +663,8 @@ namespace BirdHouseProject.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 1053);
+            this.ClientSize = new System.Drawing.Size(1358, 1061);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LadyGouldianFinchDataView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LadyGouldianFinchDataView";

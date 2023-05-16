@@ -29,191 +29,178 @@ namespace BirdHouseProject.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.closeBtn = new System.Windows.Forms.Button();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.mainBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cageBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.bgMusicCheckBox = new System.Windows.Forms.CheckBox();
             this.birdBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2.SuspendLayout();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
-            this.mainPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(249)))), ((int)(((byte)(204)))));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.mainPanel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1282, 1053);
-            this.panel2.TabIndex = 47;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(228)))), ((int)(((byte)(199)))));
-            this.panel3.Controls.Add(this.closeBtn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(220, 0);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(21, 32);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1062, 64);
-            this.panel3.TabIndex = 47;
+            this.panel3.Size = new System.Drawing.Size(172, 237);
+            this.panel3.TabIndex = 13;
             // 
-            // closeBtn
+            // label2
             // 
-            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeBtn.FlatAppearance.BorderSize = 0;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(982, 1);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(68, 62);
-            this.closeBtn.TabIndex = 18;
-            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.closeBtn.UseVisualStyleBackColor = true;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label2.Location = new System.Drawing.Point(51, 205);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 21);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Place";
             // 
-            // mainPanel
+            // pictureBox1
             // 
-            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(228)))), ((int)(((byte)(199)))));
-            this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mainPanel.Controls.Add(this.mainBtn);
-            this.mainPanel.Controls.Add(this.cageBtn);
-            this.mainPanel.Controls.Add(this.bgMusicCheckBox);
-            this.mainPanel.Controls.Add(this.birdBtn);
-            this.mainPanel.Controls.Add(this.panel1);
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mainPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(220, 1053);
-            this.mainPanel.TabIndex = 46;
+            this.pictureBox1.Image = global::BirdHouseProject.Properties.Resources.bird_house;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(125, 147);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
-            // mainBtn
+            // label1
             // 
-            this.mainBtn.BackColor = System.Drawing.Color.Transparent;
-            this.mainBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.mainBtn.FlatAppearance.BorderSize = 0;
-            this.mainBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mainBtn.Location = new System.Drawing.Point(-1, 306);
-            this.mainBtn.Name = "mainBtn";
-            this.mainBtn.Size = new System.Drawing.Size(220, 67);
-            this.mainBtn.TabIndex = 1;
-            this.mainBtn.Text = "Home";
-            this.mainBtn.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label1.Location = new System.Drawing.Point(23, 178);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 27);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bird House";
             // 
             // cageBtn
             // 
-            this.cageBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cageBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.cageBtn.FlatAppearance.BorderSize = 0;
             this.cageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cageBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cageBtn.ForeColor = System.Drawing.Color.Black;
+            this.cageBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cageBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.cageBtn.Image = global::BirdHouseProject.Properties.Resources.cage;
             this.cageBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cageBtn.Location = new System.Drawing.Point(0, 236);
+            this.cageBtn.Location = new System.Drawing.Point(0, 331);
             this.cageBtn.Name = "cageBtn";
-            this.cageBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.cageBtn.Size = new System.Drawing.Size(218, 64);
-            this.cageBtn.TabIndex = 28;
-            this.cageBtn.Text = "Cages List";
-            this.cageBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.cageBtn.Size = new System.Drawing.Size(250, 50);
+            this.cageBtn.TabIndex = 5;
+            this.cageBtn.Text = "Cage";
+            this.cageBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cageBtn.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
+            this.panel1.Controls.Add(this.bgMusicCheckBox);
+            this.panel1.Controls.Add(this.cageBtn);
+            this.panel1.Controls.Add(this.birdBtn);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(253, 714);
+            this.panel1.TabIndex = 45;
             // 
             // bgMusicCheckBox
             // 
             this.bgMusicCheckBox.Appearance = System.Windows.Forms.Appearance.Button;
             this.bgMusicCheckBox.AutoSize = true;
-            this.bgMusicCheckBox.FlatAppearance.BorderSize = 0;
-            this.bgMusicCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bgMusicCheckBox.Image = ((System.Drawing.Image)(resources.GetObject("bgMusicCheckBox.Image")));
-            this.bgMusicCheckBox.Location = new System.Drawing.Point(11, 1002);
+            this.bgMusicCheckBox.Location = new System.Drawing.Point(72, 672);
             this.bgMusicCheckBox.Name = "bgMusicCheckBox";
-            this.bgMusicCheckBox.Size = new System.Drawing.Size(38, 38);
-            this.bgMusicCheckBox.TabIndex = 22;
+            this.bgMusicCheckBox.Size = new System.Drawing.Size(92, 30);
+            this.bgMusicCheckBox.TabIndex = 14;
+            this.bgMusicCheckBox.Text = "Stop Music";
             this.bgMusicCheckBox.UseVisualStyleBackColor = true;
+            this.bgMusicCheckBox.CheckedChanged += new System.EventHandler(this.bgMusicCheckBox_CheckedChanged);
             // 
             // birdBtn
             // 
-            this.birdBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.birdBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.birdBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.birdBtn.FlatAppearance.BorderSize = 0;
             this.birdBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.birdBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.birdBtn.ForeColor = System.Drawing.Color.Black;
+            this.birdBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.birdBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.birdBtn.Image = global::BirdHouseProject.Properties.Resources.bullfinch;
             this.birdBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.birdBtn.Location = new System.Drawing.Point(0, 172);
+            this.birdBtn.Location = new System.Drawing.Point(0, 275);
             this.birdBtn.Name = "birdBtn";
-            this.birdBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.birdBtn.Size = new System.Drawing.Size(218, 64);
-            this.birdBtn.TabIndex = 27;
-            this.birdBtn.Text = "Birds List";
-            this.birdBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.birdBtn.Size = new System.Drawing.Size(250, 50);
+            this.birdBtn.TabIndex = 4;
+            this.birdBtn.Text = "Bird";
+            this.birdBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.birdBtn.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // closeBtn
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(218, 172);
-            this.panel1.TabIndex = 26;
+            this.closeBtn.FlatAppearance.BorderSize = 0;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.closeBtn.Image = global::BirdHouseProject.Properties.Resources.power_button;
+            this.closeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.closeBtn.Location = new System.Drawing.Point(976, 12);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(43, 42);
+            this.closeBtn.TabIndex = 14;
+            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // pictureBox1
+            // panel2
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 141);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.panel2.Controls.Add(this.closeBtn);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(253, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1031, 67);
+            this.panel2.TabIndex = 46;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1282, 1053);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
+            this.ClientSize = new System.Drawing.Size(1284, 714);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainView";
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.mainPanel.ResumeLayout(false);
-            this.mainPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Button cageBtn;
-        private System.Windows.Forms.CheckBox bgMusicCheckBox;
-        private System.Windows.Forms.Button birdBtn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button mainBtn;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button cageBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button birdBtn;
+        private System.Windows.Forms.CheckBox bgMusicCheckBox;
     }
 }

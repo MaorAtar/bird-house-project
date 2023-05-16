@@ -30,21 +30,17 @@ namespace BirdHouseProject.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LadyGouldianFinchView));
-            this.fsnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.msnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cageNumberErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.genderErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bodyColorErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.breastColorErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.headColorErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.hatchDateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.subSpeciesErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.speciesErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.addnewBtn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.genderComboBox = new System.Windows.Forms.ComboBox();
             this.subSpeciesComboBox = new System.Windows.Forms.ComboBox();
@@ -70,20 +66,21 @@ namespace BirdHouseProject.Views
             this.cageNumberBox = new System.Windows.Forms.TextBox();
             this.hatchDateBox = new System.Windows.Forms.TextBox();
             this.serialBox = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.searchBox = new System.Windows.Forms.TextBox();
+            this.fsnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.msnErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cageNumberErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.genderErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bodyColorErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.breastColorErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.headColorErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.hatchDateErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.subSpeciesErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.speciesErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.exportButton = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.editBtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.addnewBtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.closeBtn = new System.Windows.Forms.Button();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fsnErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.msnErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cageNumberErrorProvider)).BeginInit();
@@ -94,57 +91,167 @@ namespace BirdHouseProject.Views
             ((System.ComponentModel.ISupportInitialize)(this.hatchDateErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subSpeciesErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciesErrorProvider)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // fsnErrorProvider
+            // searchBtn
             // 
-            this.fsnErrorProvider.ContainerControl = this;
+            this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            this.searchBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.searchBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.searchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchBtn.Location = new System.Drawing.Point(297, 57);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(141, 31);
+            this.searchBtn.TabIndex = 43;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.searchBtn.UseVisualStyleBackColor = true;
             // 
-            // msnErrorProvider
+            // searchBox
             // 
-            this.msnErrorProvider.ContainerControl = this;
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBox.Location = new System.Drawing.Point(24, 60);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(267, 27);
+            this.searchBox.TabIndex = 44;
             // 
-            // cageNumberErrorProvider
+            // label3
             // 
-            this.cageNumberErrorProvider.ContainerControl = this;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.label3.Location = new System.Drawing.Point(24, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 23);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Search bird:";
             // 
-            // genderErrorProvider
+            // closeBtn
             // 
-            this.genderErrorProvider.ContainerControl = this;
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeBtn.FlatAppearance.BorderSize = 0;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.closeBtn.Image = global::BirdHouseProject.Properties.Resources.close;
+            this.closeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.closeBtn.Location = new System.Drawing.Point(980, 6);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(43, 42);
+            this.closeBtn.TabIndex = 45;
+            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.closeBtn.UseVisualStyleBackColor = true;
             // 
-            // bodyColorErrorProvider
+            // panel1
             // 
-            this.bodyColorErrorProvider.ContainerControl = this;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1039, 68);
+            this.panel1.TabIndex = 47;
             // 
-            // breastColorErrorProvider
+            // tabControl1
             // 
-            this.breastColorErrorProvider.ContainerControl = this;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 68);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1039, 553);
+            this.tabControl1.TabIndex = 48;
             // 
-            // headColorErrorProvider
+            // tabPage1
             // 
-            this.headColorErrorProvider.ContainerControl = this;
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
+            this.tabPage1.Controls.Add(this.exportButton);
+            this.tabPage1.Controls.Add(this.deleteBtn);
+            this.tabPage1.Controls.Add(this.editBtn);
+            this.tabPage1.Controls.Add(this.addnewBtn);
+            this.tabPage1.Controls.Add(this.closeBtn);
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.searchBtn);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.searchBox);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1031, 520);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Birds list";
             // 
-            // hatchDateErrorProvider
+            // deleteBtn
             // 
-            this.hatchDateErrorProvider.ContainerControl = this;
+            this.deleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteBtn.FlatAppearance.BorderSize = 0;
+            this.deleteBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.deleteBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.deleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deleteBtn.Location = new System.Drawing.Point(884, 168);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(141, 31);
+            this.deleteBtn.TabIndex = 48;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.deleteBtn.UseVisualStyleBackColor = true;
             // 
-            // subSpeciesErrorProvider
+            // editBtn
             // 
-            this.subSpeciesErrorProvider.ContainerControl = this;
+            this.editBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.editBtn.FlatAppearance.BorderSize = 0;
+            this.editBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.editBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.editBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editBtn.Location = new System.Drawing.Point(884, 131);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(141, 31);
+            this.editBtn.TabIndex = 47;
+            this.editBtn.Text = "Edit";
+            this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editBtn.UseVisualStyleBackColor = true;
             // 
-            // speciesErrorProvider
+            // addnewBtn
             // 
-            this.speciesErrorProvider.ContainerControl = this;
+            this.addnewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addnewBtn.FlatAppearance.BorderSize = 0;
+            this.addnewBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addnewBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.addnewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addnewBtn.Location = new System.Drawing.Point(884, 94);
+            this.addnewBtn.Name = "addnewBtn";
+            this.addnewBtn.Size = new System.Drawing.Size(141, 31);
+            this.addnewBtn.TabIndex = 46;
+            this.addnewBtn.Text = "Add New";
+            this.addnewBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.addnewBtn.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(21, 94);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(857, 408);
+            this.dataGridView1.TabIndex = 45;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(243)))), ((int)(((byte)(220)))));
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
             this.tabPage2.Controls.Add(this.genderComboBox);
             this.tabPage2.Controls.Add(this.subSpeciesComboBox);
             this.tabPage2.Controls.Add(this.speciesComboBox);
@@ -172,8 +279,9 @@ namespace BirdHouseProject.Views
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1292, 987);
+            this.tabPage2.Size = new System.Drawing.Size(1031, 520);
             this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "s";
             // 
             // genderComboBox
             // 
@@ -426,261 +534,80 @@ namespace BirdHouseProject.Views
             this.serialBox.TabIndex = 71;
             this.serialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tabControl1
+            // fsnErrorProvider
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabControl1.Location = new System.Drawing.Point(0, 80);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1300, 1020);
-            this.tabControl1.TabIndex = 48;
+            this.fsnErrorProvider.ContainerControl = this;
             // 
-            // tabPage1
+            // msnErrorProvider
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(243)))), ((int)(((byte)(220)))));
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1292, 987);
-            this.tabPage1.TabIndex = 0;
+            this.msnErrorProvider.ContainerControl = this;
             // 
-            // panel1
+            // cageNumberErrorProvider
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(228)))), ((int)(((byte)(199)))));
-            this.panel1.Controls.Add(this.searchBox);
-            this.panel1.Controls.Add(this.exportButton);
-            this.panel1.Controls.Add(this.deleteBtn);
-            this.panel1.Controls.Add(this.searchBtn);
-            this.panel1.Controls.Add(this.editBtn);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.addnewBtn);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1069, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 981);
-            this.panel1.TabIndex = 46;
+            this.cageNumberErrorProvider.ContainerControl = this;
             // 
-            // searchBox
+            // genderErrorProvider
             // 
-            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBox.Location = new System.Drawing.Point(3, 47);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(214, 27);
-            this.searchBox.TabIndex = 64;
+            this.genderErrorProvider.ContainerControl = this;
+            // 
+            // bodyColorErrorProvider
+            // 
+            this.bodyColorErrorProvider.ContainerControl = this;
+            // 
+            // breastColorErrorProvider
+            // 
+            this.breastColorErrorProvider.ContainerControl = this;
+            // 
+            // headColorErrorProvider
+            // 
+            this.headColorErrorProvider.ContainerControl = this;
+            // 
+            // hatchDateErrorProvider
+            // 
+            this.hatchDateErrorProvider.ContainerControl = this;
+            // 
+            // subSpeciesErrorProvider
+            // 
+            this.subSpeciesErrorProvider.ContainerControl = this;
+            // 
+            // speciesErrorProvider
+            // 
+            this.speciesErrorProvider.ContainerControl = this;
             // 
             // exportButton
             // 
-            this.exportButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exportButton.BackgroundImage")));
-            this.exportButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.exportButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.exportButton.FlatAppearance.BorderSize = 0;
-            this.exportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exportButton.ForeColor = System.Drawing.Color.White;
+            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
             this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exportButton.Location = new System.Drawing.Point(9, 309);
+            this.exportButton.Location = new System.Drawing.Point(884, 205);
             this.exportButton.Name = "exportButton";
-            this.exportButton.Size = new System.Drawing.Size(188, 45);
-            this.exportButton.TabIndex = 62;
+            this.exportButton.Size = new System.Drawing.Size(141, 31);
+            this.exportButton.TabIndex = 58;
             this.exportButton.Text = "Export";
             this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.exportButton.UseVisualStyleBackColor = true;
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.BackgroundImage")));
-            this.deleteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.deleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.deleteBtn.FlatAppearance.BorderSize = 0;
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBtn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.deleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteBtn.Location = new System.Drawing.Point(9, 258);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(188, 45);
-            this.deleteBtn.TabIndex = 61;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.deleteBtn.UseVisualStyleBackColor = true;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchBtn.BackgroundImage")));
-            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.searchBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.searchBtn.FlatAppearance.BorderSize = 0;
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBtn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchBtn.ForeColor = System.Drawing.Color.White;
-            this.searchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchBtn.Location = new System.Drawing.Point(9, 80);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(188, 45);
-            this.searchBtn.TabIndex = 43;
-            this.searchBtn.Text = "Search";
-            this.searchBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.searchBtn.UseVisualStyleBackColor = true;
-            // 
-            // editBtn
-            // 
-            this.editBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editBtn.BackgroundImage")));
-            this.editBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.editBtn.FlatAppearance.BorderSize = 0;
-            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editBtn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.editBtn.ForeColor = System.Drawing.Color.White;
-            this.editBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editBtn.Location = new System.Drawing.Point(9, 207);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(188, 45);
-            this.editBtn.TabIndex = 60;
-            this.editBtn.Text = "Edit";
-            this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.editBtn.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 27);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Search bird:";
-            // 
-            // addnewBtn
-            // 
-            this.addnewBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addnewBtn.BackgroundImage")));
-            this.addnewBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addnewBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.addnewBtn.FlatAppearance.BorderSize = 0;
-            this.addnewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addnewBtn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addnewBtn.ForeColor = System.Drawing.Color.White;
-            this.addnewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addnewBtn.Location = new System.Drawing.Point(9, 156);
-            this.addnewBtn.Name = "addnewBtn";
-            this.addnewBtn.Size = new System.Drawing.Size(188, 45);
-            this.addnewBtn.TabIndex = 59;
-            this.addnewBtn.Text = "Add New";
-            this.addnewBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.addnewBtn.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(228)))), ((int)(((byte)(199)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(183)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(228)))), ((int)(((byte)(199)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1026, 946);
-            this.dataGridView1.TabIndex = 45;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(228)))), ((int)(((byte)(199)))));
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.closeBtn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1300, 64);
-            this.panel3.TabIndex = 49;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1225, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 62);
-            this.button1.TabIndex = 19;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeBtn.FlatAppearance.BorderSize = 0;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.closeBtn.ForeColor = System.Drawing.Color.White;
-            this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(2091, 0);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(68, 62);
-            this.closeBtn.TabIndex = 18;
-            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.closeBtn.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
             // LadyGouldianFinchView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(243)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(1300, 1100);
-            this.Controls.Add(this.panel3);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(127)))), ((int)(((byte)(114)))));
+            this.ClientSize = new System.Drawing.Size(1039, 621);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LadyGouldianFinchView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LadyGouldianFinchView";
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fsnErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.msnErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cageNumberErrorProvider)).EndInit();
@@ -691,19 +618,45 @@ namespace BirdHouseProject.Views
             ((System.ComponentModel.ISupportInitialize)(this.hatchDateErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subSpeciesErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciesErrorProvider)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button editBtn;
+        private System.Windows.Forms.Button addnewBtn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox mSerialBox;
+        private System.Windows.Forms.TextBox fSerialBox;
+        private System.Windows.Forms.TextBox cageNumberBox;
+        private System.Windows.Forms.TextBox hatchDateBox;
+        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.ComboBox bodyColorComboBox;
+        private System.Windows.Forms.ComboBox breastColorComboBox;
+        private System.Windows.Forms.ComboBox headColorComboBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox subSpeciesComboBox;
+        private System.Windows.Forms.ComboBox speciesComboBox;
+        private System.Windows.Forms.ComboBox genderComboBox;
         private System.Windows.Forms.ErrorProvider fsnErrorProvider;
         private System.Windows.Forms.ErrorProvider msnErrorProvider;
         private System.Windows.Forms.ErrorProvider cageNumberErrorProvider;
@@ -714,44 +667,8 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.ErrorProvider hatchDateErrorProvider;
         private System.Windows.Forms.ErrorProvider subSpeciesErrorProvider;
         private System.Windows.Forms.ErrorProvider speciesErrorProvider;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox genderComboBox;
-        private System.Windows.Forms.ComboBox subSpeciesComboBox;
-        private System.Windows.Forms.ComboBox speciesComboBox;
-        private System.Windows.Forms.ComboBox bodyColorComboBox;
-        private System.Windows.Forms.ComboBox breastColorComboBox;
-        private System.Windows.Forms.ComboBox headColorComboBox;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox mSerialBox;
-        private System.Windows.Forms.TextBox fSerialBox;
-        private System.Windows.Forms.TextBox cageNumberBox;
-        private System.Windows.Forms.TextBox hatchDateBox;
         private System.Windows.Forms.TextBox serialBox;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button closeBtn;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button exportButton;
-        private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.Button searchBtn;
-        private System.Windows.Forms.Button editBtn;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button addnewBtn;
-        private System.Windows.Forms.TextBox searchBox;
     }
 }
