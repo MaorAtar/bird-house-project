@@ -43,7 +43,6 @@ Integrated Security=True;");
             {
                 if (e.KeyCode == Keys.Enter)
                     SearchEvent?.Invoke(this, EventArgs.Empty);
-                RefreshCageList();
             };
             // Add New
             addnewBtn.Click += delegate

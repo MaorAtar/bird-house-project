@@ -33,6 +33,7 @@ namespace BirdHouseProject.Views
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.exportButton = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.addnewBtn = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@ namespace BirdHouseProject.Views
             this.widthErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.heightErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.materialErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.exportButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,7 +75,7 @@ namespace BirdHouseProject.Views
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1040, 68);
+            this.panel1.Size = new System.Drawing.Size(1300, 68);
             this.panel1.TabIndex = 48;
             // 
             // tabControl1
@@ -106,6 +106,22 @@ namespace BirdHouseProject.Views
             this.tabPage1.Size = new System.Drawing.Size(1036, 503);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cage List";
+            // 
+            // exportButton
+            // 
+            this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportButton.FlatAppearance.BorderSize = 0;
+            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
+            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exportButton.Location = new System.Drawing.Point(886, 195);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(141, 31);
+            this.exportButton.TabIndex = 57;
+            this.exportButton.Text = "Export";
+            this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
             // deleteBtn
             // 
@@ -392,27 +408,11 @@ namespace BirdHouseProject.Views
             // 
             this.materialErrorProvider.ContainerControl = this;
             // 
-            // exportButton
-            // 
-            this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.exportButton.FlatAppearance.BorderSize = 0;
-            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.exportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exportButton.Location = new System.Drawing.Point(886, 195);
-            this.exportButton.Name = "exportButton";
-            this.exportButton.Size = new System.Drawing.Size(141, 31);
-            this.exportButton.TabIndex = 57;
-            this.exportButton.Text = "Export";
-            this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.exportButton.UseVisualStyleBackColor = true;
-            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
-            // 
             // CageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 605);
+            this.ClientSize = new System.Drawing.Size(1300, 1100);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

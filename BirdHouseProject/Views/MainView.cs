@@ -19,9 +19,13 @@ namespace BirdHouseProject.Views
         {
             InitializeComponent();
             sound = new SoundPlayer(@"Resources\Music\background-sound.wav");
-            sound.PlayLooping();
-            birdBtn.Click += delegate { ShowLadyGouldianFinchView?.Invoke(this, EventArgs.Empty); };
-            cageBtn.Click += delegate { ShowCageView?.Invoke(this, EventArgs.Empty); };
+            //sound.PlayLooping();
+            birdBtn.Click += delegate { ShowLadyGouldianFinchView?.Invoke(this, EventArgs.Empty);
+                Controls.Remove(panel2);
+            };
+            cageBtn.Click += delegate { ShowCageView?.Invoke(this, EventArgs.Empty);
+                Controls.Remove(panel2);
+            };
         }
 
         /// <summary>
@@ -40,7 +44,6 @@ namespace BirdHouseProject.Views
         /// </summary>
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
             Application.Exit();
         }
 
@@ -48,14 +51,18 @@ namespace BirdHouseProject.Views
         {
             if (bgMusicCheckBox.Checked)
             {
-                bgMusicCheckBox.Text = "Stop";
                 sound.PlayLooping();
             }
             else
             {
-                bgMusicCheckBox.Text = "Play";
                 sound.Stop();
             }
+        }
+
+        private void mainBtn_Click(object sender, EventArgs e)
+        {
+            Controls.Add(panel2);
+            panel2.Dock = DockStyle.Fill;
         }
     }
 }
