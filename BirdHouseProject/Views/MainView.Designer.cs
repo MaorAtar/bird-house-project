@@ -40,6 +40,7 @@ namespace BirdHouseProject.Views
             this.closeBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.homePanel = new System.Windows.Forms.Panel();
+            this.plotView1 = new OxyPlot.WindowsForms.PlotView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -200,6 +201,7 @@ namespace BirdHouseProject.Views
             // 
             // homePanel
             // 
+            this.homePanel.Controls.Add(this.plotView1);
             this.homePanel.Controls.Add(this.panel6);
             this.homePanel.Controls.Add(this.panel5);
             this.homePanel.Controls.Add(this.panel4);
@@ -209,6 +211,19 @@ namespace BirdHouseProject.Views
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(1347, 833);
             this.homePanel.TabIndex = 54;
+            // 
+            // plotView1
+            // 
+            this.plotView1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.plotView1.Location = new System.Drawing.Point(688, 381);
+            this.plotView1.Name = "plotView1";
+            this.plotView1.PanCursor = System.Windows.Forms.Cursors.Hand;
+            this.plotView1.Size = new System.Drawing.Size(400, 400);
+            this.plotView1.TabIndex = 11;
+            this.plotView1.Text = "plotView1";
+            this.plotView1.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.plotView1.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.plotView1.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
             // 
             // panel6
             // 
@@ -442,5 +457,6 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel6;
+        private OxyPlot.WindowsForms.PlotView plotView1;
     }
 }
