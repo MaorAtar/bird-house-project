@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Media;
-using System.Configuration;
-using BirdHouseProject.Presenters;
+using System.Data.SqlClient;
 
 namespace BirdHouseProject.Views
 {
@@ -21,7 +20,7 @@ namespace BirdHouseProject.Views
         {
             InitializeComponent();
             sound = new SoundPlayer(@"Resources\Music\background-sound.wav");
-            //sound.PlayLooping();
+            bgMusicCheckBox.Checked = true;
             birdBtn.Click += delegate { 
                 ShowLadyGouldianFinchView?.Invoke(this, EventArgs.Empty);
                 homePanel.Hide();
@@ -30,6 +29,8 @@ namespace BirdHouseProject.Views
                 ShowCageView?.Invoke(this, EventArgs.Empty);
                 homePanel.Hide();
             };
+            birdsLabel.Text = GetAmountOfBirdsInDB().ToString();
+            cagesLabel.Text = GetAmountOfCagesInDB().ToString();
         }
 
         /// <summary>
@@ -52,23 +53,76 @@ namespace BirdHouseProject.Views
             Application.Exit();
         }
 
+        /// <summary>
+        /// Handles the background music button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bgMusicCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (bgMusicCheckBox.Checked)
             {
-                bgMusicCheckBox.Text = "Stop";
                 sound.PlayLooping();
             }
             else
             {
-                bgMusicCheckBox.Text = "Play";
                 sound.Stop();
             }
         }
 
+        /// <summary>
+        /// Shows the home panel when clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void homeBtn_Click(object sender, EventArgs e)
         {
             homePanel.Show();
+        }
+
+        /// <summary>
+        /// Gets the amout of bird objects in the database.
+        /// </summary>
+        /// <returns>int</returns>
+        private int GetAmountOfBirdsInDB()
+        {
+            int count = 0;
+            string connectionString = @"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+Integrated Security=True;";
+            string tableName = "LadyGouldianFinch";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = $"SELECT COUNT(*) FROM {tableName}";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    count = (int)command.ExecuteScalar();
+                }
+            }
+            return count;
+        }
+        /// <summary>
+        /// Gets the amout of cage objects in the database.
+        /// </summary>
+        /// <returns>int</returns>
+        private int GetAmountOfCagesInDB()
+        {
+            int count = 0;
+            string connectionString = @"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+Integrated Security=True;";
+            string tableName = "Cage";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = $"SELECT COUNT(*) FROM {tableName}";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    count = (int)command.ExecuteScalar();
+                }
+            }
+            return count;
         }
     }
 }

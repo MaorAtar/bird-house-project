@@ -35,7 +35,24 @@ namespace BirdHouseProject.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CageView));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.lengthErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.widthErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.heightErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.materialErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.materialComboBox = new System.Windows.Forms.ComboBox();
+            this.heightBox = new System.Windows.Forms.TextBox();
+            this.widthBox = new System.Windows.Forms.TextBox();
+            this.lenBox = new System.Windows.Forms.TextBox();
+            this.serialBox = new System.Windows.Forms.TextBox();
+            this.cancelBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -46,240 +63,32 @@ namespace BirdHouseProject.Views
             this.searchBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label8 = new System.Windows.Forms.Label();
-            this.materialComboBox = new System.Windows.Forms.ComboBox();
-            this.heightBox = new System.Windows.Forms.TextBox();
-            this.widthBox = new System.Windows.Forms.TextBox();
-            this.lenBox = new System.Windows.Forms.TextBox();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.serialBox = new System.Windows.Forms.TextBox();
-            this.lengthErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.widthErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.heightErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.materialErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.lengthErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialErrorProvider)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // lengthErrorProvider
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(880, 645);
-            this.tabControl1.TabIndex = 49;
+            this.lengthErrorProvider.ContainerControl = this;
             // 
-            // tabPage1
+            // widthErrorProvider
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.exportButton);
-            this.tabPage1.Controls.Add(this.deleteBtn);
-            this.tabPage1.Controls.Add(this.editBtn);
-            this.tabPage1.Controls.Add(this.addnewBtn);
-            this.tabPage1.Controls.Add(this.searchBtn);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.searchBox);
-            this.tabPage1.ForeColor = System.Drawing.Color.Black;
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(872, 609);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Cages List";
+            this.widthErrorProvider.ContainerControl = this;
             // 
-            // label2
+            // heightErrorProvider
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(26, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 17);
-            this.label2.TabIndex = 58;
-            this.label2.Text = "by Serial Number/Material";
+            this.heightErrorProvider.ContainerControl = this;
             // 
-            // dataGridView1
+            // materialErrorProvider
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowTemplate.DividerHeight = 1;
-            this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(823, 461);
-            this.dataGridView1.TabIndex = 20;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // exportButton
-            // 
-            this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.exportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            this.exportButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exportButton.BackgroundImage")));
-            this.exportButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.exportButton.FlatAppearance.BorderSize = 0;
-            this.exportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.exportButton.ForeColor = System.Drawing.Color.Black;
-            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exportButton.Location = new System.Drawing.Point(652, 59);
-            this.exportButton.Name = "exportButton";
-            this.exportButton.Size = new System.Drawing.Size(141, 39);
-            this.exportButton.TabIndex = 57;
-            this.exportButton.Text = "Export";
-            this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.exportButton.UseVisualStyleBackColor = false;
-            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            this.deleteBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.BackgroundImage")));
-            this.deleteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.deleteBtn.FlatAppearance.BorderSize = 0;
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteBtn.ForeColor = System.Drawing.Color.Black;
-            this.deleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteBtn.Location = new System.Drawing.Point(652, 10);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(141, 39);
-            this.deleteBtn.TabIndex = 56;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            // 
-            // editBtn
-            // 
-            this.editBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            this.editBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editBtn.BackgroundImage")));
-            this.editBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.editBtn.FlatAppearance.BorderSize = 0;
-            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.editBtn.ForeColor = System.Drawing.Color.Black;
-            this.editBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editBtn.Location = new System.Drawing.Point(491, 59);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(141, 39);
-            this.editBtn.TabIndex = 55;
-            this.editBtn.Text = "Edit";
-            this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.editBtn.UseVisualStyleBackColor = false;
-            // 
-            // addnewBtn
-            // 
-            this.addnewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addnewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            this.addnewBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addnewBtn.BackgroundImage")));
-            this.addnewBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addnewBtn.FlatAppearance.BorderSize = 0;
-            this.addnewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addnewBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addnewBtn.ForeColor = System.Drawing.Color.Black;
-            this.addnewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addnewBtn.Location = new System.Drawing.Point(491, 10);
-            this.addnewBtn.Name = "addnewBtn";
-            this.addnewBtn.Size = new System.Drawing.Size(141, 39);
-            this.addnewBtn.TabIndex = 54;
-            this.addnewBtn.Text = "Add New";
-            this.addnewBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.addnewBtn.UseVisualStyleBackColor = false;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            this.searchBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchBtn.BackgroundImage")));
-            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.searchBtn.FlatAppearance.BorderSize = 0;
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.searchBtn.ForeColor = System.Drawing.Color.Black;
-            this.searchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchBtn.Location = new System.Drawing.Point(242, 59);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(141, 39);
-            this.searchBtn.TabIndex = 50;
-            this.searchBtn.Text = "Search";
-            this.searchBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.searchBtn.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(26, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 23);
-            this.label3.TabIndex = 49;
-            this.label3.Text = "Search Cage:";
-            // 
-            // searchBox
-            // 
-            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBox.Location = new System.Drawing.Point(26, 64);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(210, 30);
-            this.searchBox.TabIndex = 51;
+            this.materialErrorProvider.ContainerControl = this;
             // 
             // tabPage2
             // 
@@ -289,6 +98,7 @@ namespace BirdHouseProject.Views
             this.tabPage2.Controls.Add(this.heightBox);
             this.tabPage2.Controls.Add(this.widthBox);
             this.tabPage2.Controls.Add(this.lenBox);
+            this.tabPage2.Controls.Add(this.serialBox);
             this.tabPage2.Controls.Add(this.cancelBtn);
             this.tabPage2.Controls.Add(this.saveBtn);
             this.tabPage2.Controls.Add(this.label7);
@@ -296,11 +106,10 @@ namespace BirdHouseProject.Views
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.serialBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(872, 609);
+            this.tabPage2.Size = new System.Drawing.Size(1339, 797);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add New Cage";
             // 
@@ -358,6 +167,18 @@ namespace BirdHouseProject.Views
             this.lenBox.Size = new System.Drawing.Size(177, 32);
             this.lenBox.TabIndex = 107;
             this.lenBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // serialBox
+            // 
+            this.serialBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.serialBox.ForeColor = System.Drawing.Color.Black;
+            this.serialBox.Location = new System.Drawing.Point(188, 177);
+            this.serialBox.Name = "serialBox";
+            this.serialBox.ReadOnly = true;
+            this.serialBox.Size = new System.Drawing.Size(177, 32);
+            this.serialBox.TabIndex = 89;
+            this.serialBox.Text = "0";
+            this.serialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cancelBtn
             // 
@@ -450,68 +271,260 @@ namespace BirdHouseProject.Views
             this.label1.TabIndex = 97;
             this.label1.Text = "Cage Number:";
             // 
-            // serialBox
+            // tabPage1
             // 
-            this.serialBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.serialBox.ForeColor = System.Drawing.Color.Black;
-            this.serialBox.Location = new System.Drawing.Point(188, 177);
-            this.serialBox.Name = "serialBox";
-            this.serialBox.ReadOnly = true;
-            this.serialBox.Size = new System.Drawing.Size(177, 32);
-            this.serialBox.TabIndex = 89;
-            this.serialBox.Text = "0";
-            this.serialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.exportButton);
+            this.tabPage1.Controls.Add(this.deleteBtn);
+            this.tabPage1.Controls.Add(this.editBtn);
+            this.tabPage1.Controls.Add(this.addnewBtn);
+            this.tabPage1.Controls.Add(this.searchBtn);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.searchBox);
+            this.tabPage1.ForeColor = System.Drawing.Color.Black;
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1339, 797);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Cages List";
             // 
-            // lengthErrorProvider
+            // label2
             // 
-            this.lengthErrorProvider.ContainerControl = this;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(26, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(174, 17);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "by Serial Number/Material";
             // 
-            // widthErrorProvider
+            // dataGridView1
             // 
-            this.widthErrorProvider.ContainerControl = this;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(26, 124);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.RowTemplate.DividerHeight = 1;
+            this.dataGridView1.RowTemplate.Height = 40;
+            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(823, 651);
+            this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // heightErrorProvider
+            // exportButton
             // 
-            this.heightErrorProvider.ContainerControl = this;
+            this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.exportButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exportButton.BackgroundImage")));
+            this.exportButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.exportButton.FlatAppearance.BorderSize = 0;
+            this.exportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exportButton.ForeColor = System.Drawing.Color.Black;
+            this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exportButton.Location = new System.Drawing.Point(1119, 59);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(141, 39);
+            this.exportButton.TabIndex = 57;
+            this.exportButton.Text = "Export";
+            this.exportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.exportButton.UseVisualStyleBackColor = false;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
-            // materialErrorProvider
+            // deleteBtn
             // 
-            this.materialErrorProvider.ContainerControl = this;
+            this.deleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.deleteBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deleteBtn.BackgroundImage")));
+            this.deleteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.deleteBtn.FlatAppearance.BorderSize = 0;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.deleteBtn.ForeColor = System.Drawing.Color.Black;
+            this.deleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deleteBtn.Location = new System.Drawing.Point(1119, 10);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(141, 39);
+            this.deleteBtn.TabIndex = 56;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            // 
+            // editBtn
+            // 
+            this.editBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.editBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editBtn.BackgroundImage")));
+            this.editBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.editBtn.FlatAppearance.BorderSize = 0;
+            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.editBtn.ForeColor = System.Drawing.Color.Black;
+            this.editBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editBtn.Location = new System.Drawing.Point(958, 59);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(141, 39);
+            this.editBtn.TabIndex = 55;
+            this.editBtn.Text = "Edit";
+            this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.editBtn.UseVisualStyleBackColor = false;
+            // 
+            // addnewBtn
+            // 
+            this.addnewBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addnewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.addnewBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addnewBtn.BackgroundImage")));
+            this.addnewBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addnewBtn.FlatAppearance.BorderSize = 0;
+            this.addnewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addnewBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addnewBtn.ForeColor = System.Drawing.Color.Black;
+            this.addnewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addnewBtn.Location = new System.Drawing.Point(958, 10);
+            this.addnewBtn.Name = "addnewBtn";
+            this.addnewBtn.Size = new System.Drawing.Size(141, 39);
+            this.addnewBtn.TabIndex = 54;
+            this.addnewBtn.Text = "Add New";
+            this.addnewBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.addnewBtn.UseVisualStyleBackColor = false;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.searchBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchBtn.BackgroundImage")));
+            this.searchBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.searchBtn.ForeColor = System.Drawing.Color.Black;
+            this.searchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchBtn.Location = new System.Drawing.Point(237, 64);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(141, 39);
+            this.searchBtn.TabIndex = 50;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.searchBtn.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(26, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(144, 23);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "Search Cage:";
+            // 
+            // searchBox
+            // 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBox.Location = new System.Drawing.Point(26, 64);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(205, 30);
+            this.searchBox.TabIndex = 51;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1347, 833);
+            this.tabControl1.TabIndex = 49;
             // 
             // CageView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(880, 645);
+            this.ClientSize = new System.Drawing.Size(1347, 833);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CageView";
             this.Text = "CageView";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lengthErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialErrorProvider)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private System.Windows.Forms.ErrorProvider lengthErrorProvider;
+        private System.Windows.Forms.ErrorProvider widthErrorProvider;
+        private System.Windows.Forms.ErrorProvider heightErrorProvider;
+        private System.Windows.Forms.ErrorProvider materialErrorProvider;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button exportButton;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button addnewBtn;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox materialComboBox;
+        private System.Windows.Forms.TextBox heightBox;
+        private System.Windows.Forms.TextBox widthBox;
+        private System.Windows.Forms.TextBox lenBox;
+        private System.Windows.Forms.TextBox serialBox;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Label label7;
@@ -519,18 +532,5 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox serialBox;
-        private System.Windows.Forms.ComboBox materialComboBox;
-        private System.Windows.Forms.TextBox heightBox;
-        private System.Windows.Forms.TextBox widthBox;
-        private System.Windows.Forms.TextBox lenBox;
-        private System.Windows.Forms.ErrorProvider lengthErrorProvider;
-        private System.Windows.Forms.ErrorProvider widthErrorProvider;
-        private System.Windows.Forms.ErrorProvider heightErrorProvider;
-        private System.Windows.Forms.ErrorProvider materialErrorProvider;
-        private System.Windows.Forms.Button exportButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
     }
 }

@@ -169,7 +169,7 @@ namespace BirdHouseProject.Views
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(939, 797);
+            this.tabPage2.Size = new System.Drawing.Size(1339, 797);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add New Bird";
             // 
@@ -484,7 +484,7 @@ namespace BirdHouseProject.Views
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(939, 797);
+            this.tabPage1.Size = new System.Drawing.Size(1339, 797);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Birds List";
             // 
@@ -499,7 +499,7 @@ namespace BirdHouseProject.Views
             this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.exportButton.ForeColor = System.Drawing.Color.Black;
             this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exportButton.Location = new System.Drawing.Point(658, 64);
+            this.exportButton.Location = new System.Drawing.Point(1157, 69);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(141, 39);
             this.exportButton.TabIndex = 64;
@@ -518,7 +518,7 @@ namespace BirdHouseProject.Views
             this.deleteBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.deleteBtn.ForeColor = System.Drawing.Color.Black;
             this.deleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteBtn.Location = new System.Drawing.Point(658, 15);
+            this.deleteBtn.Location = new System.Drawing.Point(1157, 20);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(141, 39);
             this.deleteBtn.TabIndex = 63;
@@ -537,7 +537,7 @@ namespace BirdHouseProject.Views
             this.editBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.editBtn.ForeColor = System.Drawing.Color.Black;
             this.editBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editBtn.Location = new System.Drawing.Point(497, 64);
+            this.editBtn.Location = new System.Drawing.Point(996, 69);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(141, 39);
             this.editBtn.TabIndex = 62;
@@ -556,7 +556,7 @@ namespace BirdHouseProject.Views
             this.addnewBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.addnewBtn.ForeColor = System.Drawing.Color.Black;
             this.addnewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addnewBtn.Location = new System.Drawing.Point(497, 15);
+            this.addnewBtn.Location = new System.Drawing.Point(996, 20);
             this.addnewBtn.Name = "addnewBtn";
             this.addnewBtn.Size = new System.Drawing.Size(141, 39);
             this.addnewBtn.TabIndex = 61;
@@ -575,7 +575,7 @@ namespace BirdHouseProject.Views
             this.searchBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.searchBtn.ForeColor = System.Drawing.Color.Black;
             this.searchBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchBtn.Location = new System.Drawing.Point(248, 64);
+            this.searchBtn.Location = new System.Drawing.Point(238, 69);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(141, 39);
             this.searchBtn.TabIndex = 60;
@@ -639,7 +639,7 @@ namespace BirdHouseProject.Views
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(880, 645);
+            this.dataGridView1.Size = new System.Drawing.Size(1271, 645);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -661,7 +661,7 @@ namespace BirdHouseProject.Views
             this.searchBox.ForeColor = System.Drawing.Color.Black;
             this.searchBox.Location = new System.Drawing.Point(27, 69);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(210, 30);
+            this.searchBox.Size = new System.Drawing.Size(205, 30);
             this.searchBox.TabIndex = 44;
             // 
             // tabControl1
@@ -673,7 +673,7 @@ namespace BirdHouseProject.Views
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(947, 833);
+            this.tabControl1.Size = new System.Drawing.Size(1347, 833);
             this.tabControl1.TabIndex = 48;
             // 
             // LadyGouldianFinchView
@@ -681,7 +681,7 @@ namespace BirdHouseProject.Views
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(947, 833);
+            this.ClientSize = new System.Drawing.Size(1347, 833);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LadyGouldianFinchView";

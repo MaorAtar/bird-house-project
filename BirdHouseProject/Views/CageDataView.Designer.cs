@@ -29,10 +29,10 @@ namespace BirdHouseProject.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CageDataView));
             this.birdsDataGridView = new System.Windows.Forms.DataGridView();
             this.label23 = new System.Windows.Forms.Label();
@@ -73,7 +73,7 @@ namespace BirdHouseProject.Views
             this.birdsDataGridView.ReadOnly = true;
             this.birdsDataGridView.RowHeadersWidth = 51;
             this.birdsDataGridView.RowTemplate.Height = 29;
-            this.birdsDataGridView.Size = new System.Drawing.Size(1199, 579);
+            this.birdsDataGridView.Size = new System.Drawing.Size(1267, 579);
             this.birdsDataGridView.TabIndex = 149;
             // 
             // label23
@@ -90,13 +90,14 @@ namespace BirdHouseProject.Views
             // materialBox
             // 
             this.materialBox.BackColor = System.Drawing.Color.White;
-            this.materialBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.materialBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.materialBox.ForeColor = System.Drawing.Color.Black;
             this.materialBox.Location = new System.Drawing.Point(305, 291);
             this.materialBox.Name = "materialBox";
             this.materialBox.ReadOnly = true;
-            this.materialBox.Size = new System.Drawing.Size(177, 32);
+            this.materialBox.Size = new System.Drawing.Size(177, 28);
             this.materialBox.TabIndex = 147;
+            this.materialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -156,96 +157,99 @@ namespace BirdHouseProject.Views
             // heightBox
             // 
             this.heightBox.BackColor = System.Drawing.Color.White;
-            this.heightBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.heightBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.heightBox.ForeColor = System.Drawing.Color.Black;
             this.heightBox.Location = new System.Drawing.Point(305, 239);
             this.heightBox.Name = "heightBox";
             this.heightBox.ReadOnly = true;
-            this.heightBox.Size = new System.Drawing.Size(177, 32);
+            this.heightBox.Size = new System.Drawing.Size(177, 28);
             this.heightBox.TabIndex = 141;
+            this.heightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // widthBox
             // 
             this.widthBox.BackColor = System.Drawing.Color.White;
-            this.widthBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.widthBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.widthBox.ForeColor = System.Drawing.Color.Black;
             this.widthBox.Location = new System.Drawing.Point(305, 190);
             this.widthBox.Name = "widthBox";
             this.widthBox.ReadOnly = true;
-            this.widthBox.Size = new System.Drawing.Size(177, 32);
+            this.widthBox.Size = new System.Drawing.Size(177, 28);
             this.widthBox.TabIndex = 140;
+            this.widthBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lengthBox
             // 
             this.lengthBox.BackColor = System.Drawing.Color.White;
-            this.lengthBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lengthBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lengthBox.ForeColor = System.Drawing.Color.Black;
             this.lengthBox.Location = new System.Drawing.Point(305, 134);
             this.lengthBox.Name = "lengthBox";
             this.lengthBox.ReadOnly = true;
-            this.lengthBox.Size = new System.Drawing.Size(177, 32);
+            this.lengthBox.Size = new System.Drawing.Size(177, 28);
             this.lengthBox.TabIndex = 139;
+            this.lengthBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cageSerialBox
             // 
             this.cageSerialBox.BackColor = System.Drawing.Color.White;
-            this.cageSerialBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cageSerialBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cageSerialBox.ForeColor = System.Drawing.Color.Black;
             this.cageSerialBox.Location = new System.Drawing.Point(305, 87);
             this.cageSerialBox.Name = "cageSerialBox";
             this.cageSerialBox.ReadOnly = true;
-            this.cageSerialBox.Size = new System.Drawing.Size(177, 32);
+            this.cageSerialBox.Size = new System.Drawing.Size(177, 28);
             this.cageSerialBox.TabIndex = 138;
+            this.cageSerialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // birdsDataGrid
             // 
             this.birdsDataGrid.AllowUserToAddRows = false;
             this.birdsDataGrid.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.birdsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.birdsDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.birdsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.birdsDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.birdsDataGrid.BackgroundColor = System.Drawing.Color.White;
             this.birdsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.birdsDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.birdsDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.birdsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.birdsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.birdsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.birdsDataGrid.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.birdsDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.birdsDataGrid.EnableHeadersVisualStyles = false;
             this.birdsDataGrid.Location = new System.Drawing.Point(38, 458);
             this.birdsDataGrid.Name = "birdsDataGrid";
             this.birdsDataGrid.ReadOnly = true;
             this.birdsDataGrid.RowHeadersVisible = false;
             this.birdsDataGrid.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.birdsDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.birdsDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.birdsDataGrid.RowTemplate.Height = 29;
             this.birdsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.birdsDataGrid.Size = new System.Drawing.Size(1203, 471);
+            this.birdsDataGrid.Size = new System.Drawing.Size(1271, 471);
             this.birdsDataGrid.TabIndex = 20;
             // 
             // cagePictureBox
             // 
-            this.cagePictureBox.Location = new System.Drawing.Point(862, 77);
+            this.cagePictureBox.Location = new System.Drawing.Point(930, 87);
             this.cagePictureBox.Name = "cagePictureBox";
             this.cagePictureBox.Size = new System.Drawing.Size(379, 301);
             this.cagePictureBox.TabIndex = 151;
@@ -262,7 +266,7 @@ namespace BirdHouseProject.Views
             this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.exportButton.ForeColor = System.Drawing.Color.Black;
             this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exportButton.Location = new System.Drawing.Point(1025, 400);
+            this.exportButton.Location = new System.Drawing.Point(1093, 400);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(216, 40);
             this.exportButton.TabIndex = 163;
@@ -288,7 +292,7 @@ namespace BirdHouseProject.Views
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1282, 953);
+            this.ClientSize = new System.Drawing.Size(1350, 953);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.cagePictureBox);

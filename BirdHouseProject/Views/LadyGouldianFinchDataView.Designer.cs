@@ -30,10 +30,10 @@ namespace BirdHouseProject.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LadyGouldianFinchDataView));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -106,7 +106,7 @@ namespace BirdHouseProject.Views
             this.tabControl1.Location = new System.Drawing.Point(12, 58);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1255, 889);
+            this.tabControl1.Size = new System.Drawing.Size(1326, 889);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -141,7 +141,7 @@ namespace BirdHouseProject.Views
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1247, 853);
+            this.tabPage1.Size = new System.Drawing.Size(1318, 853);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Bird Details";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -150,46 +150,45 @@ namespace BirdHouseProject.Views
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.Location = new System.Drawing.Point(19, 438);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.RowTemplate.Height = 29;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(1203, 471);
+            this.dataGridView.Size = new System.Drawing.Size(1274, 471);
             this.dataGridView.TabIndex = 163;
             // 
             // exportButton
@@ -203,7 +202,7 @@ namespace BirdHouseProject.Views
             this.exportButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.exportButton.ForeColor = System.Drawing.Color.Black;
             this.exportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exportButton.Location = new System.Drawing.Point(1006, 381);
+            this.exportButton.Location = new System.Drawing.Point(1077, 381);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(216, 40);
             this.exportButton.TabIndex = 162;
@@ -214,48 +213,48 @@ namespace BirdHouseProject.Views
             // genderBox
             // 
             this.genderBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.genderBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.genderBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.genderBox.ForeColor = System.Drawing.Color.Black;
             this.genderBox.Location = new System.Drawing.Point(162, 263);
             this.genderBox.Name = "genderBox";
             this.genderBox.ReadOnly = true;
-            this.genderBox.Size = new System.Drawing.Size(177, 32);
+            this.genderBox.Size = new System.Drawing.Size(177, 28);
             this.genderBox.TabIndex = 161;
             this.genderBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bodyColorBox
             // 
             this.bodyColorBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.bodyColorBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bodyColorBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bodyColorBox.ForeColor = System.Drawing.Color.Black;
             this.bodyColorBox.Location = new System.Drawing.Point(594, 157);
             this.bodyColorBox.Name = "bodyColorBox";
             this.bodyColorBox.ReadOnly = true;
-            this.bodyColorBox.Size = new System.Drawing.Size(177, 32);
+            this.bodyColorBox.Size = new System.Drawing.Size(177, 28);
             this.bodyColorBox.TabIndex = 160;
             this.bodyColorBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // breastColorBox
             // 
             this.breastColorBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.breastColorBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.breastColorBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.breastColorBox.ForeColor = System.Drawing.Color.Black;
             this.breastColorBox.Location = new System.Drawing.Point(594, 101);
             this.breastColorBox.Name = "breastColorBox";
             this.breastColorBox.ReadOnly = true;
-            this.breastColorBox.Size = new System.Drawing.Size(177, 32);
+            this.breastColorBox.Size = new System.Drawing.Size(177, 28);
             this.breastColorBox.TabIndex = 159;
             this.breastColorBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // headColorBox
             // 
             this.headColorBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.headColorBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.headColorBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.headColorBox.ForeColor = System.Drawing.Color.Black;
             this.headColorBox.Location = new System.Drawing.Point(594, 50);
             this.headColorBox.Name = "headColorBox";
             this.headColorBox.ReadOnly = true;
-            this.headColorBox.Size = new System.Drawing.Size(177, 32);
+            this.headColorBox.Size = new System.Drawing.Size(177, 28);
             this.headColorBox.TabIndex = 158;
             this.headColorBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -302,7 +301,7 @@ namespace BirdHouseProject.Views
             this.addChickBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.addChickBtn.ForeColor = System.Drawing.Color.Black;
             this.addChickBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addChickBtn.Location = new System.Drawing.Point(764, 380);
+            this.addChickBtn.Location = new System.Drawing.Point(843, 381);
             this.addChickBtn.Name = "addChickBtn";
             this.addChickBtn.Size = new System.Drawing.Size(216, 40);
             this.addChickBtn.TabIndex = 154;
@@ -401,84 +400,84 @@ namespace BirdHouseProject.Views
             // mSerialBox
             // 
             this.mSerialBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.mSerialBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mSerialBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mSerialBox.ForeColor = System.Drawing.Color.Black;
             this.mSerialBox.Location = new System.Drawing.Point(594, 263);
             this.mSerialBox.Name = "mSerialBox";
             this.mSerialBox.ReadOnly = true;
-            this.mSerialBox.Size = new System.Drawing.Size(177, 32);
+            this.mSerialBox.Size = new System.Drawing.Size(177, 28);
             this.mSerialBox.TabIndex = 145;
             this.mSerialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fSerialBox
             // 
             this.fSerialBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.fSerialBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fSerialBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fSerialBox.ForeColor = System.Drawing.Color.Black;
             this.fSerialBox.Location = new System.Drawing.Point(594, 206);
             this.fSerialBox.Name = "fSerialBox";
             this.fSerialBox.ReadOnly = true;
-            this.fSerialBox.Size = new System.Drawing.Size(177, 32);
+            this.fSerialBox.Size = new System.Drawing.Size(177, 28);
             this.fSerialBox.TabIndex = 144;
             this.fSerialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cageNumberBox
             // 
             this.cageNumberBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.cageNumberBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cageNumberBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cageNumberBox.ForeColor = System.Drawing.Color.Black;
             this.cageNumberBox.Location = new System.Drawing.Point(162, 315);
             this.cageNumberBox.Name = "cageNumberBox";
             this.cageNumberBox.ReadOnly = true;
-            this.cageNumberBox.Size = new System.Drawing.Size(177, 32);
+            this.cageNumberBox.Size = new System.Drawing.Size(177, 28);
             this.cageNumberBox.TabIndex = 143;
             this.cageNumberBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // hatchDateBox
             // 
             this.hatchDateBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.hatchDateBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.hatchDateBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.hatchDateBox.ForeColor = System.Drawing.Color.Black;
             this.hatchDateBox.Location = new System.Drawing.Point(162, 207);
             this.hatchDateBox.Name = "hatchDateBox";
             this.hatchDateBox.ReadOnly = true;
-            this.hatchDateBox.Size = new System.Drawing.Size(177, 32);
+            this.hatchDateBox.Size = new System.Drawing.Size(177, 28);
             this.hatchDateBox.TabIndex = 142;
             this.hatchDateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // subSpeciesBox
             // 
             this.subSpeciesBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.subSpeciesBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.subSpeciesBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.subSpeciesBox.ForeColor = System.Drawing.Color.Black;
             this.subSpeciesBox.Location = new System.Drawing.Point(162, 157);
             this.subSpeciesBox.Name = "subSpeciesBox";
             this.subSpeciesBox.ReadOnly = true;
-            this.subSpeciesBox.Size = new System.Drawing.Size(177, 32);
+            this.subSpeciesBox.Size = new System.Drawing.Size(177, 28);
             this.subSpeciesBox.TabIndex = 141;
             this.subSpeciesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // speciesBox
             // 
             this.speciesBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.speciesBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.speciesBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.speciesBox.ForeColor = System.Drawing.Color.Black;
             this.speciesBox.Location = new System.Drawing.Point(162, 101);
             this.speciesBox.Name = "speciesBox";
             this.speciesBox.ReadOnly = true;
-            this.speciesBox.Size = new System.Drawing.Size(177, 32);
+            this.speciesBox.Size = new System.Drawing.Size(177, 28);
             this.speciesBox.TabIndex = 140;
             this.speciesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // serialBox
             // 
             this.serialBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.serialBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.serialBox.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.serialBox.ForeColor = System.Drawing.Color.Black;
             this.serialBox.Location = new System.Drawing.Point(162, 45);
             this.serialBox.Name = "serialBox";
             this.serialBox.ReadOnly = true;
-            this.serialBox.Size = new System.Drawing.Size(177, 32);
+            this.serialBox.Size = new System.Drawing.Size(177, 28);
             this.serialBox.TabIndex = 139;
             this.serialBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -525,7 +524,7 @@ namespace BirdHouseProject.Views
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1247, 853);
+            this.tabPage2.Size = new System.Drawing.Size(1318, 853);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add Chick";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -763,7 +762,7 @@ namespace BirdHouseProject.Views
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1282, 953);
+            this.ClientSize = new System.Drawing.Size(1350, 953);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

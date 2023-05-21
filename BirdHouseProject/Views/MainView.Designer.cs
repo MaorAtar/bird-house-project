@@ -40,12 +40,32 @@ namespace BirdHouseProject.Views
             this.closeBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.homePanel = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.cagesLabel = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.birdsLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.homePanel.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,7 +164,7 @@ namespace BirdHouseProject.Views
             this.bgMusicCheckBox.FlatAppearance.BorderSize = 0;
             this.bgMusicCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bgMusicCheckBox.Image = ((System.Drawing.Image)(resources.GetObject("bgMusicCheckBox.Image")));
-            this.bgMusicCheckBox.Location = new System.Drawing.Point(822, 15);
+            this.bgMusicCheckBox.Location = new System.Drawing.Point(1235, 15);
             this.bgMusicCheckBox.Name = "bgMusicCheckBox";
             this.bgMusicCheckBox.Size = new System.Drawing.Size(38, 38);
             this.bgMusicCheckBox.TabIndex = 14;
@@ -159,7 +179,7 @@ namespace BirdHouseProject.Views
             this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
             this.closeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.closeBtn.Location = new System.Drawing.Point(879, 12);
+            this.closeBtn.Location = new System.Drawing.Point(1292, 12);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(43, 42);
             this.closeBtn.TabIndex = 14;
@@ -175,23 +195,188 @@ namespace BirdHouseProject.Views
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(253, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(947, 67);
+            this.panel2.Size = new System.Drawing.Size(1347, 67);
             this.panel2.TabIndex = 46;
             // 
             // homePanel
             // 
+            this.homePanel.Controls.Add(this.panel6);
+            this.homePanel.Controls.Add(this.panel5);
+            this.homePanel.Controls.Add(this.panel4);
             this.homePanel.Controls.Add(this.pictureBox2);
             this.homePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homePanel.Location = new System.Drawing.Point(253, 67);
             this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(947, 833);
-            this.homePanel.TabIndex = 52;
+            this.homePanel.Size = new System.Drawing.Size(1347, 833);
+            this.homePanel.TabIndex = 54;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Location = new System.Drawing.Point(17, 44);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1071, 279);
+            this.panel6.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(18, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(510, 34);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Welcome to the Bird House Program!";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(18, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(852, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Discover the beauty of Lady Gouldian finches and join our program dedicated to th" +
+    "eir";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(9, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(758, 23);
+            this.label3.TabIndex = 3;
+            this.label3.Text = " unique personalities, making them a popular choice among bird enthusiasts.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(18, 219);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(1028, 23);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Together, let\'s ensure the well-being and preservation of Lady Gouldian finches f" +
+    "or generations to come!";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(18, 111);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(813, 23);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "care and conservation. These exquisite birds are known for their vibrant colors a" +
+    "nd";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(18, 185);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(735, 23);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Start the journey of discovery and enjoyment with these remarkable birds. ";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(170)))), ((int)(((byte)(28)))));
+            this.panel5.Controls.Add(this.pictureBox4);
+            this.panel5.Controls.Add(this.cagesLabel);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Location = new System.Drawing.Point(163, 596);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(250, 130);
+            this.panel5.TabIndex = 9;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(110, 22);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(125, 94);
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
+            // 
+            // cagesLabel
+            // 
+            this.cagesLabel.AutoSize = true;
+            this.cagesLabel.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cagesLabel.Location = new System.Drawing.Point(13, 51);
+            this.cagesLabel.Name = "cagesLabel";
+            this.cagesLabel.Size = new System.Drawing.Size(0, 44);
+            this.cagesLabel.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(13, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 23);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "CAGES";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(237)))), ((int)(((byte)(153)))));
+            this.panel4.Controls.Add(this.pictureBox3);
+            this.panel4.Controls.Add(this.birdsLabel);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Location = new System.Drawing.Point(163, 426);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(250, 130);
+            this.panel4.TabIndex = 8;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(110, 22);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(125, 94);
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // birdsLabel
+            // 
+            this.birdsLabel.AutoSize = true;
+            this.birdsLabel.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.birdsLabel.Location = new System.Drawing.Point(13, 51);
+            this.birdsLabel.Name = "birdsLabel";
+            this.birdsLabel.Size = new System.Drawing.Size(0, 44);
+            this.birdsLabel.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(13, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 23);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "BIRDS";
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(86, 104);
+            this.pictureBox2.Location = new System.Drawing.Point(1114, 75);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 200);
             this.pictureBox2.TabIndex = 0;
@@ -202,7 +387,7 @@ namespace BirdHouseProject.Views
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1200, 900);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.homePanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -217,6 +402,14 @@ namespace BirdHouseProject.Views
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.homePanel.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -234,5 +427,20 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.Button birdBtn;
         private System.Windows.Forms.Panel homePanel;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label birdsLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label cagesLabel;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel6;
     }
 }
