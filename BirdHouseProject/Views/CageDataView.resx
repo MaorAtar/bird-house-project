@@ -57,4 +57,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="exportButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        qAAAAKgBefSzxgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGbSURBVEhL5dW7
+        LwRBAMfx9QyRCIJCJSrRIBQaoZAQjUSiIGqho5T4A/wHeoXEo/OI0IlK4lGpaEQpdAjx+P7udjaTMXOZ
+        vdYv+SS7O3fz253b3UtIBw7whp8I39hENaKiyR+xjIUID1DRNqJKdOYrxc2oXOMWH4gq0dksFjejooIN
+        TEMlu6hBMOUUnGAGWzDLVQVv8hYcQ99xjcIbDeYp0Jo3W3qhOSbgTd4CN52IKmjFS7ofonF9zk50QSXm
+        4Lv3DY1XwI5dUI9VNCGLKVC6MODRjVDsgjY84wJZiSloT7dDBuGLu0R9eMIlWnRAg+YK+jHmMQQtzTxO
+        HefQHFfWsfv02BmyAk0wCT1ArinUYhx6qHYshzCTmWN36bE9ZAVav9d03/UJXbov7hLpJPR+O0KdDmjQ
+        LJHuAvshMhoQil2gV/879qErLsQU6IW1hvUSNO6+Pe0Cjc0im1wxBTpT/VD6gUJ0Z+hzdtwl+hNTUG7+
+        QUHev0w3PVDBSGHPk7x/+rYl6AHTq6ER3uje1X0beshK+cINhuFJkvwCkU62+JHMX4IAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="closeBtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFvSURBVFhHxZdt
+        boNADEQ5XdSkzdVyw96j+UX9VmNkFvMRAllLT4VZe8a0VRs6q4fxa1z6vu8+AVnKJLtcoP4ZX9nAkZCh
+        LG7ILtu4cOoSeCvDsy5zB9d6+F3wlLdnlAeNDactgZc8R+HlbKXxFs/3gIe83HP0YKPmIhy4BLPySMNL
+        Ty0UcTr4nfUtwYxm3SN9kIngMKBBbp7G5iXo1cxiOKSiYxWN+PqT9UXoUa/PLC6eihEMZLS6BGfq2RQO
+        qVhjVRtPlkDT2WxPRipmYChjD7iHs7u0l8IhFefAWAHDEmJXOKTiElZ1YLwevitbScU1CFIgN7vDIRXX
+        IEyhn1+AIAV6cLw+90dg1e6XEGMFDOHhbPcSqViDoYxnA9B09tISqRixavenGAMZrYY79Kh30xKpCFbt
+        /h0zoEE32BzuMKPZxSWmQsuPZDSo8e1wBw95pUvExnYfyxF0cHi4g6e8R0tQbV/NrJq/nDZ8Pe8e/zVZ
+        UhyKvweFAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

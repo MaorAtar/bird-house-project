@@ -55,18 +55,17 @@ namespace BirdHouseProject.Views
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(283, 110);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.label1.Location = new System.Drawing.Point(295, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome!";
-            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(317, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(329, 66);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(128, 104);
@@ -78,8 +77,8 @@ namespace BirdHouseProject.Views
             // 
             this.txtUser.AutoSize = true;
             this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtUser.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtUser.Location = new System.Drawing.Point(29, 202);
+            this.txtUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.txtUser.Location = new System.Drawing.Point(109, 251);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(151, 29);
             this.txtUser.TabIndex = 2;
@@ -89,8 +88,8 @@ namespace BirdHouseProject.Views
             // 
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtUsername.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtUsername.Location = new System.Drawing.Point(191, 211);
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
+            this.txtUsername.Location = new System.Drawing.Point(271, 260);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
@@ -99,8 +98,8 @@ namespace BirdHouseProject.Views
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Location = new System.Drawing.Point(191, 244);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.panel1.Location = new System.Drawing.Point(271, 293);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(334, 1);
@@ -110,8 +109,8 @@ namespace BirdHouseProject.Views
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtPassword.Location = new System.Drawing.Point(191, 301);
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtPassword.Location = new System.Drawing.Point(271, 346);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
@@ -120,8 +119,8 @@ namespace BirdHouseProject.Views
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel2.Location = new System.Drawing.Point(191, 334);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.panel2.Location = new System.Drawing.Point(271, 379);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(334, 1);
@@ -131,8 +130,8 @@ namespace BirdHouseProject.Views
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(29, 292);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.label2.Location = new System.Drawing.Point(109, 337);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 29);
             this.label2.TabIndex = 12;
@@ -142,8 +141,8 @@ namespace BirdHouseProject.Views
             // 
             this.txtConPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtConPassword.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtConPassword.Location = new System.Drawing.Point(272, 396);
+            this.txtConPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtConPassword.Location = new System.Drawing.Point(276, 429);
             this.txtConPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConPassword.Multiline = true;
             this.txtConPassword.Name = "txtConPassword";
@@ -152,8 +151,8 @@ namespace BirdHouseProject.Views
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel3.Location = new System.Drawing.Point(267, 429);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.panel3.Location = new System.Drawing.Point(271, 462);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(334, 1);
@@ -163,8 +162,8 @@ namespace BirdHouseProject.Views
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(29, 394);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.label3.Location = new System.Drawing.Point(33, 427);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 29);
             this.label3.TabIndex = 15;
@@ -174,8 +173,8 @@ namespace BirdHouseProject.Views
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Britannic Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label5.Location = new System.Drawing.Point(379, 622);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.label5.Location = new System.Drawing.Point(383, 672);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 19);
             this.label5.TabIndex = 19;
@@ -184,12 +183,12 @@ namespace BirdHouseProject.Views
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Britannic Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(272, 559);
+            this.button3.Location = new System.Drawing.Point(276, 617);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(253, 41);
@@ -202,8 +201,8 @@ namespace BirdHouseProject.Views
             // 
             this.idUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.idUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.idUser.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.idUser.Location = new System.Drawing.Point(81, 478);
+            this.idUser.ForeColor = System.Drawing.Color.Black;
+            this.idUser.Location = new System.Drawing.Point(271, 522);
             this.idUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.idUser.Multiline = true;
             this.idUser.Name = "idUser";
@@ -212,8 +211,8 @@ namespace BirdHouseProject.Views
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel4.Location = new System.Drawing.Point(81, 515);
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.panel4.Location = new System.Drawing.Point(271, 559);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(334, 1);
@@ -223,8 +222,8 @@ namespace BirdHouseProject.Views
             // 
             this.te.AutoSize = true;
             this.te.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.te.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.te.Location = new System.Drawing.Point(29, 480);
+            this.te.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.te.Location = new System.Drawing.Point(219, 524);
             this.te.Name = "te";
             this.te.Size = new System.Drawing.Size(45, 29);
             this.te.TabIndex = 20;
@@ -235,7 +234,7 @@ namespace BirdHouseProject.Views
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 658);
+            this.ClientSize = new System.Drawing.Size(800, 800);
             this.Controls.Add(this.idUser);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.te);
@@ -252,8 +251,10 @@ namespace BirdHouseProject.Views
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "register";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

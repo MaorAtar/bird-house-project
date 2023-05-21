@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Media;
+using System.Configuration;
+using BirdHouseProject.Presenters;
 
 namespace BirdHouseProject.Views
 {
@@ -19,9 +21,15 @@ namespace BirdHouseProject.Views
         {
             InitializeComponent();
             sound = new SoundPlayer(@"Resources\Music\background-sound.wav");
-            sound.PlayLooping();
-            birdBtn.Click += delegate { ShowLadyGouldianFinchView?.Invoke(this, EventArgs.Empty); };
-            cageBtn.Click += delegate { ShowCageView?.Invoke(this, EventArgs.Empty); };
+            //sound.PlayLooping();
+            birdBtn.Click += delegate { 
+                ShowLadyGouldianFinchView?.Invoke(this, EventArgs.Empty);
+                homePanel.Hide();
+            };
+            cageBtn.Click += delegate { 
+                ShowCageView?.Invoke(this, EventArgs.Empty);
+                homePanel.Hide();
+            };
         }
 
         /// <summary>
@@ -56,6 +64,11 @@ namespace BirdHouseProject.Views
                 bgMusicCheckBox.Text = "Play";
                 sound.Stop();
             }
+        }
+
+        private void homeBtn_Click(object sender, EventArgs e)
+        {
+            homePanel.Show();
         }
     }
 }

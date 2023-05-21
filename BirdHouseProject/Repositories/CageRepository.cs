@@ -52,11 +52,18 @@ namespace BirdHouseProject.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "delete from Cage where Serial_Number=@serial_number";
+                command.CommandText = @"
+            DELETE FROM LadyGouldianFinch
+            WHERE Serial_Number = @serial_number;
+            
+            DELETE FROM Cage
+            WHERE Serial_Number = @serial_number;";
                 command.Parameters.Add("@serial_number", SqlDbType.Int).Value = serial_number;
                 command.ExecuteNonQuery();
             }
         }
+
+
 
         /// <summary>
         /// Updates the information of an existing cage in the database.

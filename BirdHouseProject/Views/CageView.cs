@@ -25,7 +25,6 @@ Integrated Security=True;");
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             tabControl1.TabPages.Remove(tabPage2);
-            closeBtn.Click += delegate { this.Close(); };
             if (dataGridView1.Rows.Count == 1)
             {
                 SingleObjectInDB();

@@ -40,13 +40,13 @@ namespace BirdHouseProject.Views
             {
                 fSerialBox2.Text = serialNumber.ToString();
                 fSerialBox2.ReadOnly = true;
-                fSerialBox2.BackColor = System.Drawing.Color.White;
+                fSerialBox2.BackColor = Color.White;
             }
             else
             {
                 mSerialBox2.Text = serialNumber.ToString();
                 mSerialBox2.ReadOnly = true;
-                mSerialBox2.BackColor = System.Drawing.Color.White;
+                mSerialBox2.BackColor = Color.White;
             }
             // Add Chick
             addChickBtn.Click += delegate
@@ -723,6 +723,16 @@ Integrated Security=True;");
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Closes the Bird Detail form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

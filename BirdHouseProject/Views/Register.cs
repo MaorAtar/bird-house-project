@@ -18,6 +18,10 @@ namespace BirdHouseProject.Views
         public Register()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '*';
+            txtPassword.MaxLength = 10;
+            txtConPassword.PasswordChar = '*';
+            txtConPassword.MaxLength = 10;
         }
 
         /// <summary>

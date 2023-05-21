@@ -19,6 +19,8 @@ namespace BirdHouseProject.Views
         public Login()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '*';
+            txtPassword.MaxLength = 10;
         }
 
         /// <summary>
@@ -124,5 +126,6 @@ namespace BirdHouseProject.Views
             new Register().Show();
             this.Hide();
         }
+
     }
 }

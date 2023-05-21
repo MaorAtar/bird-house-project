@@ -117,5 +117,15 @@ namespace BirdHouseProject.Views
                 }
             }
         }
+
+        /// <summary>
+        /// Closes the Cage Detail form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -28,7 +28,6 @@ Integrated Security=True;");
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             tabControl1.TabPages.Remove(tabPage2);
-            closeBtn.Click += delegate { this.Close(); };
             if (dataGridView1.Rows.Count == 1)
             {
                 SingleObjectInDB();
@@ -185,7 +184,7 @@ Integrated Security=True;");
                     fsnErrorProvider.SetError(fSerialBox, "Father Serial Number must be 6 digits long");
                     return;
                 }
-                else if (!IsFSerialNumberInDB(fSerialBox.Text))
+                else if (!IsFSerialNumberInDB(fSerialBox.Text) && dataGridView1.Rows.Count > 1)
                 {
                     fsnErrorProvider.SetError(fSerialBox, "Father Serial Number does not exist in the system");
                     return;
@@ -200,6 +199,10 @@ Integrated Security=True;");
                     fsnErrorProvider.SetError(fSerialBox, "Father Serial Number and Mother Serial Number can't be the same");
                     return;
                 }
+                else if (!IsFMInSameCage(fSerialBox.Text, mSerialBox.Text))
+                {
+                    fsnErrorProvider.SetError(fSerialBox, "The Chick father and mother have to be in the same cage");
+                }
                 else
                 {
                     fsnErrorProvider.SetError(fSerialBox, string.Empty);
@@ -210,7 +213,7 @@ Integrated Security=True;");
                     msnErrorProvider.SetError(mSerialBox, "Mother Serial Number must be 6 digits long");
                     return;
                 }
-                else if (!IsMSerialNumberInDB(mSerialBox.Text))
+                else if (!IsMSerialNumberInDB(mSerialBox.Text) && dataGridView1.Rows.Count > 1)
                 {
                     msnErrorProvider.SetError(mSerialBox, "Mother Serial Number does not exist in the system");
                     return;
@@ -261,11 +264,6 @@ Integrated Security=True;");
         public void SetLadyGouldianFinchBindingSource(BindingSource ladyGouldianFinchList)
         {
             dataGridView1.DataSource = ladyGouldianFinchList;
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         // Singleton pattern (open a single form instance)
@@ -377,33 +375,6 @@ Integrated Security=True;");
             {
                 subSpeciesComboBox.Items.Add("Central Australia");
                 subSpeciesComboBox.Items.Add("Coastal cities");
-            }
-        }
-
-        /// <summary>
-        /// Handles the SelectedIndexChanged event of the genderComboBox control.
-        /// Occurs when the selected index of the genderComboBox is changed.
-        /// Updates the bodyColorComboBox items based on the selected gender.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">An EventArgs that contains the event data.</param>
-        private void genderComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            bodyColorComboBox.Items.Clear();
-
-            if (genderComboBox.SelectedItem.ToString() == "Female")
-            {
-                bodyColorComboBox.Items.Add("Green");
-                bodyColorComboBox.Items.Add("Yellow");
-                bodyColorComboBox.Items.Add("Blue");
-                bodyColorComboBox.Items.Add("Silver");
-            }
-            else if (genderComboBox.SelectedItem.ToString() == "Male")
-            {
-                bodyColorComboBox.Items.Add("Green");
-                bodyColorComboBox.Items.Add("Yellow");
-                bodyColorComboBox.Items.Add("Blue");
-                bodyColorComboBox.Items.Add("Silver");
             }
         }
 
@@ -587,6 +558,49 @@ Integrated Security=True;");
                 sqlConnection.Close();
             }
             return flag;
+        }
+
+        private bool IsFMInSameCage(string f_serial_number, string m_serial_number)
+        {
+            string temp1 = null;
+            string temp2 = null;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query1 = "SELECT Cage_Number FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
+            string query2 = "SELECT Cage_Number FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query1, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@m_serial_number", m_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        temp1 = reader.GetString(0);
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query2, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@f_serial_number", f_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        temp2 = reader.GetString(0);
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return string.Equals(temp1, temp2, StringComparison.OrdinalIgnoreCase);
         }
 
 

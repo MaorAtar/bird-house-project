@@ -17,28 +17,27 @@ namespace BirdHouseProject.Models
         // Properties - Validations
 
         // Cage Serial Number
-        [DisplayName("Cage Serial Number")]
+        [DisplayName("Serial Number")]
         [Required(ErrorMessage = "Cage serial number is required!")]
         public int Serial_number { get => serial_number; set => serial_number = value; }
 
         // Cage Length
-        [DisplayName("Cage Length")]
+        [DisplayName("Length")]
         [Required(ErrorMessage = "Cage length is required!")]
         public double Length { get => length; set => length = value; }
 
         // Cage Width
-        [DisplayName("Cage Width")]
+        [DisplayName("Width")]
         [Required(ErrorMessage = "Cage width is required!")]
         public double Width { get => width; set => width = value; }
 
         // Cage Height
-        [DisplayName("Cage Height")]
+        [DisplayName("Height")]
         [Required(ErrorMessage = "Cage height is required!")]
         public double Height { get => height; set => height = value; }
 
         // Cage Material
-        [DisplayName("Cage Material")]
-        [Required(ErrorMessage = "Cage material is required!")]
+        [DisplayName("Material")]
         public string Material { get => material; set => material = value; }
     }
 }
