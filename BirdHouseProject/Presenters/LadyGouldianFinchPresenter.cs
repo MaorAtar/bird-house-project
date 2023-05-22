@@ -106,8 +106,18 @@ namespace BirdHouseProject.Presenters
             model.Hatch_date = view.LadyGouldianFinchHatchDate;
             model.Gender = view.LadyGouldianFinchGender;
             model.Cage_number = view.LadyGouldianFinchCageNumber;
-            model.F_serial_number = Convert.ToInt32(view.LadyGouldianFinchFSerialNumber);
-            model.M_serial_number = Convert.ToInt32(view.LadyGouldianFinchMSerialNumber);
+            try
+            {
+                model.F_serial_number = Convert.ToInt32(view.LadyGouldianFinchFSerialNumber);
+                model.M_serial_number = Convert.ToInt32(view.LadyGouldianFinchMSerialNumber);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex + " occured while trying to set the serial numbers for one of the parents.");
+                Console.WriteLine("Setting the parents serial numbers to default values!");
+                model.F_serial_number = 111000;
+                model.M_serial_number = 111001;
+            }
             model.Head_color = view.LadyGouldianFinchHeadColor;
             model.Breast_color = view.LadyGouldianFinchBreastColor;
             model.Body_color = view.LadyGouldianFinchBodyColor;

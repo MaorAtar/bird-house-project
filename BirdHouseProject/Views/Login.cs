@@ -58,7 +58,7 @@ namespace BirdHouseProject.Views
                         // Username found, check password
                         if (passwordRange != null && passwordRange[i, 1] != null && txtPassword.Text == passwordRange[i, 1].ToString())
                         {
-                            MessageBox.Show("Login successful!");
+                            MessageBox.Show("Login Successful!");
                             string sqlConnectionString = ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
                             MainView view = new MainView();
                             new MainPresenter(view, sqlConnectionString);
@@ -67,7 +67,7 @@ namespace BirdHouseProject.Views
                         }
                         else
                         {
-                            MessageBox.Show("Incorrect password");
+                            MessageBox.Show("Incorrect Password");
                             txtPassword.Clear();
                             txtPassword.Focus();
                         }
@@ -126,6 +126,5 @@ namespace BirdHouseProject.Views
             new Register().Show();
             this.Hide();
         }
-
     }
 }
