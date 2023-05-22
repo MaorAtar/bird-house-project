@@ -40,6 +40,7 @@ namespace BirdHouseProject.Views
             widthBox.Text = width.ToString();
             heightBox.Text = height.ToString();
             materialBox.Text = material;
+            cageNumberLabel.Text = "#" + cage_serial_number.ToString();
             showBirdsTable();
             showCagePic(material);
         }

@@ -50,6 +50,7 @@ namespace BirdHouseProject.Views
             this.cagePictureBox = new System.Windows.Forms.PictureBox();
             this.exportButton = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.cageNumberLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.birdsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.birdsDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cagePictureBox)).BeginInit();
@@ -291,6 +292,17 @@ namespace BirdHouseProject.Views
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
+            // cageNumberLabel
+            // 
+            this.cageNumberLabel.AutoSize = true;
+            this.cageNumberLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(204)))));
+            this.cageNumberLabel.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cageNumberLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(211)))), ((int)(((byte)(94)))));
+            this.cageNumberLabel.Location = new System.Drawing.Point(1055, 50);
+            this.cageNumberLabel.Name = "cageNumberLabel";
+            this.cageNumberLabel.Size = new System.Drawing.Size(0, 34);
+            this.cageNumberLabel.TabIndex = 165;
+            // 
             // CageDataView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -298,6 +310,7 @@ namespace BirdHouseProject.Views
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1350, 953);
+            this.Controls.Add(this.cageNumberLabel);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.cagePictureBox);
@@ -344,5 +357,6 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.PictureBox cagePictureBox;
         private System.Windows.Forms.Button exportButton;
         private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Label cageNumberLabel;
     }
 }
