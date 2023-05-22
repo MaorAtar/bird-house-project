@@ -610,7 +610,6 @@ Integrated Security=True;");
             return string.Equals(temp1, temp2, StringComparison.OrdinalIgnoreCase);
         }
 
-
         /// <summary>
         /// Exports the data in the datagrid to an excel file.
         /// </summary>

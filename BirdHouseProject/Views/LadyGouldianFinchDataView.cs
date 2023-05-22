@@ -178,6 +178,11 @@ Integrated Security=True;");
                 fsnErrorProvider.SetError(fSerialBox2, "Father Serial Number does not match to a Male bird Serial Number");
                 return;
             }
+            else if (!IsFMInSameCage(fSerialBox.Text, mSerialBox.Text))
+            {
+                fsnErrorProvider.SetError(fSerialBox, "The Chick father and mother have to be in the same cage");
+                return;
+            }
             else if (string.Equals(fSerialBox2.Text, mSerialBox2.Text))
             {
                 fsnErrorProvider.SetError(fSerialBox2, "Father Serial Number and Mother Serial Number can't be the same");
@@ -624,6 +629,55 @@ Integrated Security=True;");
                 sqlConnection.Close();
             }
             return flag;
+        }
+
+        /// <summary>
+        /// Checks if the father and mother of the bird is located in the same cage.
+        /// </summary>
+        /// <param name="f_serial_number"></param>
+        /// <param name="m_serial_number"></param>
+        /// <returns></returns>
+        private bool IsFMInSameCage(string f_serial_number, string m_serial_number)
+        {
+            string temp1 = null;
+            string temp2 = null;
+            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+            string query1 = "SELECT Cage_Number FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
+            string query2 = "SELECT Cage_Number FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query1, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@m_serial_number", m_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        temp1 = reader.GetString(0);
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            using (SqlConnection sqlConnection = new SqlConnection(connection))
+            {
+                using (SqlCommand command = new SqlCommand(query2, sqlConnection))
+                {
+                    command.Parameters.AddWithValue("@f_serial_number", f_serial_number);
+                    sqlConnection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        temp2 = reader.GetString(0);
+                    }
+                    reader.Close();
+                }
+                sqlConnection.Close();
+            }
+            return string.Equals(temp1, temp2, StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>

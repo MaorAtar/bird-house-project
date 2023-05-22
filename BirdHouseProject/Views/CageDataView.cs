@@ -93,6 +93,10 @@ namespace BirdHouseProject.Views
             connectionString.Close();
         }
 
+        /// <summary>
+        /// Displays the cage picture following the cage material.
+        /// </summary>
+        /// <param name="material"></param>
         private void showCagePic(string material)
         {
             if (material == "Steel")
@@ -108,7 +112,7 @@ namespace BirdHouseProject.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void exportButton_Click(object sender, System.EventArgs e)
+        private void exportButton_Click(object sender, EventArgs e)
         {
             DataTable dataTable = new DataTable();
             // Create columns in the DataTable based on the DataGridView columns

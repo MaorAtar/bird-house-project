@@ -266,7 +266,18 @@ Integrated Security=True;");
         /// <returns>Boolean</returns>
         private bool ValidateCageSizeInput(string size)
         {
-            return Convert.ToInt32(size) >= 15 && Convert.ToInt32(size) <= 100;
+            for (int i = 0; i < size.Length; i++)
+            {
+                if (!char.IsDigit(size[i]))
+                {
+                    return false;
+                }
+            }
+            if (!(Convert.ToInt32(size) >= 15 && Convert.ToInt32(size) <= 100))
+            {
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
