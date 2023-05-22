@@ -83,6 +83,8 @@ namespace BirdHouseProject.Views
         private void homeBtn_Click(object sender, EventArgs e)
         {
             homePanel.Show();
+            birdsLabel.Text = GetAmountOfBirdsInDB().ToString();
+            cagesLabel.Text = GetAmountOfCagesInDB().ToString();
         }
 
         /// <summary>

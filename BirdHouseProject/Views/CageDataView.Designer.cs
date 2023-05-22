@@ -280,7 +280,7 @@ namespace BirdHouseProject.Views
             this.closeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.closeBtn.FlatAppearance.BorderSize = 0;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.Location = new System.Drawing.Point(1224, 12);
+            this.closeBtn.Location = new System.Drawing.Point(1277, 12);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(32, 32);
             this.closeBtn.TabIndex = 164;

@@ -54,7 +54,7 @@ namespace BirdHouseProject.Repositories
                 command.Connection = connection;
                 command.CommandText = @"
             DELETE FROM LadyGouldianFinch
-            WHERE Serial_Number = @serial_number;
+            WHERE Cage_Number = @serial_number;
             
             DELETE FROM Cage
             WHERE Serial_Number = @serial_number;";

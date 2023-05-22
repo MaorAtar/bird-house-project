@@ -57,6 +57,39 @@ namespace BirdHouseProject.Views
             DataTable dt = new DataTable();
             da.Fill(dt);
             birdsDataGrid.DataSource = dt;
+            foreach (DataGridViewColumn column in birdsDataGrid.Columns)
+            {
+                switch (column.DataPropertyName)
+                {
+                    case "Serial_Number":
+                        column.HeaderText = "Serial Number";
+                        break;
+                    case "Sub_Species":
+                        column.HeaderText = "Sub Species";
+                        break;
+                    case "Hatch_Date":
+                        column.HeaderText = "Hatch Date";
+                        break;
+                    case "Cage_Number":
+                        column.HeaderText = "Cage Number";
+                        break;
+                    case "F_Serial_Number":
+                        column.HeaderText = "Father Serial Number";
+                        break;
+                    case "M_Serial_Number":
+                        column.HeaderText = "Mother Serial Number";
+                        break;
+                    case "Head_Color":
+                        column.HeaderText = "Head Color";
+                        break;
+                    case "Breast_Color":
+                        column.HeaderText = "Breast Color";
+                        break;
+                    case "Body_Color":
+                        column.HeaderText = "Body Color";
+                        break;
+                }
+            }
             connectionString.Close();
         }
 

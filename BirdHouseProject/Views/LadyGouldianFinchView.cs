@@ -194,14 +194,15 @@ Integrated Security=True;");
                     fsnErrorProvider.SetError(fSerialBox, "Father Serial Number does not match to a Male bird Serial Number");
                     return;
                 }
+                else if (!IsFMInSameCage(fSerialBox.Text, mSerialBox.Text))
+                {
+                    fsnErrorProvider.SetError(fSerialBox, "The Chick father and mother have to be in the same cage");
+                    return;
+                }
                 else if (string.Equals(fSerialBox.Text, mSerialBox.Text))
                 {
                     fsnErrorProvider.SetError(fSerialBox, "Father Serial Number and Mother Serial Number can't be the same");
                     return;
-                }
-                else if (!IsFMInSameCage(fSerialBox.Text, mSerialBox.Text))
-                {
-                    fsnErrorProvider.SetError(fSerialBox, "The Chick father and mother have to be in the same cage");
                 }
                 else
                 {
@@ -560,6 +561,12 @@ Integrated Security=True;");
             return flag;
         }
 
+        /// <summary>
+        /// Checks if the father and mother of the bird is located in the same cage.
+        /// </summary>
+        /// <param name="f_serial_number"></param>
+        /// <param name="m_serial_number"></param>
+        /// <returns></returns>
         private bool IsFMInSameCage(string f_serial_number, string m_serial_number)
         {
             string temp1 = null;
