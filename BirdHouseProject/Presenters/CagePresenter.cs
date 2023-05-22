@@ -120,10 +120,13 @@ namespace BirdHouseProject.Presenters
         {
             try
             {
-                var cage = (CageModel)cageBindingSource.Current;
-                repository.Delete(cage.Serial_number);
-                view.IsSuccessful = true;
-                view.Message = "Cage deleted successfully";
+                var cage = cageBindingSource.Current as CageModel;
+                if (cage != null)
+                {
+                    repository.Delete(cage.Serial_number);
+                    view.IsSuccessful = true;
+                    view.Message = "Cage deleted successfully";
+                }
             }
             catch (Exception ex)
             {

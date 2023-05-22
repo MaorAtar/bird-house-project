@@ -99,50 +99,53 @@ namespace BirdHouseProject.Presenters
         /// </summary>
         private void SaveLadyGouldianFinch(object sender, EventArgs e)
         {
-            var model = new LadyGouldianFinchModel();
-            model.Serial_number = Convert.ToInt32(view.LadyGouldianFinchSerialNumber);
-            model.Species = view.LadyGouldianFinchSpecies;
-            model.Sub_species = view.LadyGouldianFinchSubSpecies;
-            model.Hatch_date = view.LadyGouldianFinchHatchDate;
-            model.Gender = view.LadyGouldianFinchGender;
-            model.Cage_number = view.LadyGouldianFinchCageNumber;
-            try
+            bool flag = CheckValidSerialNumbers(view.LadyGouldianFinchFSerialNumber, view.LadyGouldianFinchMSerialNumber);
+            if (flag == true)
             {
+                var model = new LadyGouldianFinchModel();
+                model.Serial_number = Convert.ToInt32(view.LadyGouldianFinchSerialNumber);
+                model.Species = view.LadyGouldianFinchSpecies;
+                model.Sub_species = view.LadyGouldianFinchSubSpecies;
+                model.Hatch_date = view.LadyGouldianFinchHatchDate;
+                model.Gender = view.LadyGouldianFinchGender;
+                model.Cage_number = view.LadyGouldianFinchCageNumber;
                 model.F_serial_number = Convert.ToInt32(view.LadyGouldianFinchFSerialNumber);
                 model.M_serial_number = Convert.ToInt32(view.LadyGouldianFinchMSerialNumber);
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("Exception: " + ex + " occured while trying to set the serial numbers for one of the parents.");
-                Console.WriteLine("Setting the parents serial numbers to default values!");
-                model.F_serial_number = 111000;
-                model.M_serial_number = 111001;
-            }
-            model.Head_color = view.LadyGouldianFinchHeadColor;
-            model.Breast_color = view.LadyGouldianFinchBreastColor;
-            model.Body_color = view.LadyGouldianFinchBodyColor;
-            try
-            {
-                new Common.ModelDataValidation().Validate(model);
-                if(view.IsEdit) // Edit model
+                model.Head_color = view.LadyGouldianFinchHeadColor;
+                model.Breast_color = view.LadyGouldianFinchBreastColor;
+                model.Body_color = view.LadyGouldianFinchBodyColor;
+                try
                 {
-                    repository.Edit(model);
-                    view.Message = "Bird edited successfully";
+                    new Common.ModelDataValidation().Validate(model);
+                    if (view.IsEdit) // Edit model
+                    {
+                        repository.Edit(model);
+                        view.Message = "Bird edited successfully";
+                    }
+                    else // Add new model
+                    {
+                        repository.Add(model);
+                        view.Message = "Bird added successfully";
+                    }
+                    view.IsSuccessful = true;
+                    LoadAllLadyGouldianFinchList();
+                    CleanViewFields();
                 }
-                else // Add new model
+                catch (Exception ex)
                 {
-                    repository.Add(model);
-                    view.Message = "Bird added successfully";
+                    view.IsSuccessful = false;
+                    view.Message = ex.Message;
                 }
-                view.IsSuccessful = true;
-                LoadAllLadyGouldianFinchList();
-                CleanViewFields();
             }
-            catch (Exception ex)
-            {
-                view.IsSuccessful = false;
-                view.Message = ex.Message;
+        }
+
+        private bool CheckValidSerialNumbers(string f_serial_number, string m_serial_number)
+        {
+            int result = 0;
+            if (!(int.TryParse(f_serial_number, out result)) || !(int.TryParse(m_serial_number, out result))) {
+                return false;
             }
+            return true;
         }
 
         /// <summary>
@@ -171,16 +174,25 @@ namespace BirdHouseProject.Presenters
         {
             try
             {
-                var ladyGouldianFinch = (LadyGouldianFinchModel)ladyGouldianFinchBindingSource.Current;
-                repository.Delete(ladyGouldianFinch.Serial_number);
-                view.IsSuccessful = true;
-                view.Message = "Bird deleted successfully";
+                var ladyGouldianFinch = ladyGouldianFinchBindingSource.Current as LadyGouldianFinchModel;
+                if (ladyGouldianFinch != null)
+                {
+                    repository.Delete(ladyGouldianFinch.Serial_number);
+                    view.IsSuccessful = true;
+                    view.Message = "Bird deleted successfully";
+                }
+                else
+                {
+                    view.IsSuccessful = false;
+                    view.Message = "No bird selected";
+                }
             }
             catch (Exception ex)
             {
                 view.IsSuccessful = false;
-                view.Message = "An error ocurred - " + ex.Message + ", could not delete bird";
+                view.Message = "An error occurred - " + ex.Message + ", could not delete bird";
             }
+
         }
 
         /// <summary>

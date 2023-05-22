@@ -23,60 +23,46 @@ namespace BirdHouseProject.Models
 
         // Bird Serial Number
         [DisplayName("Serial Number")]
-        [Required(ErrorMessage = "Serial number is required!")]
         public int Serial_number { get => serial_number; set => serial_number = value; }
 
         // Bird Species
         [DisplayName("Species")]
-        [Required(ErrorMessage = "Bird species is required!")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Bird species must be 3-20 digits long exactly!")]
         public string Species { get => species; set => species = value; }
 
         // Bird Sub Species
         [DisplayName("Sub Species")]
-        [Required(ErrorMessage = "Bird sub species is required!")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Bird sub species must be 3-20 digits long exactly!")]
         public string Sub_species { get => sub_species; set => sub_species = value; }
 
         // Bird Hatch Date
         [DisplayName("Hatch Date")]
-        [Required(ErrorMessage = "Bird hatch date is required!")]
         public string Hatch_date { get => hatch_date; set => hatch_date = value; }
 
         // Bird Gender
         [DisplayName("Gender")]
-        [Required(ErrorMessage = "Bird gender is required!")]
         public string Gender { get => gender; set => gender = value; }
 
         // Cage Number
         [DisplayName("Cage Number")]
-        [Required(ErrorMessage = "Cage number is required!")]
-        [StringLength(50, MinimumLength = 4, ErrorMessage = "Cage number must be 4 digits long exactly!")]
         public string Cage_number { get => cage_number; set => cage_number = value; }
 
         // Bird Father Serial Number
         [DisplayName("Father Serial Number")]
-        [Required(ErrorMessage = "Bird father serial number is required!")]
         public int F_serial_number { get => f_serial_number; set => f_serial_number = value; }
 
         // Bird Mother Serial Number
         [DisplayName("Mother Serial Number")]
-        [Required(ErrorMessage = "Bird mother serial number is required!")]
         public int M_serial_number { get => m_serial_number; set => m_serial_number = value; }
 
         // Bird Head Color
         [DisplayName("Head Color")]
-        [Required(ErrorMessage = "Bird head color is required!")]
         public string Head_color { get => head_color; set => head_color = value; }
 
         // Bird Breast Color
         [DisplayName("Breast Color")]
-        [Required(ErrorMessage = "Bird breast color is required!")]
         public string Breast_color { get => breast_color; set => breast_color = value; }
 
         // Bird Body Color
         [DisplayName("Body Color")]
-        [Required(ErrorMessage = "Bird body color is required!")]
         public string Body_color { get => body_color; set => body_color = value; }
     }
 }

@@ -107,7 +107,6 @@ Integrated Security=True;");
                 if (subSpeciesComboBox.SelectedIndex == -1)
                 {
                     subSpeciesErrorProvider.SetError(subSpeciesComboBox, "Invalid Sub Species");
-                    return;
                 }
                 else
                 {
