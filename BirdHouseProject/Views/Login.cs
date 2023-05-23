@@ -13,6 +13,7 @@ namespace BirdHouseProject.Views
     /// </summary>
     public partial class Login : Form
     {
+        private bool passwordVisible = false;
         /// <summary>
         /// Initializes a new instance of the <see cref="Login"/> class.
         /// </summary>
@@ -124,7 +125,26 @@ namespace BirdHouseProject.Views
         private void label6_Click_1(object sender, EventArgs e)
         {
             new Register().Show();
-            this.Hide();
+            Hide();
+        }
+
+        /// <summary>
+        /// handles show password/hide password button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void showPassBtn_Click(object sender, EventArgs e)
+        {
+            if (passwordVisible)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                passwordVisible = false;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                passwordVisible = true;
+            }
         }
     }
 }

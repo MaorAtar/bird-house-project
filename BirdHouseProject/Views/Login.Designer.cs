@@ -42,6 +42,7 @@ namespace BirdHouseProject.Views
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.showPassBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -176,10 +177,24 @@ namespace BirdHouseProject.Views
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // showPassBtn
+            // 
+            this.showPassBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("showPassBtn.BackgroundImage")));
+            this.showPassBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.showPassBtn.FlatAppearance.BorderSize = 0;
+            this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showPassBtn.Location = new System.Drawing.Point(340, 331);
+            this.showPassBtn.Name = "showPassBtn";
+            this.showPassBtn.Size = new System.Drawing.Size(25, 25);
+            this.showPassBtn.TabIndex = 24;
+            this.showPassBtn.UseVisualStyleBackColor = true;
+            this.showPassBtn.Click += new System.EventHandler(this.showPassBtn_Click);
+            // 
             // Login
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(413, 551);
+            this.Controls.Add(this.showPassBtn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -218,5 +233,6 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button showPassBtn;
     }
 }

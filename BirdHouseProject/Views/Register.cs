@@ -81,11 +81,14 @@ namespace BirdHouseProject.Views
             Range passwordRange = ws.Range["B" + (lastRow + 1).ToString()];
             passwordRange.Value = username;
 
+            Range idRange = ws.Range["C" + (lastRow + 1).ToString()];
+            idRange.Value = id;
+
             wb.Save();
             wb.Close();
             MessageBox.Show("Registration successful!");
             new MainView().Show();
-            this.Close();
+            Close();
         }
 
         /// <summary>
@@ -124,8 +127,6 @@ namespace BirdHouseProject.Views
                 MessageBox.Show("The username cannot contain more than 2 digits!");
                 return false;
             }
-
-
             return true;
         }
 
