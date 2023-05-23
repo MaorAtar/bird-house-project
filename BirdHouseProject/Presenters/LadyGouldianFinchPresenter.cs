@@ -139,6 +139,12 @@ namespace BirdHouseProject.Presenters
             }
         }
 
+        /// <summary>
+        /// Checks if the father and mother serial numbers entered are valid.
+        /// </summary>
+        /// <param name="f_serial_number"></param>
+        /// <param name="m_serial_number"></param>
+        /// <returns></returns>
         private bool CheckValidSerialNumbers(string f_serial_number, string m_serial_number)
         {
             int result = 0;

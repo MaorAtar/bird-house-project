@@ -71,34 +71,52 @@ namespace BirdHouseProject.Presenters
         /// </summary>
         private void SaveCage(object sender, EventArgs e)
         {
-            var model = new CageModel();
-            model.Serial_number = Convert.ToInt32(view.CageSerialNumber);
-            model.Length = Convert.ToDouble(view.CageLength);
-            model.Width = Convert.ToDouble(view.CageWidth);
-            model.Height = Convert.ToDouble(view.CageHeight);
-            model.Material = view.CageMaterial;
-            try
+            bool flag = CheckValidCageValues(view.CageLength, view.CageWidth, view.CageHeight);
+            if (flag == true)
             {
-                new Common.ModelDataValidation().Validate(model);
-                if (view.IsEdit) // Edit model
+                var model = new CageModel();
+                model.Serial_number = Convert.ToInt32(view.CageSerialNumber);
+                model.Length = Convert.ToDouble(view.CageLength);
+                model.Width = Convert.ToDouble(view.CageWidth);
+                model.Height = Convert.ToDouble(view.CageHeight);
+                model.Material = view.CageMaterial;
+                try
                 {
-                    repository.Edit(model);
-                    view.Message = "Cage edited successfully";
+                    new Common.ModelDataValidation().Validate(model);
+                    if (view.IsEdit) // Edit model
+                    {
+                        repository.Edit(model);
+                        view.Message = "Cage edited successfully";
+                    }
+                    else // Add new model
+                    {
+                        repository.Add(model);
+                        view.Message = "Cage added successfully";
+                    }
+                    view.IsSuccessful = true;
+                    LoadAllCageList();
+                    CleanViewFields();
                 }
-                else // Add new model
+                catch (Exception ex)
                 {
-                    repository.Add(model);
-                    view.Message = "Cage added successfully";
+                    view.IsSuccessful = false;
+                    view.Message = ex.Message;
                 }
-                view.IsSuccessful = true;
-                LoadAllCageList();
-                CleanViewFields();
             }
-            catch (Exception ex)
+        }
+
+        private bool CheckValidCageValues(string length, string width, string height)
+        {
+            int resultLen, resultWid, resultHei;
+            int.TryParse(length, out resultLen);
+            int.TryParse(width, out resultWid);
+            int.TryParse(height, out resultHei);
+
+            if (resultLen < 15 || resultWid < 15 || resultHei < 15)
             {
-                view.IsSuccessful = false;
-                view.Message = ex.Message;
+                return false;
             }
+            return true;
         }
 
         /// <summary>

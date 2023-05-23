@@ -183,17 +183,17 @@ Integrated Security=True;");
                     fsnErrorProvider.SetError(fSerialBox, "Father Serial Number must be 6 digits long");
                     return;
                 }
-                else if (!IsFSerialNumberInDB(fSerialBox.Text) && dataGridView1.Rows.Count > 1)
+                else if (!IsFSerialNumberInDB(fSerialBox.Text) && dataGridView1.Rows.Count > 3)
                 {
                     fsnErrorProvider.SetError(fSerialBox, "Father Serial Number does not exist in the system");
                     return;
                 }
-                else if (!IsFSerialNumberValid(fSerialBox.Text) && dataGridView1.Rows.Count > 1)
+                else if (!IsFSerialNumberValid(fSerialBox.Text) && dataGridView1.Rows.Count > 3)
                 {
                     fsnErrorProvider.SetError(fSerialBox, "Father Serial Number does not match to a Male bird Serial Number");
                     return;
                 }
-                else if (!IsFMInSameCage(fSerialBox.Text, mSerialBox.Text) && dataGridView1.Rows.Count > 1)
+                else if (!IsFMInSameCage(fSerialBox.Text, mSerialBox.Text) && dataGridView1.Rows.Count > 3)
                 {
                     fsnErrorProvider.SetError(fSerialBox, "The Chick father and mother have to be in the same cage");
                     return;
@@ -218,12 +218,12 @@ Integrated Security=True;");
                     msnErrorProvider.SetError(mSerialBox, "Mother Serial Number must be 6 digits long");
                     return;
                 }
-                else if (!IsMSerialNumberInDB(mSerialBox.Text) && dataGridView1.Rows.Count > 1)
+                else if (!IsMSerialNumberInDB(mSerialBox.Text) && dataGridView1.Rows.Count > 3)
                 {
                     msnErrorProvider.SetError(mSerialBox, "Mother Serial Number does not exist in the system");
                     return;
                 }
-                else if (!IsMSerialNumberValid(mSerialBox.Text) && dataGridView1.Rows.Count > 1)
+                else if (!IsMSerialNumberValid(mSerialBox.Text) && dataGridView1.Rows.Count > 3)
                 {
                     msnErrorProvider.SetError(mSerialBox, "Mother Serial Number does not match to a Female bird Serial Number");
                     return;

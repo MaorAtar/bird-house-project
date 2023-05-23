@@ -54,7 +54,6 @@ namespace BirdHouseProject.Views
         /// </summary>
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
             Application.Exit();
         }
 
@@ -83,6 +82,7 @@ namespace BirdHouseProject.Views
         private void homeBtn_Click(object sender, EventArgs e)
         {
             homePanel.Show();
+            InitializePieChart();
             birdsLabel.Text = GetAmountOfBirdsInDB().ToString();
             cagesLabel.Text = GetAmountOfCagesInDB().ToString();
         }
