@@ -34,6 +34,7 @@ namespace BirdHouseProject.Views
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cageBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.birdBtn = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.bgMusicCheckBox = new System.Windows.Forms.CheckBox();
@@ -113,6 +114,7 @@ namespace BirdHouseProject.Views
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.birdBtn);
             this.panel1.Controls.Add(this.cageBtn);
             this.panel1.Controls.Add(this.homeBtn);
@@ -122,6 +124,16 @@ namespace BirdHouseProject.Views
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(253, 900);
             this.panel1.TabIndex = 45;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel8.Location = new System.Drawing.Point(3, 434);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(247, 454);
+            this.panel8.TabIndex = 15;
             // 
             // birdBtn
             // 
@@ -311,7 +323,7 @@ namespace BirdHouseProject.Views
             // 
             this.plotView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.plotView1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.plotView1.Location = new System.Drawing.Point(822, 346);
+            this.plotView1.Location = new System.Drawing.Point(789, 346);
             this.plotView1.Name = "plotView1";
             this.plotView1.PanCursor = System.Windows.Forms.Cursors.Hand;
             this.plotView1.Size = new System.Drawing.Size(400, 400);
@@ -333,7 +345,7 @@ namespace BirdHouseProject.Views
             this.panel6.Controls.Add(this.label6);
             this.panel6.Location = new System.Drawing.Point(17, 25);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1318, 279);
+            this.panel6.Size = new System.Drawing.Size(1278, 279);
             this.panel6.TabIndex = 10;
             // 
             // label1
@@ -385,7 +397,7 @@ namespace BirdHouseProject.Views
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(1078, 42);
+            this.pictureBox2.Location = new System.Drawing.Point(1052, 42);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 200);
             this.pictureBox2.TabIndex = 0;
@@ -477,5 +489,6 @@ namespace BirdHouseProject.Views
         private System.Windows.Forms.Panel panel6;
         private OxyPlot.WindowsForms.PlotView plotView1;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
     }
 }
