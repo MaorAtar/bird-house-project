@@ -12,6 +12,9 @@ namespace BirdHouseProject.Views
     /// </summary>
     public partial class LadyGouldianFinchDataView : Form
     {
+        // Fields
+        string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+
         // Constructors
         public LadyGouldianFinchDataView(int serialNumber, string species, string subSpecies,
     string hatchDate, string gender, string cageNumber, int fSerialNumber, int mSerialNumber,
@@ -249,7 +252,6 @@ Integrated Security=True;");
             string f_head_color = null;
             string m_head_color = null;
 
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query1 = "SELECT Head_Color FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
             string query2 = "SELECT Head_Color FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
 
@@ -324,7 +326,6 @@ Integrated Security=True;");
             string f_breast_color = null;
             string m_breast_color = null;
 
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query1 = "SELECT Breast_Color FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
             string query2 = "SELECT Breast_Color FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
 
@@ -395,7 +396,6 @@ Integrated Security=True;");
             string f_body_color = null;
             string m_body_color = null;
 
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query1 = "SELECT Body_Color FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
             string query2 = "SELECT Body_Color FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
 
@@ -500,7 +500,6 @@ Integrated Security=True;");
         private bool IsFSerialNumberInDB(string f_serial_number)
         {
             bool flag = false;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query = "SELECT Serial_Number FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
 
             using (SqlConnection sqlConnection = new SqlConnection(connection))
@@ -530,7 +529,6 @@ Integrated Security=True;");
         {
             bool flag = false;
             string temp;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query = "SELECT Gender FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
 
             using (SqlConnection sqlConnection = new SqlConnection(connection))
@@ -564,7 +562,6 @@ Integrated Security=True;");
         private bool IsMSerialNumberInDB(string m_serial_number)
         {
             bool flag = false;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query = "SELECT Serial_Number FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
 
             using (SqlConnection sqlConnection = new SqlConnection(connection))
@@ -605,7 +602,6 @@ Integrated Security=True;");
         {
             bool flag = false;
             string temp;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query = "SELECT Gender FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
 
             using (SqlConnection sqlConnection = new SqlConnection(connection))
@@ -641,7 +637,6 @@ Integrated Security=True;");
         {
             string temp1 = null;
             string temp2 = null;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query1 = "SELECT Cage_Number FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
             string query2 = "SELECT Cage_Number FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
 

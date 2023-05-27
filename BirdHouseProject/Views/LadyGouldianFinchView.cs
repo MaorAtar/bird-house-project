@@ -15,6 +15,7 @@ namespace BirdHouseProject.Views
         // Fields
         SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
 Integrated Security=True;");
+        string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
         private LadyGouldianFinchDataView openLadyGouldianFinchDataViewForm;
         private string message;
         private bool isSuccessful;
@@ -421,7 +422,6 @@ Integrated Security=True;");
         private bool IsCageNumberInDB(string cage_number)
         {
             bool flag = false;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query = "SELECT Serial_Number FROM Cage WHERE Serial_Number = @cage_number";
 
             using (SqlConnection sqlConnection = new SqlConnection(connection))
@@ -450,7 +450,6 @@ Integrated Security=True;");
         private bool IsFSerialNumberInDB(string f_serial_number)
         {
             bool flag = false;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query = "SELECT Serial_Number FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
 
             using (SqlConnection sqlConnection = new SqlConnection(connection))
@@ -480,7 +479,6 @@ Integrated Security=True;");
         {
             bool flag = false;
             string temp;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query = "SELECT Gender FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
 
             using (SqlConnection sqlConnection = new SqlConnection(connection))
@@ -514,7 +512,6 @@ Integrated Security=True;");
         private bool IsMSerialNumberInDB(string m_serial_number)
         {
             bool flag = false;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query = "SELECT Serial_Number FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
 
             using (SqlConnection sqlConnection = new SqlConnection(connection))
@@ -544,7 +541,6 @@ Integrated Security=True;");
         {
             bool flag = false;
             string temp;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query = "SELECT Gender FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
 
             using (SqlConnection sqlConnection = new SqlConnection(connection))
@@ -580,7 +576,6 @@ Integrated Security=True;");
         {
             string temp1 = null;
             string temp2 = null;
-            string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string query1 = "SELECT Cage_Number FROM LadyGouldianFinch WHERE Serial_Number = @m_serial_number";
             string query2 = "SELECT Cage_Number FROM LadyGouldianFinch WHERE Serial_Number = @f_serial_number";
 
