@@ -13,9 +13,9 @@ namespace BirdHouseProject.Views
     public partial class LadyGouldianFinchView : Form, ILadyGouldianFinchView
     {
         // Fields
-        SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+        private SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
 Integrated Security=True;");
-        string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+        private string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
         private LadyGouldianFinchDataView openLadyGouldianFinchDataViewForm;
         private string message;
         private bool isSuccessful;

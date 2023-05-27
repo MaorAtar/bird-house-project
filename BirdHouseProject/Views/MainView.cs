@@ -13,7 +13,9 @@ namespace BirdHouseProject.Views
     public partial class MainView : Form, IMainView
     {
         // Fields
-        SoundPlayer sound;
+        private SoundPlayer sound;
+        private string connectionString = @"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+Integrated Security=True;";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainView"/> class.
@@ -112,8 +114,6 @@ namespace BirdHouseProject.Views
         private int GetAmountOfBirdsInDB()
         {
             int count = 0;
-            string connectionString = @"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
-Integrated Security=True;";
             string tableName = "LadyGouldianFinch";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -135,8 +135,6 @@ Integrated Security=True;";
         private int GetAmountOfCagesInDB()
         {
             int count = 0;
-            string connectionString = @"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
-Integrated Security=True;";
             string tableName = "Cage";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -158,7 +156,6 @@ Integrated Security=True;";
         private int GetAmountOfAmericanInDB()
         {
             int count = 0;
-            string connectionString = @"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string tableName = "LadyGouldianFinch";
             string speciesColumnName = "Species";
             string targetSpecies = "Gouldian American";
@@ -183,7 +180,6 @@ Integrated Security=True;";
         private int GetAmountOfEuropeanInDB()
         {
             int count = 0;
-            string connectionString = @"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string tableName = "LadyGouldianFinch";
             string speciesColumnName = "Species";
             string targetSpecies = "Gouldian European";
@@ -208,7 +204,6 @@ Integrated Security=True;";
         private int GetAmountOfAustralianInDB()
         {
             int count = 0;
-            string connectionString = @"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
             string tableName = "LadyGouldianFinch";
             string speciesColumnName = "Species";
             string targetSpecies = "Gouldian Australian";

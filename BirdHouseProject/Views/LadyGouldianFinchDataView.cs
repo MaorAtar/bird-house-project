@@ -13,7 +13,7 @@ namespace BirdHouseProject.Views
     public partial class LadyGouldianFinchDataView : Form
     {
         // Fields
-        string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+        private string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
 
         // Constructors
         public LadyGouldianFinchDataView(int serialNumber, string species, string subSpecies,
@@ -89,8 +89,7 @@ namespace BirdHouseProject.Views
         /// <param name="serialNumber">The serial number to filter the chick table.</param>
         private void showChickTable(int serialNumber)
         {
-            SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
-Integrated Security=True;");
+            SqlConnection connectionString = new SqlConnection(connection);
             connectionString.Open();
             string query = "Select * From LadyGouldianFinch WHERE F_Serial_Number = @serial_number Or M_Serial_Number = @serial_number";
             SqlCommand command = new SqlCommand(query, connectionString);
@@ -142,8 +141,7 @@ Integrated Security=True;");
         /// <param name="e">The event arguments.</param>
         private void saveBtn2_Click(object sender, EventArgs e)
         {
-            SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
-Integrated Security=True;");
+            SqlConnection connectionString = new SqlConnection(connection);
 
             // Hatch Date Validation
             if (!IsDateFormatValid(hatchDateBox2.Text))
@@ -483,8 +481,7 @@ Integrated Security=True;");
         /// </summary>
         private void RefreshBirdList()
         {
-            SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
-Integrated Security=True;");
+            SqlConnection connectionString = new SqlConnection(connection);
             string query = "Select *from LadyGouldianFinch order by Serial_number desc";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connectionString);
             DataSet dataSet = new DataSet();

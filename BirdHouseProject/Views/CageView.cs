@@ -12,7 +12,7 @@ namespace BirdHouseProject.Views
     public partial class CageView : Form, ICageView
     {
         // Fields
-        SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
+        private SqlConnection connectionString = new SqlConnection(@"Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;
 Integrated Security=True;");
         private CageDataView openCageDataViewForm;
         private string message;
@@ -71,6 +71,11 @@ Integrated Security=True;");
                     lengthErrorProvider.SetError(lenBox, "Cage Length can't be empty");
                     return;
                 }
+                else if (!ValidateCageSizeInputForChars(lenBox.Text))
+                {
+                    lengthErrorProvider.SetError(lenBox, "Length cannot contain letters");
+                    return;
+                }
                 else if (!ValidateCageSizeInput(lenBox.Text))
                 {
                     lengthErrorProvider.SetError(lenBox, "Length must be in range of 15-100 cm");
@@ -86,6 +91,11 @@ Integrated Security=True;");
                     widthErrorProvider.SetError(widthBox, "Cage Width can't be empty");
                     return;
                 }
+                else if (!ValidateCageSizeInputForChars(widthBox.Text))
+                {
+                    widthErrorProvider.SetError(widthBox, "Width cannot contain letters");
+                    return;
+                }
                 else if (!ValidateCageSizeInput(widthBox.Text))
                 {
                     widthErrorProvider.SetError(widthBox, "Width must be in range of 15-100 cm");
@@ -99,6 +109,11 @@ Integrated Security=True;");
                 if (string.IsNullOrEmpty(heightBox.Text))
                 {
                     heightErrorProvider.SetError(heightBox, "Cage Height can't be empty");
+                    return;
+                }
+                else if (!ValidateCageSizeInputForChars(heightBox.Text))
+                {
+                    heightErrorProvider.SetError(heightBox, "Height cannot contain letters");
                     return;
                 }
                 else if (!ValidateCageSizeInput(heightBox.Text))
@@ -276,6 +291,23 @@ Integrated Security=True;");
             if (!(Convert.ToInt32(size) >= 15 && Convert.ToInt32(size) <= 100))
             {
                 return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Validates that the size of the cage input dosen't contain a letter.
+        /// </summary>
+        /// <param name="size"></param>
+        /// <returns></returns>
+        private bool ValidateCageSizeInputForChars(string size)
+        {
+            foreach (char c in size)
+            {
+                if (Char.IsLetter(c))
+                {
+                    return false;
+                }
             }
             return true;
         }
