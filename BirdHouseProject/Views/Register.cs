@@ -4,6 +4,10 @@ using static System.Text.RegularExpressions.Regex;
 using Microsoft.Office.Interop.Excel;
 using Range = Microsoft.Office.Interop.Excel.Range;
 using System.IO;
+using System.Configuration;
+using BirdHouseProject.Presenters;
+using System.Runtime.InteropServices;
+using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace BirdHouseProject.Views
 {
@@ -35,6 +39,24 @@ namespace BirdHouseProject.Views
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
             Workbook wb;
             Worksheet ws;
+
+            // Check if the Users file is already opened.
+            if (IsFileOpen(filePath))
+            {
+                try
+                {
+                    Application excelApp = new Application();
+                    Workbook workbook = excelApp.Workbooks.Open(filePath);
+                    // Close the workbook without saving changes
+                    workbook.Close(SaveChanges: false);
+                    excelApp.Quit();
+                    Marshal.ReleaseComObject(workbook);
+                    Marshal.ReleaseComObject(excelApp);
+                }
+                catch (Exception)
+                {
+                }
+            }
 
             wb = excel.Workbooks.Open(filePath);
             ws = wb.Worksheets[1];
@@ -86,9 +108,33 @@ namespace BirdHouseProject.Views
 
             wb.Save();
             wb.Close();
-            MessageBox.Show("Registration successful!");
-            new MainView().Show();
+            MessageBox.Show("Registration Successful!");
+            string sqlConnectionString = ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
+            MainView view = new MainView();
+            new MainPresenter(view, sqlConnectionString);
+            view.Show(); // Show the MainView as a dialog box
+            this.Hide(); // Hide the Login form
             Close();
+        }
+
+        /// <summary>
+        /// Checks if a file is already opened.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        private bool IsFileOpen(string filePath)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                {
+                    return false;
+                }
+            }
+            catch (IOException)
+            {
+                return true;
+            }
         }
 
         /// <summary>
