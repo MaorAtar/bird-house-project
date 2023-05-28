@@ -385,7 +385,7 @@ Integrated Security=True;");
             else if (speciesComboBox.SelectedItem.ToString() == "Gouldian Australian")
             {
                 subSpeciesComboBox.Items.Add("Central Australia");
-                subSpeciesComboBox.Items.Add("Coastal cities");
+                subSpeciesComboBox.Items.Add("Coastal Cities");
             }
         }
 
