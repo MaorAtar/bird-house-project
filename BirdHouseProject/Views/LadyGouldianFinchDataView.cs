@@ -13,7 +13,7 @@ namespace BirdHouseProject.Views
     public partial class LadyGouldianFinchDataView : Form
     {
         // Fields
-        private string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+        private const string connection = "Data Source=**TO-DO**;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
 
         // Constructors
         public LadyGouldianFinchDataView(int serialNumber, string species, string subSpecies,

@@ -101,7 +101,7 @@ namespace BirdHouseProject.Views
             this.cageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cageBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cageBtn.ForeColor = System.Drawing.Color.Black;
-            this.cageBtn.Image = global::BirdHouseProject.Properties.Resources.cage;
+            this.cageBtn.Image = ((System.Drawing.Image)(resources.GetObject("cageBtn.Image")));
             this.cageBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cageBtn.Location = new System.Drawing.Point(0, 246);
             this.cageBtn.Name = "cageBtn";
@@ -143,7 +143,7 @@ namespace BirdHouseProject.Views
             this.birdBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.birdBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.birdBtn.ForeColor = System.Drawing.Color.Black;
-            this.birdBtn.Image = global::BirdHouseProject.Properties.Resources.bullfinch;
+            this.birdBtn.Image = ((System.Drawing.Image)(resources.GetObject("birdBtn.Image")));
             this.birdBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.birdBtn.Location = new System.Drawing.Point(0, 294);
             this.birdBtn.Name = "birdBtn";
