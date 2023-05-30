@@ -107,6 +107,7 @@ namespace BirdHouseProject.Views
                 if (subSpeciesComboBox.SelectedIndex == -1)
                 {
                     subSpeciesErrorProvider.SetError(subSpeciesComboBox, "Invalid Sub Species");
+                    return;
                 }
                 else
                 {

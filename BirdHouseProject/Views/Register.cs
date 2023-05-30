@@ -34,81 +34,90 @@ namespace BirdHouseProject.Views
         /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
-
             string filePath = Path.GetFullPath(@"Resources\Login Excel Files\Users.xlsx");
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Workbook wb;
-            Worksheet ws;
+            Workbook wb = null;
+            Worksheet ws = null;
 
-            // Check if the Users file is already opened.
-            if (IsFileOpen(filePath))
+            try
             {
-                try
+                IsFileOpen(filePath);
+                wb = excel.Workbooks.Open(filePath);
+                ws = wb.Worksheets[1];
+
+                // Read input fields
+                string username = txtUsername.Text;
+                string password = txtPassword.Text;
+                string confirmPassword = txtConPassword.Text;
+                string id = idUser.Text;
+
+                // Validate input
+                if (!ValidateUsername(username))
                 {
-                    Application excelApp = new Application();
-                    Workbook workbook = excelApp.Workbooks.Open(filePath);
-                    // Close the workbook without saving changes
-                    workbook.Close(SaveChanges: false);
-                    excelApp.Quit();
-                    Marshal.ReleaseComObject(workbook);
-                    Marshal.ReleaseComObject(excelApp);
+                    return;
                 }
-                catch (Exception)
+
+                if (!ValidatePassword(password))
                 {
+                    return;
+                }
+
+                if (password != confirmPassword)
+                {
+                    MessageBox.Show("Passwords do not match.");
+                    return;
+                }
+
+                if (!ValidateId(id))
+                {
+                    return;
+                }
+
+                // Find the last row with data
+                int lastRow = ws.Cells.Find("*", System.Reflection.Missing.Value,
+                                  System.Reflection.Missing.Value, System.Reflection.Missing.Value,
+                                  XlSearchOrder.xlByRows, XlSearchDirection.xlPrevious,
+                                  false, System.Reflection.Missing.Value, System.Reflection.Missing.Value).Row;
+
+                // Write the new user's data to the next row
+                if (ValidateUsername(username) && ValidatePassword(password) && password == confirmPassword)
+                {
+                    Range userRange = ws.Range["A" + (lastRow + 1).ToString()];
+                    userRange.Value = password;
+
+                    Range passwordRange = ws.Range["B" + (lastRow + 1).ToString()];
+                    passwordRange.Value = username;
+
+                    Range idRange = ws.Range["C" + (lastRow + 1).ToString()];
+                    idRange.Value = id;
+
+                    wb.Save();
+                    MessageBox.Show("Registration Successful!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                // Clean up Excel objects
+                if (ws != null)
+                    Marshal.ReleaseComObject(ws);
+
+                if (wb != null)
+                {
+                    wb.Close(SaveChanges: false);
+                    Marshal.ReleaseComObject(wb);
+                }
+
+                if (excel != null)
+                {
+                    excel.Quit();
+                    Marshal.ReleaseComObject(excel);
                 }
             }
 
-            wb = excel.Workbooks.Open(filePath);
-            ws = wb.Worksheets[1];
-
-            // Read input fields
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-            string confirmPassword = txtConPassword.Text;
-            string id = idUser.Text;
-
-            // Find the last row with data
-            int lastRow = ws.Cells.Find("*", System.Reflection.Missing.Value,
-                              System.Reflection.Missing.Value, System.Reflection.Missing.Value,
-                              XlSearchOrder.xlByRows, XlSearchDirection.xlPrevious,
-                              false, System.Reflection.Missing.Value, System.Reflection.Missing.Value).Row;
-
-            // Validate input
-            if (!ValidateUsername(username))
-            {
-
-                return;
-            }
-
-            if (!ValidatePassword(password))
-            {
-
-                return;
-            }
-
-            if (password != confirmPassword)
-            {
-                MessageBox.Show("Passwords do not match.");
-                return;
-            }
-
-            if (!ValidateId(id))
-            {
-                return;
-            }
-            // Write the new user's data to the next row
-            Range userRange = ws.Range["A" + (lastRow + 1).ToString()];
-            userRange.Value = password;
-
-            Range passwordRange = ws.Range["B" + (lastRow + 1).ToString()];
-            passwordRange.Value = username;
-
-            Range idRange = ws.Range["C" + (lastRow + 1).ToString()];
-            idRange.Value = id;
-
-            wb.Save();
-            wb.Close();
-            MessageBox.Show("Registration Successful!");
             string sqlConnectionString = ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
             MainView view = new MainView();
             new MainPresenter(view, sqlConnectionString);
@@ -122,19 +131,16 @@ namespace BirdHouseProject.Views
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
-        private bool IsFileOpen(string filePath)
+        private void IsFileOpen(string filePath)
         {
             try
             {
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
                 {
-                    return false;
+                    fs.Close();
                 }
             }
-            catch (IOException)
-            {
-                return true;
-            }
+            catch (IOException) {}
         }
 
         /// <summary>
@@ -211,9 +217,9 @@ namespace BirdHouseProject.Views
 
             }
 
-            if (numofdigit != 1)
+            if (numofdigit < 1)
             {
-                MessageBox.Show("The password must contain one number!");
+                MessageBox.Show("The password must contain at least one number!");
                 return false;
             }
             if (numofletter < 1)
@@ -221,9 +227,9 @@ namespace BirdHouseProject.Views
                 MessageBox.Show("The Password cannot contain less than 1 letter!");
                 return false;
             }
-            if (numofspeical != 1)
+            if (numofspeical < 1)
             {
-                MessageBox.Show("The password must contain one speical letter!");
+                MessageBox.Show("The password must contain at least one speical letter!");
                 return false;
             }
 
