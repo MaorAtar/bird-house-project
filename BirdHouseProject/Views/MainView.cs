@@ -13,7 +13,7 @@ namespace BirdHouseProject.Views
     public partial class MainView : Form, IMainView
     {
         // Fields
-        private const string connectionString = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+        private const string connectionString = "Data Source=**TO-DO**;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
         private SoundPlayer sound;
 
         /// <summary>

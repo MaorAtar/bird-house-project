@@ -13,7 +13,7 @@ namespace BirdHouseProject.Views
     public partial class CageDataView : Form
     {
         // Fields
-        private const string connection = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+        private const string connection = "Data Source=**TO-DO**;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
         private SqlConnection connectionString = new SqlConnection(connection);
 
         /// <summary>

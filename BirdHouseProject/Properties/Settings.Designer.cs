@@ -26,8 +26,7 @@ namespace BirdHouseProject.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source = MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseDB;Inegrated Security=True" +
-            ";")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source = **TO-DO**;Initial Catalog=BirdHouseDB;Inegrated Security=True;")]
         public string SqlConnection {
             get {
                 return ((string)(this["SqlConnection"]));

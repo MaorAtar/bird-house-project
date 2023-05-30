@@ -8,7 +8,7 @@ namespace BirdHouseProject
 {
     static class Program
     {
-        private const string ConnectionString = "Data Source=MAOR-ATAR-LAPTO;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
+        private const string ConnectionString = "Data Source=**TO-DO**;Initial Catalog=BirdHouseProjectDb;Integrated Security=True;";
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -28,7 +28,7 @@ namespace BirdHouseProject
         /// </summary>
         public static void CreateDatabase()
         {
-            string serverName = "MAOR-ATAR-LAPTO";
+            string serverName = "**TO-DO**";
             string databaseName = "BirdHouseProjectDb";
             string connectionString = $"Data Source={serverName};Integrated Security=True;";
 
