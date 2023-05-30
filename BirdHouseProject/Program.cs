@@ -23,6 +23,9 @@ namespace BirdHouseProject
             Application.Run(new Login());    
         }
 
+        /// <summary>
+        /// Handels the Project data-base functionallty (Creates the table if needed)
+        /// </summary>
         public static void CreateDatabase()
         {
             string serverName = "MAOR-ATAR-LAPTO";
