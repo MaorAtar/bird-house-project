@@ -43,7 +43,7 @@ Inside the Properties folder:
 
    Inside the main project folder:
    - Open the Program file.
-   - Double-click on Line 11 and change **TO-DO** to your SQL Server server name.
+   - Double-click on Line 11, 31 and change **TO-DO** to your SQL Server server name.
    - Open the App.config file.
    - Double-click on Line 6 and 8, and change **TO-DO** to your SQL Server server name.
 
