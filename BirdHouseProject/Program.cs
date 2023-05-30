@@ -17,9 +17,46 @@ namespace BirdHouseProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            CreateDatabase();
             CreateLadyGouldianFinchTable();
             CreateCageTable();
             Application.Run(new Login());    
+        }
+
+        public static void CreateDatabase()
+        {
+            string serverName = "MAOR-ATAR-LAPTO";
+            string databaseName = "BirdHouseProjectDb";
+            string connectionString = $"Data Source={serverName};Integrated Security=True;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Check if the database already exists
+                string checkQuery = $"SELECT COUNT(*) FROM sys.databases WHERE name = '{databaseName}'";
+
+                using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
+                {
+                    int databaseCount = (int)checkCommand.ExecuteScalar();
+
+                    // Database already exists
+                    if (databaseCount > 0)
+                    {
+                        Console.WriteLine("Database already exists.");
+                        return;
+                    }
+                }
+
+                // Create the database if it doesn't exist
+                string createQuery = $"CREATE DATABASE {databaseName}";
+
+                using (SqlCommand createCommand = new SqlCommand(createQuery, connection))
+                {
+                    createCommand.ExecuteNonQuery();
+                    Console.WriteLine("Database created successfully.");
+                }
+            }
         }
 
         /// <summary>
